@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="98ec25eb-a16d-455f-9950-181db38c7402" name="Default Changelist" comment="" />
+    <list default="true" id="98ec25eb-a16d-455f-9950-181db38c7402" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/layout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,6 +25,9 @@
         <option value="Blade File" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -111,6 +120,7 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1boJvK5yyxBvYnIYCTuN5d3HQFQ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -119,16 +129,23 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/admin_assets" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\vasti\resources" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\vasti\public" />
+      <recent name="C:\xampp\htdocs\vasti\public\admin_assets" />
+      <recent name="C:\xampp\htdocs\vasti\resources\views\admin\users" />
+      <recent name="C:\xampp\htdocs\vasti\resources\views\layouts" />
       <recent name="C:\xampp\htdocs\vasti\resources\views" />
+      <recent name="C:\xampp\htdocs\vasti\public" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\vasti\public\admin_assets\css" />
+      <recent name="C:\xampp\htdocs\vasti\resources\views\admin" />
+      <recent name="C:\xampp\htdocs\vasti\resources\views\layouts" />
+      <recent name="C:\xampp\htdocs\vasti\resources\views" />
+      <recent name="C:\xampp\htdocs\vasti\resources" />
     </key>
   </component>
   <component name="RunManager">
@@ -148,7 +165,7 @@
       <option name="presentableId" value="Default" />
       <updated>1589292741786</updated>
       <workItem from="1589292744339" duration="3678000" />
-      <workItem from="1589307651909" duration="5529000" />
+      <workItem from="1589307651909" duration="9860000" />
     </task>
     <servers />
   </component>
@@ -156,6 +173,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="405" y="190" key="EditFileWatcherDialog" timestamp="1589322042339">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="405" y="190" key="EditFileWatcherDialog/0.0.1536.824@0.0.1536.824" timestamp="1589322042339" />
     <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1589307698790">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
