@@ -16,7 +16,9 @@
 
     <link href="{{asset('admin_assets/css/app.css')}}" rel="stylesheet">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+{{--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.2/css/bulma.min.css">--}}
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -24,7 +26,6 @@
     <![endif]-->
 
     @yield('styles')
-
 
 
 </head>
@@ -47,7 +48,6 @@
         <!-- /.navbar-header -->
 
 
-
         <ul class="nav navbar-top-links navbar-right">
 
 
@@ -55,7 +55,7 @@
             <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                     <i class="fa fa-user fa-fw"></i>
-{{--                    {{ Auth::user()->name }}--}}
+                    {{ Auth::user()->name }}
                     <i class="fa fa-caret-down"></i>
                 </a>
                 <ul class="dropdown-menu dropdown-user">
@@ -64,7 +64,7 @@
                     <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                     </li>
                     <li class="divider"></li>
-                    <li><a href="{{ url('/logout') }}"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                    <li><a href="http://vasti.test:10080/logout"><i class="fa fa-sign-out fa-fw"></i>Logout</a>
                     </li>
                 </ul>
                 <!-- /.dropdown-user -->
@@ -73,10 +73,6 @@
 
 
         </ul>
-
-
-
-
 
 
         {{--<ul class="nav navbar-nav navbar-right">--}}
@@ -98,9 +94,6 @@
         {{--</li>--}}
         {{--@endif--}}
         {{--</ul>--}}
-
-
-
 
 
         <div class="navbar-default sidebar" role="navigation">
@@ -125,11 +118,11 @@
                         <a href="#"><i class="fa fa-wrench fa-fw"></i>Users<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-{{--                                <a href="{{route('admin.users.index')}}">All Users</a>--}}
+                                {{--                                <a href="{{route('admin.users.index')}}">All Users</a>--}}
                             </li>
 
                             <li>
-{{--                                <a href="{{route('admin.users.create')}}">Create User</a>--}}
+                                {{--                                <a href="{{route('admin.users.create')}}">Create User</a>--}}
                             </li>
 
                         </ul>
@@ -140,15 +133,15 @@
                         <a href="#"><i class="fa fa-wrench fa-fw"></i> Posts<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-{{--                                <a href="{{route('admin.posts.index')}}">All Posts</a>--}}
+                                {{--                                <a href="{{route('admin.posts.index')}}">All Posts</a>--}}
                             </li>
 
                             <li>
-{{--                                <a href="{{route('admin.posts.create')}}">Create Post</a>--}}
+                                {{--                                <a href="{{route('admin.posts.create')}}">Create Post</a>--}}
                             </li>
 
                             <li>
-{{--                                <a href="{{route('admin.comments.index')}}">All comments</a>--}}
+                                {{--                                <a href="{{route('admin.comments.index')}}">All comments</a>--}}
                             </li>
 
                         </ul>
@@ -160,11 +153,11 @@
                         <a href="#"><i class="fa fa-wrench fa-fw"></i>Categories<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-{{--                                <a href="{{route('admin.categories.index')}}">All Categories</a>--}}
+                                {{--                                <a href="{{route('admin.categories.index')}}">All Categories</a>--}}
                             </li>
 
                             <li>
-{{--                                <a href="{{route('admin.categories.index')}}">Create Category</a>--}}
+                                {{--                                <a href="{{route('admin.categories.index')}}">Create Category</a>--}}
                             </li>
 
                         </ul>
@@ -176,21 +169,16 @@
                         <a href="#"><i class="fa fa-wrench fa-fw"></i>Media<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-{{--                                <a href="{{route('admin.media.index')}}">All Media</a>--}}
+                                {{--                                <a href="{{route('admin.media.index')}}">All Media</a>--}}
                             </li>
 
                             <li>
-{{--                                <a href="{{route('admin.media.create')}}">Upload Media</a>--}}
+                                {{--                                <a href="{{route('admin.media.create')}}">Upload Media</a>--}}
                             </li>
 
                         </ul>
                         <!-- /.nav-second-level -->
                     </li>
-
-
-
-
-
 
 
                     <li>
@@ -236,7 +224,8 @@
                         <!-- /.nav-second-level -->
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
+                        <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span
+                                class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
                                 <a href="#">Second Level Item</a>
@@ -287,17 +276,12 @@
     </nav>
 
 
-
-
-
     <div class="navbar-default sidebar" role="navigation">
         <div class="sidebar-nav navbar-collapse">
             <ul class="nav" id="side-menu">
                 <li>
                     <a href="/profile"><i class="fa fa-dashboard fa-fw"></i>Profile</a>
                 </li>
-
-
 
 
                 <li>
@@ -316,39 +300,30 @@
                 </li>
 
 
-
-
-
             </ul>
 
         </div>
 
     </div>
 
-</div>
 
+    <!-- Page Content -->
+    <div id="page-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header"></h1>
 
+                    @yield('content')
 
-
-
-
-<!-- Page Content -->
-<div id="page-wrapper">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header"></h1>
-
-                @yield('content')
-
+                </div>
+                <!-- /.col-lg-12 -->
             </div>
-            <!-- /.col-lg-12 -->
+            <!-- /.row -->
         </div>
-        <!-- /.row -->
+        <!-- /.container-fluid -->
     </div>
-    <!-- /.container-fluid -->
-</div>
-<!-- /#page-wrapper -->
+    <!-- /#page-wrapper -->
 
 </div>
 <!-- /#wrapper -->
@@ -357,11 +332,7 @@
 <script src="{{asset('admin_assets/js/libs.js')}}"></script>
 
 
-
 @yield('scripts')
-
-
-
 
 
 </body>

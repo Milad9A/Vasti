@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <h1>All Books</h1>
+    <h1>{{ $user->name }}'s Reading List</h1>
 
     <table class="table">
         <thead>
@@ -10,6 +10,7 @@
             <th>Id</th>
             <th>Cover</th>
             <th>Title</th>
+            <th>Status</th>
             <th>Author</th>
             <th>Summary</th>
             <th>Categories</th>
@@ -33,6 +34,7 @@
                                                                                 {{--src="{{$book->image ? $book->image->path : 'http:/placehold.it/400x400'}}"--}}
                                                                                 alt=""></a></td>
                     <td>{{$book->title}}</td>
+                    <td>{{$user->status->first()->name}}</td>
                     <td>{{$book->author}}</td>
                     <td>{{$book->summary}}</td>
                     <td>
