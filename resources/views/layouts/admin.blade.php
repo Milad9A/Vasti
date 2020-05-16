@@ -16,8 +16,6 @@
 
     <link href="{{asset('admin_assets/css/app.css')}}" rel="stylesheet">
 
-{{--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.2/css/bulma.min.css">--}}
-
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -50,7 +48,6 @@
 
         <ul class="nav navbar-top-links navbar-right">
 
-
             <!-- /.dropdown -->
             <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -64,36 +61,36 @@
                     <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                     </li>
                     <li class="divider"></li>
-                    <li><a href="http://vasti.test:10080/logout"><i class="fa fa-sign-out fa-fw"></i>Logout</a>
+                    <li><a href="/logout"><i class="fa fa-sign-out fa-fw"></i>Logout</a>
                     </li>
                 </ul>
                 <!-- /.dropdown-user -->
             </li>
             <!-- /.dropdown -->
 
-
         </ul>
 
 
-        {{--<ul class="nav navbar-nav navbar-right">--}}
-        {{--@if(auth()->guest())--}}
-        {{--@if(!Request::is('auth/login'))--}}
-        {{--<li><a href="{{ url('/auth/login') }}">Login</a></li>--}}
-        {{--@endif--}}
-        {{--@if(!Request::is('auth/register'))--}}
-        {{--<li><a href="{{ url('/auth/register') }}">Register</a></li>--}}
-        {{--@endif--}}
-        {{--@else--}}
-        {{--<li class="dropdown">--}}
-        {{--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ auth()->user()->name }} <span class="caret"></span></a>--}}
-        {{--<ul class="dropdown-menu" role="menu">--}}
-        {{--<li><a href="{{ url('/auth/logout') }}">Logout</a></li>--}}
 
-        {{--<li><a href="{{ url('/admin/profile') }}/{{auth()->user()->id}}">Profile</a></li>--}}
-        {{--</ul>--}}
-        {{--</li>--}}
-        {{--@endif--}}
-        {{--</ul>--}}
+        {{-- <ul class="nav navbar-nav navbar-right">
+        @if(auth()->guest())
+        @if(!Request::is('auth/login'))
+        <li><a href="{{ url('/auth/login') }}">Login</a></li>
+        @endif
+        @if(!Request::is('auth/register'))
+        <li><a href="{{ url('/auth/register') }}">Register</a></li>
+        @endif
+        @else
+        <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ auth()->user()->name }} <span class="caret"></span></a>
+        <ul class="dropdown-menu" role="menu">
+        <li><a href="{{ url('/auth/logout') }}">Logout</a></li>
+
+        <li><a href="{{ url('/admin/profile') }}/{{auth()->user()->id}}">Profile</a></li>
+        </ul>
+        </li>
+        @endif
+        </ul> --}}
 
 
         <div class="navbar-default sidebar" role="navigation">
@@ -118,11 +115,11 @@
                         <a href="#"><i class="fa fa-wrench fa-fw"></i>Users<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                {{--                                <a href="{{route('admin.users.index')}}">All Users</a>--}}
+                                <a href="{{route('admin.users.index')}}">All Users</a>
                             </li>
 
                             <li>
-                                {{--                                <a href="{{route('admin.users.create')}}">Create User</a>--}}
+                                <a href="{{route('admin.users.create')}}">Create User</a>
                             </li>
 
                         </ul>
@@ -130,20 +127,15 @@
                     </li>
 
                     <li>
-                        <a href="#"><i class="fa fa-wrench fa-fw"></i> Posts<span class="fa arrow"></span></a>
+                        <a href="#"><i class="fa fa-wrench fa-fw"></i>Books<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                {{--                                <a href="{{route('admin.posts.index')}}">All Posts</a>--}}
+                                                               <a href="{{route('admin.books.index')}}">All Books</a>
                             </li>
 
                             <li>
-                                {{--                                <a href="{{route('admin.posts.create')}}">Create Post</a>--}}
+                                                               <a href="{{route('admin.books.create')}}">Add Books</a>
                             </li>
-
-                            <li>
-                                {{--                                <a href="{{route('admin.comments.index')}}">All comments</a>--}}
-                            </li>
-
                         </ul>
                         <!-- /.nav-second-level -->
                     </li>
@@ -153,13 +145,19 @@
                         <a href="#"><i class="fa fa-wrench fa-fw"></i>Categories<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                {{--                                <a href="{{route('admin.categories.index')}}">All Categories</a>--}}
+                                <a href="{{route('admin.categories.index')}}">All Categories</a>
                             </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
 
+
+                    <li>
+                        <a href="#"><i class="fa fa-wrench fa-fw"></i>Reviews<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
                             <li>
-                                {{--                                <a href="{{route('admin.categories.index')}}">Create Category</a>--}}
+                                <a href="{{route('admin.reviews.index')}}">All Reviews</a>
                             </li>
-
                         </ul>
                         <!-- /.nav-second-level -->
                     </li>
@@ -189,79 +187,6 @@
                             </li>
                             <li>
                                 <a href="morris.html">Morris.js Charts</a>
-                            </li>
-                        </ul>
-                        <!-- /.nav-second-level -->
-                    </li>
-                    <li>
-                        <a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>
-                    </li>
-                    <li>
-                        <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="panels-wells.html">Panels and Wells</a>
-                            </li>
-                            <li>
-                                <a href="buttons.html">Buttons</a>
-                            </li>
-                            <li>
-                                <a href="notifications.html">Notifications</a>
-                            </li>
-                            <li>
-                                <a href="typography.html">Typography</a>
-                            </li>
-                            <li>
-                                <a href="icons.html"> Icons</a>
-                            </li>
-                            <li>
-                                <a href="grid.html">Grid</a>
-                            </li>
-                        </ul>
-                        <!-- /.nav-second-level -->
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span
-                                class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="#">Second Level Item</a>
-                            </li>
-                            <li>
-                                <a href="#">Second Level Item</a>
-                            </li>
-                            <li>
-                                <a href="#">Third Level <span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li>
-                                        <a href="#">Third Level Item</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Third Level Item</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Third Level Item</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Third Level Item</a>
-                                    </li>
-                                </ul>
-                                <!-- /.nav-third-level -->
-                            </li>
-                        </ul>
-                        <!-- /.nav-second-level -->
-                    </li>
-                    <li class="active">
-                        <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a class="active" href="blank.html">Blank Page</a>
-                            </li>
-                            <li>
-                                <a href="login.html">Login Page</a>
                             </li>
                         </ul>
                         <!-- /.nav-second-level -->
