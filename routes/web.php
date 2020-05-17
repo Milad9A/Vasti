@@ -11,21 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/hilal', function () {
-    return view('index');
-});
-
-Route::get('/admin', function () {
-    return view('layouts.admin');
-});
-
+//Route::get('/', function () {
+//    return view('welcome');
+//});
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
-    
+
+    Route::get('/', function(){
+        return view('layouts.admin');
+    });
+
     Route::get('/books', 'AdminBooksController@index')->name('admin.books.index');
     Route::post('/books', 'AdminBooksController@store')->name('admin.books.store');
     Route::get('/books/create', 'AdminBooksController@create')->name('admin.books.create');

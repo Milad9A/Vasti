@@ -1,0 +1,85 @@
+@font-face {
+    font-family: SF-Pro-Text;
+    src: url(../fonts/SF-UI-Display-Regular.otf);
+  }
+
+* {
+    box-sizing:  border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: SF-Pro-Text;
+    font-size: 1.6rem;
+    vertical-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+#main-nav {
+    top: 0;
+    background: #272727;
+    color: #fff;
+    font-size: 2rem;
+    width: 100vw;
+    text-align: center;
+}
+
+#main-header .container {
+    min-width: 1000px;
+    font-size: 6rem;
+    font-weight: bold;
+    color: #272727;
+}
+#main-header .container .square {
+    display: block;
+    height: 8.9rem;
+    width: 38rem;
+    background: #575454;
+    transform: translate(33rem, -11.6rem);
+}
+
+#create-book .container {
+    height: 20rem;
+    width: 71rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#create-book .container input,
+#create-book .container select {
+    border: none;
+    width: 33rem;
+    border: 1px solid #575454;
+    /* background: #575454; */
+    font-size: 1.6rem;
+    padding: 1.2rem;
+}
+
+#create-book .container select {
+    color: #575454;
+}
+
+#create-book .container input[value] {
+    background: #fff;
+    color:#575454;
+}
+
+#create-book .container input[type="date"] {
+    background: #fff;
+    color:#575454;
+    font-size: 1.6rem;
+    font-family: SF-Pro-Text;
+    padding: 0.94rem;
+}
+

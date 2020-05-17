@@ -1,0 +1,30 @@
+.search-box:hover > .search-text{
+    width: 350px;
+    background: #fff;
+}
+
+.search-box:hover > .search-btn{ 
+    background: #272727;
+    z-index: 100;
+}
+
+.search-text {
+    transform: translate(20px, 0);
+    background: none;
+    outline: none;
+    border: none;
+    padding: 0;
+    font-size: 14px;
+    transition: 0.5s;
+    border-radius: 4px;
+    width: 0;
+    padding: 4px 10px;
+}
+
+.search-box {
+    display: flex;
+}
+.search-btn {
+    height: 26px;
+    cursor: pointer;
+}

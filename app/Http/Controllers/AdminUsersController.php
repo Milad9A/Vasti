@@ -42,6 +42,7 @@ class AdminUsersController extends Controller
             'password' => 'required|min:8',
         ]));
 
+        $user['password'] = bcrypt($user['password']);
         $user->save();
         return redirect(route('admin.users.index'));
     }

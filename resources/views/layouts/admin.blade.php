@@ -119,7 +119,7 @@
                             </li>
 
                             <li>
-                                <a href="{{route('admin.users.create')}}">Create User</a>
+                                <a href="{{route('admin.users.create')}}">Create a User</a>
                             </li>
 
                         </ul>
