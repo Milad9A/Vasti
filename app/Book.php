@@ -15,11 +15,18 @@ class Book extends Model
         'rating',
     ];
 
-    public function categories(){
+    public function categories()
+    {
         return $this->belongsToMany(Category::class)->withTimestamps();
     }
 
-    public function users(){
+    public function users()
+    {
         return $this->belongsToMany(User::class)->withTimestamps();
+    }
+
+    public function getImageAttribute()
+    {
+        return "/storage/" . $this->attributes['image'];
     }
 }

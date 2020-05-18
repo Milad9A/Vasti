@@ -12,7 +12,7 @@
         <div id="page" class="container">
             <h1 class="heading has-text-weight-bold is-size-4">Create a User</h1>
 
-            <form method="POST" action="/admin/users">
+            <form method="POST" action="/admin/users" enctype="multipart/form-data">
                 @csrf
 
                 <div class="field">
@@ -58,6 +58,7 @@
                             class="input @error('password') is-danger @enderror"
                             name="password"
                             id="password"
+                            type="password"
                             value="{{ old('password') }}"
                         >
 
@@ -67,23 +68,23 @@
                     </div>
                 </div>
 
-{{--                <div class="field">--}}
-{{--                    <label for="image">Cover</label>--}}
+                <div class="field">
+                    <label for="image">Profile Pic</label>
 
-{{--                    <div class="control">--}}
-{{--                        <input--}}
-{{--                            class="fa-file @error('image') is-danger @enderror"--}}
-{{--                            name="image"--}}
-{{--                            id="image"--}}
-{{--                            type="file"--}}
-{{--                            value="{{ old('image') }}"--}}
-{{--                        >--}}
+                    <div class="control">
+                        <input
+                            class="fa-file @error('image') is-danger @enderror"
+                            name="image"
+                            id="image"
+                            type="file"
+                            value="{{ old('image') }}"
+                        >
 
-{{--                        @error('image')--}}
-{{--                        <p class="help is-danger">{{ $errors->first('image') }}</p>--}}
-{{--                        @enderror--}}
-{{--                    </div>--}}
-{{--                </div>--}}
+                        @error('image')
+                        <p class="help is-danger">{{ $errors->first('image') }}</p>
+                        @enderror
+                    </div>
+                </div>
 
 
                 <div class="field is-grouped">

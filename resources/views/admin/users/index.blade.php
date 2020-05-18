@@ -8,7 +8,7 @@
         <thead>
         <tr>
             <th>Id</th>
-            <th>Image</th>
+            <th>Profile Pic</th>
             <th>Name</th>
             <th>Email</th>
 {{--            <th>Role</th>--}}
@@ -24,8 +24,8 @@
 
                 <tr>
                     <td><a href="{{route('admin.users.edit', $user->id)}}">{{$user->id}}</a></td>
-                    <td><a href="{{route('admin.users.edit', $user->id)}}"><img height="50"
-                                                                                {{--src="{{$user->image ? $user->image->path : 'http:/placehold.it/400x400'}}"--}}
+                    <td><a href="{{route('admin.users.edit', $user->id)}}"><img height="60"
+                                                                                src="{{$user->image ? $user->image : 'http:/placehold.it/400x400'}}"
                                                                                 alt=""></a></td>
                     <td>{{$user->name}}</td>
                     <td>{{$user->email}}</td>

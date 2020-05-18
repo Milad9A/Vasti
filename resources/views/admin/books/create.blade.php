@@ -12,7 +12,7 @@
         <div id="page" class="container">
             <h1 class="heading has-text-weight-bold is-size-4">Add a Book</h1>
 
-            <form method="POST" action="/admin/books">
+            <form method="POST" action="/admin/books" enctype="multipart/form-data">
                 @csrf
 
                 <div class="field">

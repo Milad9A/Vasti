@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'image',
     ];
 
     /**
@@ -43,5 +43,10 @@ class User extends Authenticatable
 
     public function status(){
         return $this->belongsToMany(Status::class, 'book_user',  'user_id', 'status_id');
+    }
+
+    public function getImageAttribute()
+    {
+        return "/storage/" . $this->attributes['image'];
     }
 }

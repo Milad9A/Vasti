@@ -29,8 +29,8 @@
 
                 <tr>
                     <td><a href="{{route('admin.books.edit', $book->id)}}">{{$book->id}}</a></td>
-                    <td><a href="{{route('admin.books.edit', $book->id)}}"><img height="50"
-                                                                                {{--src="{{$book->image ? $book->image->path : 'http:/placehold.it/400x400'}}"--}}
+                    <td><a href="{{route('admin.books.edit', $book->id)}}"><img height="100"
+                                                                                src="{{ asset($book->image) }}"
                                                                                 alt=""></a></td>
                     <td>{{$book->title}}</td>
                     <td>{{$book->author}}</td>
@@ -52,7 +52,6 @@
 
             @endforeach
         @endif
-
         </tbody>
     </table>
 
@@ -64,5 +63,6 @@
         </style>
         {{ $books->links() }}
     </div>
+
 
 @stop

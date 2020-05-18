@@ -1,5 +1,11 @@
 @extends('layouts.admin')
 
+@section('styles')
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.2/css/bulma.min.css">
+
+@endsection
+
 @section('content')
 
     <h1>Edit Category</h1>
@@ -29,7 +35,7 @@
                 </div>
 
                 <div class="field">
-                    <label for="image">Cover</label>
+                    <label for="image">Image</label>
 
                     <div class="control">
                         <input
@@ -48,7 +54,7 @@
 
                 <div class="field is-grouped">
                     <div class="control">
-                        <button class="button is-link" type="submit">Submit</button>
+                        <button class="button is-link" type="submit">Update</button>
                     </div>
                 </div>
 

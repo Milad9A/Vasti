@@ -2,15 +2,55 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="98ec25eb-a16d-455f-9950-181db38c7402" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Book.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Book.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminBooksController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminBooksController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminUsersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminUsersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/MacBook_Air_MockupsForFree copy.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/cover-book-001.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/img/cover-book-001.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/index.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/admin_assets/images/1587225054Ichiro Miyata.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/admin_assets/images/1587244941Ichiro Miyata.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/admin_assets/images/1587244946Ichiro Miyata.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/admin_assets/images/1587244953Ichiro Miyata.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/admin_assets/images/158724503020180508_181634.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/admin_assets/images/158729397320180309_204242.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/admin_assets/images/158737991220180401_181319.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/admin_assets/images/158737998920180528_220712.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/admin_assets/images/158756949820180401_145359.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/admin_assets/images/158757054420180128_130305.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/admin_assets/images/158758277720180205_202550.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/admin_assets/images/158758292120180322_134805.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/admin_assets/images/158767141220180318_203023.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/admin_assets/images/158767141220180320_093010.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/admin_assets/images/158767141220180329_121529.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/admin_assets/images/158767141320180401_010938.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/admin_assets/images/158767141320180401_010947.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/admin_assets/images/158773179520180213_172532.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/admin_assets/images/158773665820180205_202550.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/admin_assets/images/158773673420180401_145359.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/admin_assets/images/1588019916419534.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/admin_assets/images/15881541881082789.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/admin_assets/images/1588154237silhouette_crow_hood_127461_2560x1600.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/admin_assets/images/1588157485596889.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/admin_assets/images/1588166605111290.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/admin_assets/images/1588166605149456.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/admin_assets/images/1588166605152514.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/admin_assets/images/1588166605160337.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/admin_assets/images/158816660581257.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/admin_assets/images/158816660583960.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/admin_assets/images/158816660584366.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/admin_assets/images/1588166606180289.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/admin_assets/images/158819274420180213_172532.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/books/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/books/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/books/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/books/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/books/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/books/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/categories/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/categories/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/categories/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/categories/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/users/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/users/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/users/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/users/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/users/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/users/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/layout.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -155,17 +195,17 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/site" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/storage" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\vasti\public\storage" />
       <recent name="C:\xampp\htdocs\vasti\resources\views\site" />
       <recent name="C:\xampp\htdocs\vasti\public\admin_assets" />
       <recent name="C:\xampp\htdocs\vasti\resources\views\admin\users" />
       <recent name="C:\xampp\htdocs\vasti\resources\views\layouts" />
-      <recent name="C:\xampp\htdocs\vasti\resources\views" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\vasti\public\admin_assets\css" />
@@ -206,11 +246,25 @@
       <workItem from="1589655409648" duration="1150000" />
       <workItem from="1589705850934" duration="1633000" />
       <workItem from="1589734770870" duration="4266000" />
+      <workItem from="1589803971960" duration="3824000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="WindowStateProjectService">
     <state x="361" y="70" key="#Notifications" timestamp="1589576143627">
@@ -245,21 +299,21 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="354" y="0" width="1050" height="715" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1589706230616" />
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1589705850208">
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1589804157211">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1589705850208" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1589804157211" />
     <state x="0" y="0" width="739" height="801" key="dock-window-1" timestamp="1589475960892">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="0" y="0" width="739" height="801" key="dock-window-1/0.0.1536.824@0.0.1536.824" timestamp="1589475960892" />
-    <state x="425" y="187" key="run.anything.popup" timestamp="1589487105699">
+    <state x="425" y="187" key="run.anything.popup" timestamp="1589805252175">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1589487105699" />
-    <state x="46" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1589707640984">
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1589805252175" />
+    <state x="46" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1589806260231">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="46" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1589707640983" />
+    <state x="46" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1589806260231" />
   </component>
 </project>

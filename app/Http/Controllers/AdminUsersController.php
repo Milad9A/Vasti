@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class AdminUsersController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -40,7 +45,13 @@ class AdminUsersController extends Controller
             'name' => 'required',
             'email' => 'required|unique:users|email',
             'password' => 'required|min:8',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg'
         ]));
+        if ($image = $request->file('image')) {
+            $imageName = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $filepath = $request->file('image')->storeAs('profiles', $imageName, 'public');
+            $user['image'] = $filepath;
+        }
 
         $user['password'] = bcrypt($user['password']);
         $user->save();
@@ -72,7 +83,7 @@ class AdminUsersController extends Controller
 
     /**
      * Update the specified resource in storage.
-     *
+     *w
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -80,11 +91,24 @@ class AdminUsersController extends Controller
     public function update(Request $request, $id)
     {
         $user = User::findOrFail($id);
-        $user->update(request()->validate([
+        request()->validate([
             'name' => 'required',
-            'email' => 'required|unique:users|email',
-            'password' => 'required|min:8',
-        ]));
+            'password' => 'nullable|min:8',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg',
+        ]);
+        $user->update(request()->except('password'));
+        if(!empty($request->input('password'))){
+            $user['password'] = bcrypt($request->input('password'));
+            $user->save();
+        }
+        if ($image = $request->file('image')) {
+            $imageName = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $filepath = $request->file('image')->storeAs('profiles', $imageName, 'public');
+            $user['image'] = $filepath;
+            $user->update([
+                'image' => $filepath,
+            ]);
+        }
 
         return redirect(route('admin.users.index'));
     }

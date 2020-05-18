@@ -18,7 +18,7 @@ class AdminBooksController extends Controller
     {
         if (request('category')) {
             $books = Category::where('name', request('category'))->firstOrFail()->books()->simplePaginate(5);
-        } elseif (request('user')){
+        } elseif (request('user')) {
             $books = User::where('id', request('user'))->firstOrFail()->books()->simplePaginate(5);
             $user = User::where('id', request('user'))->firstOrFail();
             return view('admin.books.reading_list', compact('books', 'user'));
@@ -52,15 +52,22 @@ class AdminBooksController extends Controller
             'title' => 'required',
             'author' => 'required',
             'summary' => 'required',
-            'isbn' => 'required',
-            'image' => '',
-            'rating' => '',
-            'categories' => 'exists:categories,id'
+            'isbn' => 'required|unique:books',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'rating' => 'required|numeric|min:0|max:5',
+            'categories' => 'required|exists:categories,id'
         ]));
+        if ($image = $request->file('image')) {
+            $imageName = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $filepath = $request->file('image')->storeAs('covers', $imageName, 'public');
+            $book['image'] = $filepath;
+        }
         $book->save();
         $book->categories()->attach(request('categories'));
-        return redirect(route('admin.books.index', ['page' => round((Book::all()->count()+2)/5)]));
+
+        return redirect(route('admin.books.index', ['page' => round((Book::all()->count() + 2) / 5)]));
     }
+
 
     /**
      * Display the specified resource.
@@ -101,11 +108,19 @@ class AdminBooksController extends Controller
             'title' => 'required',
             'author' => 'required',
             'summary' => 'required',
-            'isbn' => 'required',
-            'image' => 'required',
-            'rating' => '',
-//            'tags' => 'exists:tags,id'
+            'isbn' => "required|unique:books,isbn,{$id}",
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'rating' => 'required|numeric|min:0|max:5',
+            'categories' => 'exists:categories,id'
         ]));
+        if ($image = $request->file('image')) {
+            $imageName = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $filepath = $request->file('image')->storeAs('profiles', $imageName, 'public');
+            $book['image'] = $filepath;
+            $book->update([
+                'image' => $filepath,
+            ]);
+        }
         return redirect(route('admin.books.index'));
     }
 
