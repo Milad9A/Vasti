@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'BooksController@home');
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
 

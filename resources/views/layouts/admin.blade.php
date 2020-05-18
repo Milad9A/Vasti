@@ -50,11 +50,12 @@
 
             <!-- /.dropdown -->
             <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                    <i class="fa fa-user fa-fw"></i>
-                    {{ Auth::user()->name }}
-                    <i class="fa fa-caret-down"></i>
-                </a>
+                @if (Auth::user())
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw"></i>
+                        {{ Auth::user()->name }}
+                        <i class="fa fa-caret-down"></i>
+                    </a>
                 <ul class="dropdown-menu dropdown-user">
 
                     <li><a href="{{ route('admin.users.edit', Auth::user()->id) }}"><i class="fa fa-user fa-fw"></i> User Profile</a>
@@ -66,6 +67,7 @@
                     </li>
                 </ul>
                 <!-- /.dropdown-user -->
+                @endif
             </li>
             <!-- /.dropdown -->
 

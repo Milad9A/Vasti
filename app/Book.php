@@ -8,8 +8,10 @@ class Book extends Model
 {
     protected $fillable = [
         'title',
-        'author',
+        'author_id',
+        'publishing_house_id',
         'summary',
+        'language',
         'isbn',
         'image',
         'rating',
@@ -23,6 +25,14 @@ class Book extends Model
     public function users()
     {
         return $this->belongsToMany(User::class)->withTimestamps();
+    }
+
+    public function author(){
+        return $this->belongsTo(Author::class);
+    }
+
+    public function publishing_house(){
+        return $this->belongsTo(PublishingHouse::class);
     }
 
     public function getImageAttribute()

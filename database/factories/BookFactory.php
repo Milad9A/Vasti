@@ -7,10 +7,12 @@ use Faker\Generator as Faker;
 
 $factory->define(Book::class, function (Faker $faker) {
     return [
+        'author_id' => factory(\App\Author::class),
+        'publishing_house_id' => factory(\App\PublishingHouse::class),
         'title' => $faker->word(),
-        'author' => $faker->firstName . ' ' . $faker->lastName,
         'summary' => $faker->paragraph,
         'isbn' => $faker->isbn13,
+        'language' => $faker->country,
         'image' => 'not available',
         'rating' => $faker->numberBetween(0, 5),
     ];
