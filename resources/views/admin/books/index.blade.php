@@ -12,7 +12,9 @@
             <th>Title</th>
             <th>Author</th>
             <th>Summary</th>
+            <th>Language</th>
             <th>Categories</th>
+            <th>Publishing House</th>
             <th>Rating</th>
             <th>ISBN</th>
             {{--            <th></th>--}}
@@ -33,15 +35,17 @@
                                                                                 src="{{ asset($book->image) }}"
                                                                                 alt=""></a></td>
                     <td>{{$book->title}}</td>
-                    <td>{{$book->author}}</td>
+                    <td><a href="">{{$book->author->name}}</a></td>
                     <td>{{$book->summary}}</td>
+                    <td>{{$book->language}}</td>
                     <td>
                         @if ($book->categories)
                             @foreach($book->categories as $category)
-                                {{ $category->name . ' ' }}                          {{--add ref to edit category--}}
+                                <a href="{{ route('admin.categories.edit', $category->id) }}">{{ $category->name . ' ' }}</a>
                             @endforeach
                         @endif
                     </td>
+                    <td><a href="">{{ $book->publishing_house->name }}</a></td>
                     <td>{{$book->rating}}</td>
                     <td>{{$book->isbn}}</td>
                     {{--                    <td><a href="{{route('home.post', $post->id)}}">View Post</a></td>--}}

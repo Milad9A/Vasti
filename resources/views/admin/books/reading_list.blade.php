@@ -13,7 +13,9 @@
             <th>Status</th>
             <th>Author</th>
             <th>Summary</th>
+            <th>Language</th>
             <th>Categories</th>
+            <th>Publishing House</th>
             <th>Rating</th>
             <th>ISBN</th>
             {{--            <th></th>--}}
@@ -30,20 +32,22 @@
 
                 <tr>
                     <td><a href="{{route('admin.books.edit', $book->id)}}">{{$book->id}}</a></td>
-                    <td><a href="{{route('admin.books.edit', $book->id)}}"><img height="50"
-                                                                                {{--src="{{$book->image ? $book->image->path : 'http:/placehold.it/400x400'}}"--}}
+                    <td><a href="{{route('admin.books.edit', $book->id)}}"><img height="100"
+                                                                                src="{{ asset($book->image) }}"
                                                                                 alt=""></a></td>
                     <td>{{$book->title}}</td>
                     <td>{{$user->status->first()->name}}</td>
-                    <td>{{$book->author}}</td>
+                    <td><a href="">{{$book->author->name}}</a></td>
                     <td>{{$book->summary}}</td>
+                    <td>{{$book->language}}</td>
                     <td>
                         @if ($book->categories)
                             @foreach($book->categories as $category)
-                                {{ $category->name . ' ' }}                          {{--add ref to edit category--}}
+                                <a href="{{ route('admin.categories.edit', $category->id) }}">{{ $category->name . ' ' }}</a>
                             @endforeach
                         @endif
                     </td>
+                    <td><a href="">{{ $book->publishing_house->name }}</a></td>
                     <td>{{$book->rating}}</td>
                     <td>{{$book->isbn}}</td>
                     {{--                    <td><a href="{{route('home.post', $post->id)}}">View Post</a></td>--}}
@@ -66,5 +70,6 @@
         </style>
         {{ $books->links() }}
     </div>
+
 
 @stop

@@ -29,7 +29,7 @@ class BooksController extends Controller
 
         $most_popular = Book::take(6)->get();
 
-        return view('site.books.index', compact('best_sellers', 'most_popular', 'featured'));
+        return view('site.books.home', compact('best_sellers', 'most_popular', 'featured'));
     }
 
     /**

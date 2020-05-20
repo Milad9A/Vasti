@@ -115,7 +115,7 @@ class AdminBooksController extends Controller
         ]));
         if ($image = $request->file('image')) {
             $imageName = date('YmdHis') . "." . $image->getClientOriginalExtension();
-            $filepath = $request->file('image')->storeAs('profiles', $imageName, 'public');
+            $filepath = $request->file('image')->storeAs('covers', $imageName, 'public');
             $book['image'] = $filepath;
             $book->update([
                 'image' => $filepath,

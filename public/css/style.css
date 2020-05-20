@@ -98,7 +98,7 @@ ul {
     position: absolute;
     background: #272727;
     height: 9rem;
-    width: 1rem;  
+    width: 1rem;
 }
 
 #showcase-header .showcase-container .showcase-text .btn {
@@ -108,7 +108,7 @@ ul {
     border-radius: 0.4rem;
     font-size: 2rem;
     padding: 0.5rem 1rem;
-    cursor: pointer;   
+    cursor: pointer;
 }
 
 #showcase-header .showcase-container .showcase-text h1 {
@@ -122,17 +122,17 @@ ul {
 
 /* best-books-section */
 
-#best-books {  
+#best-books {
     display: flex;
     background: #272727;
     color: #fff;
     height: 55rem;
     justify-content: center;
-    align-items: center;   
-    font-size: 2rem;  
+    align-items: center;
+    font-size: 2rem;
     overflow: hidden;
     padding: 0 6rem;
-} 
+}
 #best-books .text-section {
     display: flex;
     flex-direction: column;
@@ -154,13 +154,13 @@ ul {
     font-size: 2rem;
     padding: 0.5rem 1rem;
     cursor: pointer;
-} 
+}
 
 #best-books .text-section .lines-arrow-bnt .lines .line {
     display: inline-block;
     background: #fff;
     height: 0.1rem;
-    width: 5rem;  
+    width: 5rem;
     margin: 0 1rem;
 }
 
@@ -219,7 +219,7 @@ ul {
 .popular-books .popular-row {
     width: 100%;
     display: flex;
-    flex-flow: row wrap; 
+    flex-flow: row wrap;
     justify-content: space-between;
     align-items: center;
     padding: 0 4rem;
@@ -244,14 +244,16 @@ ul {
     padding-bottom: 0.4rem;
 }
 
-.bestselling-books .bestselling-row .book .rating .fa-star {
+.bestselling-books .bestselling-row .book .rating .fa-star,
+.popular-books .popular-row .book .rating .fa-star {
     -webkit-text-fill-color: white;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #272727;
 }
 
-.bestselling-books .bestselling-row .book .rating .checked {
-    -webkit-text-fill-color: #272727; 
+.bestselling-books .bestselling-row .book .rating .checked ,
+.popular-books .popular-row .book .rating .checked {
+    -webkit-text-fill-color: #272727;
 }
 
 /* categories-section */
@@ -262,7 +264,7 @@ ul {
     grid-gap: 1rem;
     margin:0 1rem;
     overflow: hidden;
-} 
+}
 
 .categories .container-categories .category {
     background: #272727;
@@ -296,7 +298,7 @@ ul {
 }
 
 .categories .container-categories .category:hover {
-    font-size: 2.5rem; 
+    font-size: 2.5rem;
 }
 .categories .container-categories .category img:hover {
     opacity: 0.8;
@@ -314,7 +316,7 @@ ul {
     align-items: center;
     color: #272727;
     font-size: 3rem;
-    text-align: center; 
+    text-align: center;
 }
 
 .progress .bg img{
@@ -322,7 +324,7 @@ ul {
     height: auto;
 }
 
- 
+
 .progress .bg .books p
  {
     padding-top: 4.7rem;
@@ -429,7 +431,7 @@ ul {
     height: 3.8rem;
     border-radius: 0.4rem;
     float: right;
-} 
+}
 
 .footer-container .container .col-1 {
     background: url('../img/background-001-01-01.png') no-repeat ;
@@ -438,7 +440,7 @@ ul {
 }
 
 .footer-container .container .col-1 {
-   padding-top: 6rem;   
+   padding-top: 6rem;
 }
 
 .footer-container .container .col-1 .logo {
@@ -508,26 +510,26 @@ ul {
     animation-name: modalopen;
     animation-duration: 1s;
 }
-  
+
 .modal-header {
     background: #272727;
     color: #fff;
     padding: 1.5rem;
 }
-  
+
 .modal-content {
     padding: 20px;
 }
-  
+
 .modal-form div {
     margin: 15px 0;
 }
-  
+
 .modal-form label {
     display: block;
     margin-bottom: 5px;
 }
-  
+
 .modal-form .form-input[placeholder] {
     padding: 1rem;
     color: #A3A0A0;
