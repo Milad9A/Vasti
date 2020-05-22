@@ -1,0 +1,131 @@
+* {
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: SF-Pro-Text;
+    src: url(../fonts/SF-UI-Display-Regular.otf);
+}
+
+body {
+    background: #272727;
+    color: #fff;
+    line-height: 1.5;
+    font-family: SF-Pro-Text;
+    font-size: 1.6rem;
+    vertical-align: middle;
+}
+
+a {
+    text-decoration: none;
+}
+
+.modal-container {
+    margin: 2rem auto;
+    max-width: 400px;
+    padding: 20px;
+} 
+
+.modal-header {
+    background: #272727;
+    padding: 0.2rem 1rem;
+    color: #fff;
+    text-align: center;
+    margin: 3rem 0;
+    
+}
+
+
+.modal-header h1 {
+    font-size: 4rem;
+}
+
+.modal label {
+    display: block;
+    color: #272727;
+    font-size: 1.4rem;
+}
+
+.modal input {
+    width: 100%;
+    padding: 10px;
+    border: #272727 1px solid;
+    border-radius: 0.4rem;
+    font-size: 1.3rem;
+}
+
+.modal {
+    background: #fff;
+    padding: 15px 25px;
+    color: #333;
+    border: 1px solid #272727;
+    border-radius: 0.4rem;
+}
+
+.modal input[type="submit"] {
+    background: #27AF43;
+    color: #fff;
+    margin-bottom: 2rem;
+    border: none;
+}
+
+#modal-login .modal input[type="submit"] {
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+}
+
+#modal-login .modal a {
+    color: #272727;
+    text-align: center;
+}
+
+footer {
+    color: #fff;
+    display: flex;
+    justify-content: center;
+}
+
+
+a:hover {
+    font-size: 1.6rem;
+}
+
+#modal-login label {
+    padding: 1.2rem 0;
+}
+
+.modal .form-control.success input {
+    border-color: #2ecc71;
+}
+
+.modal .form-control.error input {
+    border-color: #e74c3c;
+}
+
+.modal-container .modal .form-control small {
+    color: #e74c3c;;
+    visibility: hidden;
+}
+
+.modal .form-control.error small {
+    visibility: visible;
+} 
+
+
+#login-form #forgot{
+    color: #337CD9; 
+    font-size: 1.4rem;
+    position: absolute;
+    transform: translate(-11rem,0.7rem);
+}
+
+ #register, #login {
+    color: #27AF43; 
+}
+
+footer span {
+    cursor: pointer;
+    padding-left: 0.5rem;
+}

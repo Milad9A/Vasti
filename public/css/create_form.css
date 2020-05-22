@@ -48,12 +48,26 @@ a {
 }
 
 #create-book .container {
-    height: 20rem;
+    height: 22rem;
     width: 71rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+}
+
+#create-book .container .row-3 input[type="file"] {
+    border: none;
+    border: 1px solid #575454;
+    /* background: #575454; */
+    font-size: 1.6rem;
+    color: #575454;;
+    padding: 0.9rem;
+}
+
+
+#create-book .container .row-4 input[type="submit"] {
+    width: 66.5rem;
 }
 
 #create-book .container input,

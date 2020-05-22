@@ -12,8 +12,11 @@
         crossorigin="anonymous"
     />
     <link rel="stylesheet" href="/css/search.css">
+    @livewireStyles
+    @yield('styles')
     <title>Vasti</title>
 </head>
+
 
 <body>
 
@@ -30,28 +33,43 @@
         <div class="icon-register">
             <ul>
                 <div class="search-box">
-                    <input type="text" class="search-text" placeholder="">
-                    @svg('icons/icons8-search', 'search-btn')
+                    <div id="input-search">
+                        <input type="text" class="search-text" id="search-ba" placeholder="Search Books by name...">
+                        <i class="fa fa-close" id="close-icon"></i>
+                    </div>
+
+                    @svg('icons/icons8-search', 'search-btn', ['id' => 'se'])
                 </div>
-                @svg('icons/shopping-cart', 'cart-btn')
+
+                <li> @svg('icons/shopping-cart', 'cart-btn')</li>
 
                 <!-- Authentication Links -->
                 @guest
-                    <li class="register-login" id="login">Login</li>
+                    <li class="register-login" id="login">
+                        <a href="{{ route('site.login') }}">{{ __('Login') }}</a>
+                    </li>
                     @if (Route::has('register'))
-                        <li class="register-login" id="register">Register</li>
+                        <li class="register-login" id="register">
+                            <a href="{{ route('site.register') }}">{{ __('Register') }}</a>
+                        </li>
                     @endif
                 @else
-                    <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                    <li>
+                        <div class="img-avatar" id="avatar">
+                            <img src="{{ asset(Auth::user()->image) }}" alt="" width="30" height="30">
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
-
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    </li>
+                    <li>
+                        <div aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                               document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
 
@@ -62,7 +80,6 @@
                     </li>
                 @endguest
             </ul>
-
         </div>
     </div>
 </nav>
@@ -73,18 +90,18 @@
 
 <footer class="footer-container">
     <div class="container">
-        <div class="col-1">
+        <div class="footer-col-1">
             <a href="index.html" class="logo">VASTI</a>
             <div class="nav">
                 <h1>Navigation</h1>
                 <ul>
-                    <li><a href="Books.html">Books</a></li>
-                    <li><a href="Advance_search.html">Advance Search</a></li>
+                    <li><a href="Browse_all_books.html">Browse All Books</a></li>
+                    <li><a href="News_feed.html">News feed</a></li>
                     <li><a href="reading_list.html">Reading list</a></li>
                 </ul>
             </div>
         </div>
-        <div class="col-2">
+        <div class="footer-col-2">
             <h1>Contact Us</h1>
             <p>Please fill out the form below to contact us</p>
             <form action="" id="message">
@@ -100,173 +117,10 @@
     </div>
 </footer>
 
-<!-- Modal for register -->
-
-<div class="modal-container" id="modal-register">
-    <div class="modal">
-        <button class="close-btn" id="close-register">
-            <i class="fa fa-times"></i>
-        </button>
-        <div class="modal-header">
-            <h3>{{ __('Register') }}</h3>
-        </div>
-        <div class="modal-content">
-            <form class="modal-form" method="POST" action="{{ route('register') }}">
-                @csrf
-
-                <div class="form-control">
-                    <label for="name">{{ __('Name') }}</label>
-                    <input
-                        type="text"
-                        id="name"
-                        placeholder="Enter Name"
-                        class="form-input @error('name') is-invalid @enderror"
-                        name="name" value="{{ old('name') }}"
-                        required autocomplete="name" autofocus>
-
-                    @error('name')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                    @enderror
-                </div>
-
-                <div class="form-control">
-                    <label for="email">{{ __('E-Mail Address') }}</label>
-                    <input
-                        type="email"
-                        id="email"
-                        placeholder="Enter Email"
-                        class="form-input @error('email') is-invalid @enderror"
-                        name="email"
-                        value="{{ old('email') }}"
-                        required autocomplete="email">
-
-                    @error('email')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                    @enderror
-                </div>
-
-                <div class="form-control">
-                    <label for="password">{{ __('Password') }}</label>
-                    <input
-                        type="password"
-                        id="password"
-                        placeholder="Enter Password"
-                        class="form-input @error('password') is-invalid @enderror"
-                        name="password"
-                        required autocomplete="new-password">
-
-                    @error('password')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                    @enderror
-                </div>
-
-                <div class="form-control">
-                    <label for="password-confirm">{{ __('Confirm Password') }}</label>
-                    <input
-                        type="password"
-                        id="password-confirm"
-                        placeholder="Confirm Password"
-                        class="form-input" name="password_confirmation" required autocomplete="new-password">
-                </div>
-
-                <div class="form-group row mb-0">
-                    <div class="col-md-6 offset-md-4">
-                        <button type="submit" class="btn submit-btn">
-                            {{ __('Register') }}
-                        </button>
-                    </div>
-                </div>
-
-            </form>
-        </div>
-    </div>
-</div>
-
-<!-- modal for login -->
-
-<div class="modal-container" id="modal-login">
-    <div class="modal">
-        <button class="close-btn" id="close-login">
-            <i class="fa fa-times"></i>
-        </button>
-        <div class="modal-header">
-            <h3>{{ __('Login') }}</h3>
-        </div>
-        <div class="modal-content">
-            <form class="modal-form" method="POST" action="{{ route('login') }}">
-                @csrf
-
-                <div>
-                    <label for="email">{{ __('E-Mail Address') }}</label>
-                    <input id="email"
-                           type="email"
-                           class="form-input @error('email') is-invalid @enderror"
-                           name="email"
-                           placeholder="Enter Password"
-                           value="{{ old('email') }}"
-                           required autocomplete="email" autofocus>
-
-                    @error('email')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                    @enderror
-                </div>
-
-                <div>
-                    <label for="password">{{ __('Password') }}</label>
-                    <input
-                        type="password"
-                        id="password"
-                        class="form-input @error('password') is-invalid @enderror"
-                        name="password"
-                        placeholder="Enter Password"
-                        required autocomplete="current-password">
-
-                    @error('password')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                    @enderror
-                </div>
-
-                <div class="form-group row">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="remember"
-                               id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                        <label class="form-check-label" for="remember">
-                            {{ __('Remember Me') }}
-                        </label>
-                    </div>
-                </div>
-
-                <div class="form-group row mb-0">
-                    <div class="col-md-8 offset-md-4">
-                        <button type="submit" class="btn submit-btn">
-                            {{ __('Login') }}
-                        </button>
-
-                        @if (Route::has('password.request'))
-                            Forgot Your Password?
-                            <a class="btn btn-link" href="{{ route('password.request') }}">
-                                {{ __('Forgot Your Password?') }}
-                            </a>
-                        @endif
-                    </div>
-                </div>
-
-            </form>
-        </div>
-    </div>
-</div>
 <script src="/js/main_index.js"></script>
+<script src="/js/main.js"></script>
+@yield('scripts')
+@livewireScripts
 </body>
 </html>
 

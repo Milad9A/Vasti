@@ -11,6 +11,7 @@
             <th>Profile Pic</th>
             <th>Name</th>
             <th>Email</th>
+            <th>Admin</th>
 {{--            <th>Role</th>--}}
             <th>Reading List</th>
             <th>Created</th>
@@ -29,6 +30,7 @@
                                                                                 alt=""></a></td>
                     <td>{{$user->name}}</td>
                     <td>{{$user->email}}</td>
+                    <td>{{ $user->is_admin ? 'YES' : 'NO' }}</td>
                     <td><a href="{{ route('admin.books.index', ['user' => $user->id]) }}">View</a></td>
                     <td>{{$user->created_at->diffForhumans()}}</td>
                     <td>{{$user->updated_at->diffForhumans()}}</td>

@@ -34,18 +34,17 @@
                 </div>
 
                 <div class="field">
-                    <label for="author">Author</label>
+                    <label for="author_id">Author</label>
 
-                    <div class="control">
-                        <input
-                            class="input @error('author') is-danger @enderror"
-                            name="author"
-                            id="author"
-                            value="{{ old('author') }}"
-                        >
+                    <div class="select control">
+                        <select name="author_id">
+                            @foreach($authors as $author)
+                                <option value="{{$author->id}}">{{$author->name}}</option>
+                            @endforeach
+                        </select>
 
-                        @error('author')
-                        <p class="help is-danger">{{ $errors->first('author') }}</p>
+                        @error('author_id')
+                        <p class="help is-danger">{{ $message }}</p>
                         @enderror
                     </div>
                 </div>
@@ -63,6 +62,22 @@
 
                         @error('summary')
                         <p class="help is-danger">{{ $errors->first('summary') }}</p>
+                        @enderror
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label for="publishing_house_id">Publishing House</label>
+
+                    <div class="select control">
+                        <select name="publishing_house_id">
+                            @foreach($publishing_houses as $publishing_house)
+                                <option value="{{$publishing_house->id}}">{{$publishing_house->name}}</option>
+                            @endforeach
+                        </select>
+
+                        @error('publishing_house_id')
+                        <p class="help is-danger">{{ $message }}</p>
                         @enderror
                     </div>
                 </div>
@@ -103,6 +118,23 @@
                 </div>
 
                 <div class="field">
+                    <label for="language">Language</label>
+
+                    <div class="control">
+                        <input
+                            class="input @error('language') is-danger @enderror"
+                            name="language"
+                            id="language"
+                            value="{{ old('language') }}"
+                        >
+
+                        @error('language')
+                        <p class="help is-danger">{{ $errors->first('language') }}</p>
+                        @enderror
+                    </div>
+                </div>
+
+                <div class="field">
                     <label for="rating">Rating</label>
 
                     <div class="control">
@@ -129,7 +161,7 @@
                             @endforeach
                         </select>
 
-                        @error('tags')
+                        @error('categories')
                         <p class="help is-danger">{{ $message }}</p>
                         @enderror
                     </div>

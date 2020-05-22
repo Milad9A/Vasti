@@ -13,7 +13,7 @@
 
     <div class="col-sm-6">
 
-        <form method="POST" action="/admin/categories">
+        <form method="POST" action="/admin/categories" enctype="multipart/form-data">
             @csrf
 
             <div class="field">
@@ -35,7 +35,7 @@
             </div>
 
             <div class="field">
-                <label for="image">Image</label>
+                <label for="image">Cover</label>
 
                 <div class="control">
                     <input
@@ -82,8 +82,8 @@
                         <td>{{$category->id}}</td>
                         <td><a href="{{route('admin.categories.edit', $category->id)}}">{{$category->name}}</a></td>
                         <td><a href="{{route('admin.categories.edit', $category->id)}}"><img height="50"
-                                                                                             {{--src="{{$book->image ? $book->image->path : 'http:/placehold.it/400x400'}}"--}}
-                                                                                             alt=""></a></td>
+                            src="{{ asset($category->image) }}"
+                            alt=""></a></td>
                         <td>{{$category->created_at ? $category->created_at->diffForHumans() : 'No date available'}}</td>
                     </tr>
 

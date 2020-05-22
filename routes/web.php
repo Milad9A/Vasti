@@ -13,6 +13,9 @@
 
 Route::get('/', 'BooksController@home');
 
+Route::view('/logins', 'site.login')->name('site.login');
+Route::view('/registers', 'site.register')->name('site.register');
+
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
 
     Route::get('/', function(){
@@ -45,7 +48,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::put('/categories/{category}', 'AdminCategoriesController@update')->name('admin.categories.update');
 
 });
-
 
 Auth::routes();
 

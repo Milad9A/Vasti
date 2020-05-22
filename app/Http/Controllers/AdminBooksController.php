@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Author;
 use App\Book;
 use App\Category;
+use App\PublishingHouse;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -37,7 +39,9 @@ class AdminBooksController extends Controller
     public function create()
     {
         $categories = Category::all();
-        return view('admin.books.create', compact('categories'));
+        $authors = Author::all();
+        $publishing_houses = PublishingHouse::all();
+        return view('admin.books.create', compact('categories', 'authors', 'publishing_houses'));
     }
 
     /**
@@ -50,9 +54,11 @@ class AdminBooksController extends Controller
     {
         $book = new Book(request()->validate([
             'title' => 'required',
-            'author' => 'required',
+            'author_id' => 'required|exists:authors,id',
+            'publishing_house_id' => 'required|exists:publishing_houses,id',
             'summary' => 'required',
             'isbn' => 'required|unique:books',
+            'language' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'rating' => 'required|numeric|min:0|max:5',
             'categories' => 'required|exists:categories,id'
@@ -89,9 +95,11 @@ class AdminBooksController extends Controller
      */
     public function edit($id)
     {
+        $authors = Author::all();
+        $publishing_houses = PublishingHouse::all();
         $book = Book::findOrfail($id);
         $categories = Category::all();
-        return view('admin.books.edit', compact('book', 'categories'));
+        return view('admin.books.edit', compact('book', 'categories', 'authors', 'publishing_houses'));
     }
 
     /**
@@ -106,9 +114,11 @@ class AdminBooksController extends Controller
         $book = Book::findOrFail($id);
         $book->update(request()->validate([
             'title' => 'required',
-            'author' => 'required',
+            'author_id' => 'required|exists:authors,id',
+            'publishing_house_id' => 'required|exists:publishing_houses,id',
             'summary' => 'required',
             'isbn' => "required|unique:books,isbn,{$id}",
+            'language' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'rating' => 'required|numeric|min:0|max:5',
             'categories' => 'exists:categories,id'

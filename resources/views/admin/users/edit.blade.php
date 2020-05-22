@@ -77,6 +77,18 @@
                             </div>
                         </div>
 
+                        <div class="field">
+                            <label for="is_admin">Admin</label>
+
+                            <div class="select control">
+                                <select name="is_admin" id="is_admin">
+                                    <option value="none" selected disabled hidden>Is Admin?</option>
+                                    <option value="1">Yes</option>
+                                    <option value="0">No</option>
+                                </select>
+                            </div>
+                        </div>
+
 
                         <div class="field is-grouped">
                             <div class="control">

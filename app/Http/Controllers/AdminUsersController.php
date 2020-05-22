@@ -45,14 +45,14 @@ class AdminUsersController extends Controller
             'name' => 'required',
             'email' => 'required|unique:users|email',
             'password' => 'required|min:8',
-            'image' => 'image|mimes:jpeg,png,jpg,gif,svg'
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg',
         ]));
         if ($image = $request->file('image')) {
             $imageName = date('YmdHis') . "." . $image->getClientOriginalExtension();
             $filepath = $request->file('image')->storeAs('profiles', $imageName, 'public');
             $user['image'] = $filepath;
         }
-
+        $user['is_admin'] = 0;
         $user['password'] = bcrypt($user['password']);
         $user->save();
         return redirect(route('admin.users.index'));

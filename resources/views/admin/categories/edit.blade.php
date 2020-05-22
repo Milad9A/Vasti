@@ -10,10 +10,19 @@
 
     <h1>Edit Category</h1>
 
+    <div class="row">
+
+        <div class="col-sm-3">
+
+            <img src="{{ asset($category->image) }}" alt=""
+                 class="img-responsive img-rounded">
+
+        </div>
+
 
     <div class="col-sm-6">
 
-        <form method="POST" action="/admin/categories/{{$category->id}}">
+        <form method="POST" action="/admin/categories/{{$category->id}}" enctype="multipart/form-data">
             @csrf
             @method('PUT')
 
@@ -35,7 +44,7 @@
                 </div>
 
                 <div class="field">
-                    <label for="image">Image</label>
+                    <label for="image">Cover</label>
 
                     <div class="control">
                         <input
@@ -60,8 +69,10 @@
 
             </div>
         </form>
-
+        
     </div>
+    
+</div>
 
 
 @stop

@@ -11,4 +11,9 @@ class Category extends Model
     public function books(){
         return $this->belongsToMany(Book::class);
     }
+
+    public function getImageAttribute()
+    {
+        return "/storage/" . $this->attributes['image'];
+    }
 }

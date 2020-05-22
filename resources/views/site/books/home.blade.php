@@ -9,7 +9,8 @@
                 <h1 class="text-head">
                     Get The Right Books <br> And Get Them Now.
                 </h1>
-                <button type="submit" class="btn" id="start-read">Start Reading</button>
+                <button type="submit" class="btn" id="start-read"><a href="register_login.html">Start Reading</a>
+                </button>
             </div>
         </div>
     </header>
@@ -17,10 +18,9 @@
     <section id="best-books">
         <div class="igm-best-container" id="book-summary">
             <div class="square"></div>
-            <img class="mySlides" src="/img/cover-book-001.png" alt="" height="420px" width="auto">
-            <img class="mySlides" src="/img/cover-book-002.png" alt="" height="420px" width="auto">
-            <img class="mySlides" src="/img/cover-book-003.png" alt="" height="420px" width="auto">
-            <img class="mySlides" src="/img/cover-book-004.png" alt="" height="420px" width="auto">
+            @foreach($featured as $book)
+                <img class="mySlides" src="{{ asset($book->image) }}" alt="" height="420px" width="auto">  {{--260px--}}
+            @endforeach
         </div>
         <div class="text-section">
             <div class="container-text">
@@ -48,21 +48,23 @@
                 </div>
             </div>
         </div>
-        <img src="/icons/next-01-fff.svg" alt="" width="45px" height="90" id="best-arrow">
+        @svg('icons/next-01-fff', 'next-01f-btn', ['id' => 'best-arrow'])
     </section>
 
     <section class="bestselling-books">
         <h1 class="primary-text">Bestselling Books</h1>
         <div class="bestselling-row">
-            <a href="selected_book.html" class="next"><img src="/icons/next-02.svg" alt="" width="45px" height="90"></a>
-
+            @svg('icons/next-02', 'prve-bo')
             @foreach($best_sellers as $sbook)
 
                 <div class="book">
-                    <a href=""><img src="{{ asset($sbook->image) }}" alt="" height="240px"
-                                    width="150px"></a>
+                    <a href="">
+                        <img src="{{ asset($sbook->image) }}"
+                             alt="" height="240px" width="150px">
+                    </a>
                     <h1 class="title">{{ $sbook->title }}</h1>
                     <h1 class="author">By {{ $sbook->author->name }}</h1>
+                    <h1 class="price">$12.2</h1>
                     <div class="rating">
                         @for($i = 0; $i < $sbook->rating; $i++)
                             <span class="fa fa-star checked"></span>
@@ -71,19 +73,28 @@
                             <span class="fa fa-star"></span>
                         @endfor
                     </div>
+                    <input type="submit" value="Buy" class="buy">
+                    <input type="submit" value="Add to list" class="add-to-list">
+                    <span class="fa fa-plus"></span>
+                    <div class="dropdown">
+                        <select name="" id="status-book">
+                            <option value="Want to Read">Want to Read</option>
+                            <option value="Reader">Reader</option>
+                            <option value="Currently Reading">Currently Reading</option>
+                        </select>
+                        <i class="fa fa-caret-down"></i>
+                    </div>
                 </div>
-
             @endforeach
 
-
-            <img src="/icons/next-01.svg" alt="" width="45px" height="90" id="next-book">
+            @svg('icons/next-01', 'next-bo')
         </div>
     </section>
 
     <section class="popular-books">
         <h1 class="primary-text">Most Popular Books</h1>
         <div class="popular-row">
-            <a href="selected_book.html" class="next"><img src="/icons/next-02.svg" alt="" width="45px" height="90"></a>
+            @svg('icons/next-02', 'prve-bo')
 
             @foreach($most_popular as $mbook)
 
@@ -92,19 +103,30 @@
                                     width="150px"></a>
                     <h1 class="title">{{ $mbook->title }}</h1>
                     <h1 class="author">By {{ $mbook->author->name }}</h1>
+                    <h1 class="price">$12.2</h1>
                     <div class="rating">
                         @for($i = 0; $i < $mbook->rating; $i++)
                             <span class="fa fa-star checked"></span>
                         @endfor
-                            @for ($j = 0; $j < 5 - $mbook->rating; $j++)
-                                <span class="fa fa-star"></span>
-                            @endfor
+                        @for ($j = 0; $j < 5 - $mbook->rating; $j++)
+                            <span class="fa fa-star"></span>
+                        @endfor
+                    </div>
+                    <input type="submit" value="Buy" class="buy">
+                    <input type="submit" value="Add to list" class="add-to-list">
+                    <span class="fa fa-plus"></span>
+                    <div class="dropdown">
+                        <select name="" id="status-book">
+                            <option value="Want to Read">Want to Read</option>
+                            <option value="Reader">Reader</option>
+                            <option value="Currently Reading">Currently Reading</option>
+                        </select>
+                        <i class="fa fa-caret-down"></i>
                     </div>
                 </div>
-
             @endforeach
 
-            <a href="" class="next"><img src="/icons/next-01.svg" alt="" width="45px" height="90"></a>
+            @svg('icons/next-01', 'next-bo')
         </div>
     </section>
 

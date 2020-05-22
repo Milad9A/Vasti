@@ -36,10 +36,17 @@ class AdminCategoriesController extends Controller
      */
     public function store(Request $request)
     {
-        Category::create(request()->validate([
-            'name' => 'required',
-            'image' => 'required'
+        $category = new Category(request()->validate([
+            'name' => 'required|unique:categories,name',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        
         ]));
+        if ($image = $request->file('image')) {
+            $imageName = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $filepath = $request->file('image')->storeAs('categoriesCovers', $imageName, 'public');
+            $category['image'] = $filepath;
+        }
+        $category->save();
         return redirect(route('admin.categories.index'));
     }
 
@@ -78,8 +85,16 @@ class AdminCategoriesController extends Controller
         $category = Category::findOrFail($id);
         $category->update(request()->validate([
             'name' => 'required',
-            'image' => 'required'
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]));
+        if ($image = $request->file('image')) {
+            $imageName = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $filepath = $request->file('image')->storeAs('CategoriesCovers', $imageName, 'public');
+            $category['image'] = $filepath;
+            $category->update([
+                'image' => $filepath,
+            ]);
+        }
         return redirect(route('admin.categories.index'));
     }
 
