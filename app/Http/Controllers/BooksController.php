@@ -16,7 +16,20 @@ class BooksController extends Controller
      */
     public function index()
     {
-        //
+        if (request('main-search')) {
+            $books = Book::where('title', 'like', '%' . request('main-search') . '%')->simplePaginate(15);
+        }
+        if (request('language')) {
+            $books = Book::where('language', request('language'))->simplePaginate(15);
+        }
+        if(request('rating')){
+            $books = Book::where('rating', '>=', request('rating'))->simplePaginate(15);
+            return view('site.books.index', ['books' => $books]);
+        }
+
+
+        $books = Book::latest()->simplePaginate(15);
+        return view('site.books.index', ['books' => $books]);
     }
 
     public function home()

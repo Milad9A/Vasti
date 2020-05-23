@@ -22,7 +22,7 @@
 
 <nav id="main-nav">
     <div class="container">
-        <a href="index.html"><h1 class="logo">VASTI</h1></a>
+        <a href="/"><h1 class="logo">VASTI</h1></a>
         <div class="nav-text">
             <ul>
                 <li><a href="Books.html">Books</a></li>
@@ -34,7 +34,7 @@
             <ul>
                 <div class="search-box">
                     <div id="input-search">
-                        <input type="text" class="search-text" id="search-ba" placeholder="Search Books by name...">
+                        @livewire('books-search-bar')
                         <i class="fa fa-close" id="close-icon"></i>
                     </div>
 
@@ -84,6 +84,8 @@
     </div>
 </nav>
 
+
+@livewire('search-books')
 
 @yield('content')
 

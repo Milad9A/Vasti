@@ -13,6 +13,8 @@
 
 Route::get('/', 'BooksController@home');
 
+Route::get('/books', 'BooksController@index')->name('site.books.index');
+
 Route::view('/logins', 'site.login')->name('site.login');
 Route::view('/registers', 'site.register')->name('site.register');
 

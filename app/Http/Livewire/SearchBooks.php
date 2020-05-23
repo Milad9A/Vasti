@@ -5,21 +5,20 @@ namespace App\Http\Livewire;
 use App\Book;
 use Livewire\Component;
 
-class SearchPosts extends Component
+class SearchBooks extends Component
 {
-    public $search = '';
+    public $search;
 
-    protected $updatesQueryString = ['search' => ['except' => '']];
+    protected $listeners = ['result' => 'set'];
 
-    public function mount()
-    {
-        $this->search = request()->query('search', $this->search);
+    public function set($s){
+        $this->search = $s;
     }
 
     public function render()
     {
         return view('livewire.search-books', [
-            'posts' => Book::where('title', 'like', '%' . $this->search . '%')->get(),
+            'books' => Book::where('title', 'like', '%' . $this->search . '%')->get(),
         ]);
     }
 }
