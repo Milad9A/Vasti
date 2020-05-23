@@ -133,11 +133,11 @@
                         <a href="#"><i class="fa fa-wrench fa-fw"></i>Books<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                                               <a href="{{route('admin.books.index')}}">All Books</a>
+                                <a href="{{route('admin.books.index')}}">All Books</a>
                             </li>
 
                             <li>
-                                                               <a href="{{route('admin.books.create')}}">Add Books</a>
+                                <a href="{{route('admin.books.create')}}">Add Books</a>
                             </li>
                         </ul>
                         <!-- /.nav-second-level -->
@@ -149,6 +149,28 @@
                         <ul class="nav nav-second-level">
                             <li>
                                 <a href="{{route('admin.categories.index')}}">All Categories</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
+
+
+                    <li>
+                        <a href="#"><i class="fa fa-wrench fa-fw"></i>Authors<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="{{route('admin.authors.index')}}">All Authors</a>
+                            </li>
+                        </ul>
+                        <!-- /.nav-second-level -->
+                    </li>
+
+
+                    <li>
+                        <a href="#"><i class="fa fa-wrench fa-fw"></i>Publishing Houses<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="{{route('admin.houses.index')}}">All Publishing Houses</a>
                             </li>
                         </ul>
                         <!-- /.nav-second-level -->

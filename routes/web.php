@@ -49,6 +49,15 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('/categories/{category}/edit', 'AdminCategoriesController@edit')->name('admin.categories.edit');
     Route::put('/categories/{category}', 'AdminCategoriesController@update')->name('admin.categories.update');
 
+    Route::get('/authors', 'AdminAuthorsController@index')->name('admin.authors.index');
+    Route::post('/authors', 'AdminAuthorsController@store')->name('admin.authors.store');
+    Route::get('/authors/{author}/edit', 'AdminAuthorsController@edit')->name('admin.authors.edit');
+    Route::put('/authors/{author}', 'AdminAuthorsController@update')->name('admin.authors.update');
+
+    Route::get('/publishinghouses', 'AdminPublishingHousesController@index')->name('admin.houses.index');
+    Route::post('/publishinghouses', 'AdminPublishingHousesController@store')->name('admin.houses.store');
+    Route::get('/publishinghouses/{publishinghouse}/edit', 'AdminPublishingHousesController@edit')->name('admin.houses.edit');
+    Route::put('/publishinghouses/{publishinghouse}', 'AdminPublishingHousesController@update')->name('admin.houses.update');
 });
 
 Auth::routes();
