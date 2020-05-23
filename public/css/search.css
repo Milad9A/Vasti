@@ -7,14 +7,14 @@
 .search-text {
     position: relative;
     right: -3rem;
-    background: none;
+    background: #fff;
     outline: none;
     border: none;
     padding: 0;
     font-size: 14px;
     transition: 0.5s ease-out;
     border-radius: 4px;
-    width: 0;
+    width: 35rem;
     padding: 4px 10px;
 }
 
@@ -32,6 +32,7 @@
 .search-box {
     display: flex;
 }
+
 .search-btn {
     height: 26px;
     cursor: pointer;
