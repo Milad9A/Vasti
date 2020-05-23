@@ -68,6 +68,7 @@ class AdminBooksController extends Controller
             $filepath = $request->file('image')->storeAs('covers', $imageName, 'public');
             $book['image'] = $filepath;
         }
+        $book['published_at'] = NOW();
         $book->save();
         $book->categories()->attach(request('categories'));
 
