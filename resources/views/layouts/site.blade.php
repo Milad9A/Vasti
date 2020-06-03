@@ -116,7 +116,7 @@
     <script src="/js/main_index.js"></script>
     <script src="/js/main.js"></script>
     @yield('scripts')
-    @livewireScripts
+    <!-- @livewireScripts -->
 </body>
 
 </html>

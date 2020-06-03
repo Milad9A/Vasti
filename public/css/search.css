@@ -1,19 +1,19 @@
+
 .search-text {
     position: relative;
-    right: -3rem;
-    outline: none;
+    right: -3.2rem;
     border: none;
-    padding: 0;
     font-size: 14px;
     border-radius: 4px;
     padding: 4px 10px;
+    width: 35rem;
 }
 
 #close-icon {
     position: relative;
     right: -1rem;
     padding-top: 0.7rem;
-    display: none;
+    display: block;
     color: #7a7a7a;
     z-index: 100;
     font-size: 1.2rem;
