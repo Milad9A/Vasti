@@ -48,7 +48,7 @@
                 </div>
             </div>
         </div>
-        @svg('icons/next-01-fff', 'next-01f-btn', ['id' => 'best-arrow'])
+        @svg('icons/featured-btn', 'next-01f-btn', ['id' => 'best-arrow'])
     </section>
 
     <section class="bestselling-books">

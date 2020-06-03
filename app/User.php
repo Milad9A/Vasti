@@ -41,6 +41,10 @@ class User extends Authenticatable
         return $this->belongsToMany(Book::class);
     }
 
+    public function saveBook(Book $book, $status_id){
+        return $this->books()->save($book, $status_id);
+    }
+
     public function status(){
         return $this->belongsToMany(Status::class, 'book_user',  'user_id', 'status_id');
     }

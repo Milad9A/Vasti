@@ -1,20 +1,11 @@
-/* .search-box:hover > .search-text{
-    width: 350px;
-    background: #fff;
-} */
-
-
 .search-text {
     position: relative;
     right: -3rem;
-    background: #fff;
     outline: none;
     border: none;
     padding: 0;
     font-size: 14px;
-    transition: 0.5s ease-out;
     border-radius: 4px;
-    width: 35rem;
     padding: 4px 10px;
 }
 
@@ -48,8 +39,6 @@
 .next-01f-btn {
     width:45px;
     height:90px;
-    cursor: pointer;
-    z-index:90;
 }
 
 .prve-bo {

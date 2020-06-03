@@ -24,25 +24,15 @@
             </a>
             <div class="nav-text">
                 <ul>
-                    <li><a href="Books.html">Books</a></li>
-                    <li><a href="Advance_search.html">Advance Search</a></li>
-                    <li><a href="reading_list.html">Reading list</a></li>
+                    <li><a href="{{  route('site.books.index') }}">Browse All Books</a></li>
+                    <li><a href="#">Reading list</a></li>
+                    <li><a href="#">News Feed</a></li>
                 </ul>
             </div>
             <div class="icon-register">
                 <ul>
 
                     @livewire('books-search-bar')
-
-
-                    {{-- <div class="search-box">
-                    <div id="input-search">
-                        @livewire('books-search-bar')
-                        <i class="fa fa-close" id="close-icon"></i>
-                    </div>
-
-                    @svg('icons/icons8-search', 'search-btn', ['id' => 'se'])
-                </div> --}}
 
                     <li> @svg('icons/shopping-cart', 'cart-btn')</li>
 
@@ -88,7 +78,7 @@
 
 
     <div class="content-search" id="content">
-        @livewire('search-books', 'content=search')
+        @livewire('search-books')
     </div>
 
     @yield('content')

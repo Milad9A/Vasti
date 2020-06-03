@@ -6,6 +6,8 @@ use App\Book;
 use App\Category;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class BooksController extends Controller
 {
@@ -14,22 +16,55 @@ class BooksController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        // if (request('main-search')) {
-        //     $books = Book::where('title', 'like', '%' . request('main-search') . '%')->simplePaginate(15);
-        // }
-        // if (request('language')) {
-        //     $books = Book::where('language', request('language'))->simplePaginate(15);
-        // }
-        // if(request('rating')){
-        //     $books = Book::where('rating', '>=', request('rating'))->simplePaginate(15);
-        //     return view('site.books.index', ['books' => $books]);
-        // }
+        $books = Book::latest();
 
+        if ($request->has('main-search')) {
+            $books->where('title', 'like', '%' . request('main-search') . '%');
+        }
+        if ($request->has('language')) {
+            $books->where('language', request('language'));
+        }
+        if ($request->has('rating')) {
+            $books->where('rating', '>=', request('rating'));
+        }
+        if ($request->has('order-by')) {
+            switch (request('order-by')) {
+                case 'title_a':
+                    $books = Book::orderBy('title', 'asc');
+                    break;
+                case 'title_d':
+                    $books = Book::orderBy('title', 'desc');
+                    break;
+                case 'author_id_a':
+                    $books = Book::join('authors', 'books.author_id', '=', 'authors.id')
+                            ->orderBy('authors.name', 'asc');
+                    break;
+                case 'author_id_d':
+                    $books = Book::join('authors', 'books.author_id', '=', 'authors.id')
+                            ->orderBy('authors.name', 'desc');
+                    break;
+                // case 'price_a':
+                //     $books = Book::orderBy('price', 'asc')->get();
+                //     break;
+                // case 'price_d':
+                //     $books = Book::orderBy('price', 'desc')->get();
+                //     break;
+            }
+        }
+        if ($request->has('categories')) {
+            $categories_ids = request('categories');
+            $cids = DB::table('book_category')->whereIn('category_id', $categories_ids)->pluck('book_id');
+            $books->whereIn('id', $cids);
+        }
 
-        $books = Book::latest()->simplePaginate(15);
-        return view('site.books.index', ['books' => $books]);
+        $books = $books->get();
+
+        return view('site.books.index', [
+            'books' => $books,
+            'categories' => Category::all(),
+        ]);
     }
 
     public function home()
