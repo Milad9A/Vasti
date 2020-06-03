@@ -37,7 +37,6 @@ a {
     
 }
 
-
 .modal-header h1 {
     font-size: 4rem;
 }
@@ -72,7 +71,7 @@ a {
 }
 
 #modal-login .modal input[type="submit"] {
-    margin-top: 4rem;
+    margin-top: 0rem;
     margin-bottom: 2rem;
 }
 
@@ -85,11 +84,8 @@ footer {
     color: #fff;
     display: flex;
     justify-content: center;
-}
-
-
-a:hover {
-    font-size: 1.6rem;
+    padding: 0;
+    margin: 0;
 }
 
 #modal-login label {
@@ -113,15 +109,7 @@ a:hover {
     visibility: visible;
 } 
 
-
-#login-form #forgot{
-    color: #337CD9; 
-    font-size: 1.4rem;
-    position: absolute;
-    transform: translate(-11rem,0.7rem);
-}
-
- #register, #login {
+#register, #login {
     color: #27AF43; 
 }
 
@@ -129,3 +117,30 @@ footer span {
     cursor: pointer;
     padding-left: 0.5rem;
 }
+
+.form-check .form-check-label{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.form-check .form-check-label input[name="remember"] {
+    width: 1.3rem;
+    margin-right: 1rem;
+    padding: 0;
+    border: 1px solid #272727;
+    border-radius: 4px;
+}
+
+.modal-content .modal-form #forgot {
+    float: right;
+    color: #337CD9;
+    transform: translateY(-3.16rem);
+    font-size: 1.3rem;
+    padding: 0;
+    margin: 0;
+}
+
+.login-footer {
+    margin-top: -2.2rem;
+}
+
