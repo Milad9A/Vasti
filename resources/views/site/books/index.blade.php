@@ -80,7 +80,10 @@
 
         @foreach($books as $book)
 
-        <div class="book">
+        @component('components.book', ['book' => $book])
+        @endcomponent
+
+        {{-- <div class="book">
             <a href="">
                 <img src="{{ asset($book->image) }}" alt="" height="240px" width="150px">
             </a>
@@ -98,7 +101,7 @@
             <input type="submit" value="Buy" class="buy">
             @livewire('add-book', ['book' => $book, 'user' => Illuminate\Support\Facades\Auth::user()])
 
-        </div>
+        </div> --}}
         @endforeach
     </div>
 </main>

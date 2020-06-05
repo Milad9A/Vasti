@@ -9,27 +9,29 @@ use Livewire\Component;
 class AddBook extends Component
 {
     public $book;
-    public $user;
-    public $clicked=false;
+    public $ffff;
+    public $clicked = false;
 
-    public function mount(Book $book, User $user)
+    public function mount(Book $book)
     {
+        $this->ffff = 4;
         $this->book = $book;
-        $this->user = $user;
     }
 
     public function addBook()
     {
-        $this->user->saveBook($this->book, ['status_id' => 2]);
-        $this->clicked=true;
+        auth()->user()->saveBook($this->book, ['status_id' => $this->ffff]);
+        $this->clicked = true;
     }
 
     public function render()
     {
+        if ($this->ffff !== 4) {
+            auth()->user()->updateBook($this->book, $this->ffff);
+        }
+
         return view('livewire.add-book', [
-                'user' => $this->user,
-                'book' => $this->book,
-            ]
-        );
+            'book' => $this->book,
+        ]);
     }
 }

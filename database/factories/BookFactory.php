@@ -13,7 +13,6 @@ $factory->define(Book::class, function (Faker $faker) {
         'summary' => $faker->paragraph,
         'isbn' => $faker->isbn13,
         'language' => $faker->country,
-        'image' => 'not available',
         'rating' => $faker->numberBetween(0, 5),
     ];
 });
