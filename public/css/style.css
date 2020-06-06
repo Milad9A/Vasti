@@ -9,9 +9,11 @@
     padding: 0;
     list-style: none;
 }
+
 .hiden {
     display: none;
 }
+
 html {
     font-size: 62.5%;
 }
@@ -123,6 +125,7 @@ ul {
     text-align: right;
     cursor: pointer;
 }
+
 .logout-container.logout-container ul li{
     padding: 1.5rem 0.6rem;
     font-size: 1.3rem;
@@ -142,10 +145,12 @@ ul {
     overflow: hidden;
     z-index: 100;
 }
+
 .content-search .container-content ul {
     display: flex;
     flex-direction: column;
 }
+
 .content-search .container-content ul li  {
     background: #272727;
     margin-top: 1rem;
@@ -168,7 +173,6 @@ ul {
 
 ::-webkit-scrollbar-thumb {
     background: #636262;
-
 }
 ::-webkit-scrollbar-track {
     border-radius: 0.4rem;
@@ -232,12 +236,13 @@ ul {
     background: #272727;
     color: #fff;
     height: 55rem;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;   
     font-size: 2rem;  
     overflow: hidden;
     padding: 0 6rem;
 } 
+
 #best-books .text-section {
     display: flex;
     flex-direction: column;
@@ -324,11 +329,11 @@ ul {
 .popular-books .popular-row {
     width: 100%;
     display: flex;
-    flex-flow: row wrap; 
+    flex-flow: wrap; 
     justify-content: space-between;
     align-items: center;
-    padding: 0 4rem;
 }
+
 .bestselling-books .bestselling-row .book,
 .popular-books .popular-row .book {
     opacity: 0;
@@ -1081,6 +1086,81 @@ transform: rotate(45deg);
     
 }
 
-.reading-list .container .container-status-book .description-container {
 
+
+
+
+.user-dropdown-menu {
+    position: absolute;
+    top: 4rem;
+    right: 4rem;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    width: 26rem;
+    border-radius: 0.4rem;
+    border: 1px #272727 solid;
+}
+
+.user-dropdown-menu .container ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.user-dropdown-menu .container ul li {
+   color: #272727;
+   font-size: 1.8rem;
+   padding: 0.5rem 0;
+   text-align: center;
+}
+
+.user-dropdown-menu hr {
+    border: 0.5px #272727 solid;
+    margin: 0.3rem 2rem;
+}
+
+.user-dropdown-menu .container ul li img {
+    background: #272727;
+    width: 6.5rem;
+    height: 6.5rem;
+    border-radius: 50%;
+    margin-top: 0.5rem;
+}
+
+.user-dropdown-menu .setting li a {
+    color: #272727;
+    padding: 1rem;
+}
+
+.user-dropdown-menu .setting li{
+    padding: 0.5rem 1rem;
+}
+
+.user-dropdown-menu .setting li:hover{
+    background: rgb(209, 207, 207);
+}
+
+.user-dropdown-menu .setting li i {
+    font-size: 1.6rem;
+    padding-right: 1rem;
+}
+
+.user-dropdown-menu .setting li a {
+    display: flex;
+    align-items: center;
+}
+
+
+
+.owl-carousel  {
+    max-width: 90%; 
+}
+
+.owl-prev {
+    margin-left: 6rem;
+}
+
+.owl-next {
+    margin-right: 6rem;
 }

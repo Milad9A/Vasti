@@ -55,6 +55,7 @@
         <h1 class="primary-text">Bestselling Books</h1>
         <div class="bestselling-row">
             @svg('icons/next-02', 'prve-bo')
+            <div class="owl-carousel owl-theme">
             @foreach($best_sellers as $sbook)
 
                 <div class="book">
@@ -85,7 +86,8 @@
                         <i class="fa fa-caret-down"></i>
                     </div>
                 </div>
-            @endforeach
+                @endforeach
+            </div>
 
             @svg('icons/next-01', 'next-bo')
         </div>
