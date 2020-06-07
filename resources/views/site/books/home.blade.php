@@ -57,7 +57,7 @@
             @svg('icons/next-02', 'prve-bo')
             @foreach($best_sellers as $sbook)
 
-                @component('components.book', ['book' => $book])
+                @component('components.book', ['book' => $sbook])
                 @endcomponent
 
             @endforeach
@@ -73,7 +73,7 @@
 
             @foreach($most_popular as $mbook)
 
-                @component('components.book', ['book' => $book])
+                @component('components.book', ['book' => $mbook])
                 @endcomponent
 
             @endforeach

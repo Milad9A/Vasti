@@ -111,7 +111,7 @@
                     <br>
                     <div>
                         <input id="email-message" type="email" class="input" placeholder="Email" name="email" value="{{ old('email') }}" required
-                               autocomplete="email" autofocus>
+                               autocomplete="email">
                         @error('email')
                         <p class="help is-danger">{{ $message }}</p>
                         @enderror
@@ -137,7 +137,6 @@
     <script src="/js/main.js"></script>
     @yield('scripts')
     @livewireScripts
-    @include('sweetalert::alert')
 </body>
 
 </html>
