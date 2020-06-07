@@ -37,6 +37,6 @@ class Book extends Model
 
     public function getImageAttribute()
     {
-        return "/storage/" . $this->attributes['image'];
+        return $this->attributes['image'] ? "/storage/" . $this->attributes['image'] : 'https://ibf.org/site_assets/img/placeholder-book-cover-default.png' ;
     }
 }

@@ -18,7 +18,7 @@ Route::get('/books', 'BooksController@index')->name('site.books.index');
 Route::view('/logins', 'site.login')->name('site.login');
 Route::view('/registers', 'site.register')->name('site.register');
 
-Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
+Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
 
     Route::get('/', function(){
         return view('layouts.admin');
@@ -65,3 +65,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/logout', 'Auth\LoginController@logout');
+
+Route::post('/emails', 'EmailsController@handleForm');

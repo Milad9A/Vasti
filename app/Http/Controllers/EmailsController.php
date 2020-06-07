@@ -22,8 +22,6 @@ class EmailsController extends Controller
                 ->subject('Contact Us');
         });
 
-        Alert::success('Success', 'Your Message Has Been Received');
-
         return redirect()
             ->back()
             ->with('success', 'Thank you for your feedback');

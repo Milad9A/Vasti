@@ -120,10 +120,30 @@
             <div class="footer-col-2">
                 <h1>Contact Us</h1>
                 <p>Please fill out the form below to contact us</p>
-                <form action="" id="message">
-                    <input type="text" name="name" placeholder="Name" id="name-message"><br>
-                    <input type="email" name="email" placeholder="Email" id="email-message"><br>
-                    <textarea name="message" placeholder="Message" id="text-message"></textarea><br>
+                <form method="POST" action="/emails">
+                    @csrf
+                    <div>
+                        <input id="name-message" type="text" class="input" placeholder="Name" name="name" value="{{ old('name') }}" required>
+                        @error('name')
+                        <p class="help is-danger">{{ $message }}</p>
+                        @enderror
+                    </div>
+                    <br>
+                    <div>
+                        <input id="email-message" type="email" class="input" placeholder="Email" name="email" value="{{ old('email') }}" required
+                               autocomplete="email">
+                        @error('email')
+                        <p class="help is-danger">{{ $message }}</p>
+                        @enderror
+                    </div>
+                    <br>
+                    <div>
+                        <textarea id="text-message" type="text" class="input" placeholder="Message" name="message_body" value="{{ old('message_body') }}" required></textarea>
+                        @error('message_body')
+                        <p class="help is-danger">{{ $message }}</p>
+                        @enderror
+                    </div>
+                    <br>
                     <button type="submit" class="btn">Submit</button>
                 </form>
             </div>

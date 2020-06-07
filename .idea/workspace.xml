@@ -4,12 +4,11 @@
     <list default="true" id="98ec25eb-a16d-455f-9950-181db38c7402" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BooksController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BooksController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/search.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/search.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/icons/icons8-search.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/icons/icons8-search.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/icons/next-01-fff.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/icons/shopping-cart.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/icons/shopping-cart.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/EmailsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/EmailsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/site.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/site.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/site/books/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/books/home.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/site/books/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/books/index.blade.php" afterDir="false" />
@@ -160,6 +159,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="add_unversioned_files" value="$PROJECT_DIR$/.env" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../wire" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.editor" />
@@ -225,6 +225,9 @@
       <workItem from="1590311385855" duration="1299000" />
       <workItem from="1590407746561" duration="20000" />
       <workItem from="1590775764832" duration="4058000" />
+      <workItem from="1591451610912" duration="5303000" />
+      <workItem from="1591519283855" duration="542000" />
+      <workItem from="1591537901569" duration="2460000" />
     </task>
     <servers />
   </component>
@@ -265,10 +268,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1589735864306" />
-    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1589465493297">
+    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1591454137938">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1589465493297" />
+    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1591454137938" />
     <state x="405" y="190" key="EditFileWatcherDialog" timestamp="1589322042339">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -295,10 +298,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1589906334443" />
-    <state x="390" y="50" width="672" height="678" key="search.everywhere.popup" timestamp="1590311579468">
+    <state x="390" y="50" width="672" height="678" key="search.everywhere.popup" timestamp="1591463502280">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="390" y="50" width="672" height="678" key="search.everywhere.popup/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1590159966339" />
-    <state x="390" y="50" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1590311579468" />
+    <state x="390" y="50" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1591463502280" />
   </component>
 </project>
