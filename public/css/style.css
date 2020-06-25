@@ -1123,6 +1123,7 @@ transform: rotate(45deg);
     background: #272727;
     width: 6.5rem;
     height: 6.5rem;
+    object-fit: cover;
     border-radius: 50%;
     margin-top: 0.5rem;
 }
