@@ -236,7 +236,7 @@ ul {
     background: #272727;
     color: #fff;
     height: 55rem;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     font-size: 2rem;
     overflow: hidden;
@@ -246,6 +246,7 @@ ul {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    padding: 0 4rem;
 }
 
 #best-books .text-section .lines-arrow-bnt {
