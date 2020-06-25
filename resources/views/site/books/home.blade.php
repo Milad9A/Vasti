@@ -55,6 +55,7 @@
         <h1 class="primary-text">Bestselling Books</h1>
         <div class="bestselling-row">
             @svg('icons/next-02', 'prve-bo')
+            <div class="owl-carousel owl-theme">
             @foreach($best_sellers as $sbook)
 
                 @component('components.book', ['book' => $sbook])

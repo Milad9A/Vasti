@@ -8,7 +8,10 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
         integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="/css/search.css">
+    <link rel="stylesheet" href="/css/owl.carousel.css">
+    <link rel="stylesheet" href="/css/owl.theme.default.min.css">
     @livewireStyles
     @yield('styles')
     <title>Vasti</title>
@@ -52,7 +55,9 @@
                             <img src="{{ asset(Auth::user()->image) }}" alt="" width="30" height="30">
                         </div>
                     </li>
-                    <li>
+
+                    
+                    <!-- <li>
                         <a href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                             v-pre>
                             {{ Auth::user()->name }} <span class="caret"></span>
@@ -69,14 +74,29 @@
                                 @csrf
                             </form>
                         </div>
-                    </li>
+                    </li> -->
                     @endguest
                 </ul>
             </div>
         </div>
     </nav>
 
-
+    <div class="user-dropdown-menu">
+    <div class="container">
+        <ul>
+            <li><img src="" alt=""></li>
+            <li>username</li>
+            <li>milad.kk@gmail.com</li>
+        </ul>
+    </div>
+    <hr>
+    <ul class="setting">
+        <li><a href=""><i class='fas fa-user-alt'></i>Profile setting</a></li>
+        <li><a href=""><i class="material-icons">feedback</i>send feedback</a></li>
+        <li><a href=""><i class="fa fa-power-off"></i>Sign out</a></li>
+    </ul>
+</div>
+                    
     <div class="content-search" id="content">
         @livewire('search-books')
     </div>
@@ -133,8 +153,46 @@
         </div>
     </footer>
 
+
     <script src="/js/main_index.js"></script>
     <script src="/js/main.js"></script>
+    <script src="/js/jquery.min.js"></script>
+  <script src="/js/owl.carousel.js"></script>
+  <script>
+    $('.owl-carousel').owlCarousel({
+        dots:false,
+        margin:0,
+        end:true,
+        responsive:{
+            0:{
+                items:1
+            },
+            550:{
+                items:2
+            },
+            700:{
+                items:3
+            },
+            800:{
+                items:4
+            },
+            1150:{
+                items:5
+            },
+            1250:{
+                items:7
+            }
+        }
+    });
+    var owl = $('.owl-carousel');
+    owl.owlCarousel();
+    $('.owl-next').click(function() {
+        owl.trigger('next.owl.carousel');
+    })
+    $('.owl-prev').click(function() {
+        owl.trigger('prev.owl.carousel');
+    })
+  </script>
     @yield('scripts')
     @livewireScripts
 </body>
