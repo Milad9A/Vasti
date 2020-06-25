@@ -53,6 +53,10 @@ class User extends Authenticatable
         return $this->belongsToMany(Status::class, 'book_user',  'user_id', 'status_id');
     }
 
+    public function reviews(){
+        return $this->hasMany(Review::class);
+    }
+
     public function getImageAttribute()
     {
         return "/storage/" . $this->attributes['image'];
