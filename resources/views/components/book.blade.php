@@ -1,5 +1,5 @@
 <div class="book">
-    <a href="">
+    <a href="{{ route('site.show', ['book' => $book]) }}">
         <img src="{{ asset($book->image) }}" alt="" height="240px" width="150px">
     </a>
     <h1 class="title">{{ $book->title }}</h1>

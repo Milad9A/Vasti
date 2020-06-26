@@ -55,48 +55,44 @@
                             <img src="{{ asset(Auth::user()->image) }}" alt="" width="30" height="30">
                         </div>
                     </li>
-
-                    
-                    <!-- <li>
-                        <a href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                            v-pre>
-                            {{ Auth::user()->name }} <span class="caret"></span>
-                        </a>
-                    </li>
-                    <li>
-                        <div aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                               document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
-                            </a>
-
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                @csrf
-                            </form>
-                        </div>
-                    </li> -->
-                    @endguest
-                </ul>
-            </div>
+            @endguest
+            </ul>
+        </div>
         </div>
     </nav>
 
     <div class="user-dropdown-menu">
-    <div class="container">
-        <ul>
-            <li><img src="" alt=""></li>
-            <li>username</li>
-            <li>milad.kk@gmail.com</li>
+        <div class="container">
+            <ul>
+                <li><img src="{{ asset(Auth::user()->image) }}" alt=""></li>
+                <li>
+                    {{ Auth::user()->name }} <span class="caret"></span>
+                </li>
+                <li>
+                    {{ Auth::user()->email }} <span class="caret"></span>
+                </li>
+            </ul>
+        </div>
+        <hr>
+        <ul class="setting">
+            <li><a href=""><i class='fas fa-user-alt'></i>Edit Profile</a></li>
+            <li><a href=""><i class="material-icons">feedback</i>send feedback</a></li>
+            <li>
+                <div aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                       document.getElementById('logout-form').submit();">
+                        <i class="fa fa-power-off"></i>
+                        {{ __('Logout') }}
+                    </a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+                </div>
+            </li>
         </ul>
     </div>
-    <hr>
-    <ul class="setting">
-        <li><a href=""><i class='fas fa-user-alt'></i>Profile setting</a></li>
-        <li><a href=""><i class="material-icons">feedback</i>send feedback</a></li>
-        <li><a href=""><i class="fa fa-power-off"></i>Sign out</a></li>
-    </ul>
-</div>
-                    
+
     <div class="content-search" id="content">
         @livewire('search-books')
     </div>
@@ -123,22 +119,24 @@
                 <form method="POST" action="/emails">
                     @csrf
                     <div>
-                        <input id="name-message" type="text" class="input" placeholder="Name" name="name" value="{{ old('name') }}" required>
+                        <input id="name-message" type="text" class="input" placeholder="Name" name="name"
+                            value="{{ old('name') }}" required>
                         @error('name')
                         <p class="help is-danger">{{ $message }}</p>
                         @enderror
                     </div>
                     <br>
                     <div>
-                        <input id="email-message" type="email" class="input" placeholder="Email" name="email" value="{{ old('email') }}" required
-                               autocomplete="email">
+                        <input id="email-message" type="email" class="input" placeholder="Email" name="email"
+                            value="{{ old('email') }}" required autocomplete="email">
                         @error('email')
                         <p class="help is-danger">{{ $message }}</p>
                         @enderror
                     </div>
                     <br>
                     <div>
-                        <textarea id="text-message" type="text" class="input" placeholder="Message" name="message_body" value="{{ old('message_body') }}" required></textarea>
+                        <textarea id="text-message" type="text" class="input" placeholder="Message" name="message_body"
+                            value="{{ old('message_body') }}" required></textarea>
                         @error('message_body')
                         <p class="help is-danger">{{ $message }}</p>
                         @enderror
@@ -157,10 +155,16 @@
     <script src="/js/main_index.js"></script>
     <script src="/js/main.js"></script>
     <script src="/js/jquery.min.js"></script>
+<<<<<<< HEAD
   <script src="/js/owl.carousel.js"></script>
   <script>
     
     $('#popular').owlCarousel({
+=======
+    <script src="/js/owl.carousel.js"></script>
+    <script>
+        $('.owl-carousel').owlCarousel({
+>>>>>>> 07c49ab5ed7fb1bfed3b771d1097dbe099c6f43b
         dots:false,
         margin:0,
         end:true,
@@ -194,11 +198,19 @@
     })
     $('#prev-popular').click(function() {
         owl.trigger('prev.owl.carousel');
+<<<<<<< HEAD
     });
     </script>
+=======
+    })
+
+>>>>>>> 07c49ab5ed7fb1bfed3b771d1097dbe099c6f43b
 
     @yield('scripts')
     @livewireScripts
+
+    </script>
+
 </body>
 
 </html>

@@ -207,7 +207,7 @@ ul {
     position: absolute;
     background: #272727;
     height: 12rem;
-    width: 1rem;  
+    width: 1rem;
 }
 
 #showcase-header .showcase-container .showcase-text .btn {
@@ -217,7 +217,7 @@ ul {
     border-radius: 0.4rem;
     font-size: 2rem;
     padding: 0.5rem 1rem;
-    cursor: pointer;   
+    cursor: pointer;
 }
 
 #showcase-header .showcase-container .showcase-text h1 {
@@ -231,22 +231,22 @@ ul {
 
 /* best-books-section */
 
-#best-books {  
+#best-books {
     display: flex;
     background: #272727;
     color: #fff;
     height: 55rem;
     justify-content: space-between;
-    align-items: center;   
-    font-size: 2rem;  
+    align-items: center;
+    font-size: 2rem;
     overflow: hidden;
     padding: 0 6rem;
-} 
-
+}
 #best-books .text-section {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    padding: 0 4rem;
 }
 
 #best-books .text-section .lines-arrow-bnt {
@@ -264,13 +264,13 @@ ul {
     font-size: 2rem;
     padding: 0.5rem 1rem;
     cursor: pointer;
-} 
+}
 
 #best-books .text-section .lines-arrow-bnt .lines .line {
     display: inline-block;
     background: #fff;
     height: 0.1rem;
-    width: 5rem;  
+    width: 5rem;
     margin: 0 1rem;
 }
 
@@ -329,7 +329,7 @@ ul {
 .popular-books .popular-row {
     width: 100%;
     display: flex;
-    flex-flow: wrap; 
+    flex-flow: row wrap;
     justify-content: space-between;
     align-items: center;
 }
@@ -373,7 +373,7 @@ ul {
     grid-gap: 1rem;
     margin:0 1rem;
     overflow: hidden;
-} 
+}
 
 .categories .container-categories .category {
     background: #272727;
@@ -407,7 +407,7 @@ ul {
 }
 
 .categories .container-categories .category:hover {
-    font-size: 2.5rem; 
+    font-size: 2.5rem;
 }
 .categories .container-categories .category img:hover {
     opacity: 0.8;
@@ -425,7 +425,7 @@ ul {
     align-items: center;
     color: #272727;
     font-size: 3rem;
-    text-align: center; 
+    text-align: center;
 }
 
 .progress .bg img{
@@ -433,7 +433,7 @@ ul {
     height: auto;
 }
 
- 
+
 .progress .bg .books p
  {
     padding-top: 4.7rem;
@@ -540,7 +540,7 @@ ul {
     height: 3.8rem;
     border-radius: 0.4rem;
     float: right;
-} 
+}
 
 .footer-container .container .footer-col-1 {
     background: url('../img/background-001-01-01.png') no-repeat ;
@@ -549,7 +549,7 @@ ul {
 }
 
 .footer-container .container .footer-col-1 {
-   padding-top: 6rem;   
+   padding-top: 6rem;
 }
 
 .footer-container .container .footer-col-1 .logo {
@@ -619,26 +619,26 @@ ul {
     animation-name: modalopen;
     animation-duration: 1s;
 }
-  
+
 .modal-header {
     background: #272727;
     color: #fff;
     padding: 1.5rem;
 }
-  
+
 .modal-content {
     padding: 20px;
 }
-  
+
 .modal-form div {
     margin: 15px 0;
 }
-  
+
 .modal-form label {
     display: block;
     margin-bottom: 5px;
 }
-  
+
 .modal-form .form-input[placeholder] {
     padding: 1rem;
     color: #A3A0A0;
@@ -759,7 +759,7 @@ to {
     position: absolute;
     transform: translate(-2rem, 1.2rem );
     color: #272727;
-} 
+}
 /* .dropdown:hover .dropdown-content {
     display: block;
 } */
@@ -814,7 +814,7 @@ to {
 }
 
 .book .rating .checked {
-    -webkit-text-fill-color: #272727; 
+    -webkit-text-fill-color: #272727;
 }
 
 .book .price {
@@ -903,7 +903,7 @@ to {
 #main-container .container-category-slid input[value] {
     display: inline-block;
     background: none;
-    width: 43%; 
+    width: 43%;
     border: 1px solid #272727;
     font-size: 1.6rem;
     color: #272727;
@@ -933,7 +933,7 @@ to {
     border-radius: 0;
     margin-top: 0.5rem;
     cursor: pointer;
-    margin-left: 0; 
+    margin-left: 0;
     margin-right: 0;
 }
 
@@ -954,7 +954,7 @@ to {
     -ms-user-select: none;
     user-select: none;
 }
-  
+
 /* Hide the browser's default checkbox */
 #main-container .container-category-slid form .container input {
 position: absolute;
@@ -1064,7 +1064,7 @@ transform: rotate(45deg);
     text-align: center;
     border-top: 1px solid #272727;
     border-bottom: 1px solid #272727;
-} 
+}
 
 .status-bar .status-bar-container .want-to-read {
     border-right: 1px solid #272727;
@@ -1083,7 +1083,7 @@ transform: rotate(45deg);
 
 .reading-list .container .container-status-book {
     display: flex;
-    
+
 }
 
 
@@ -1124,6 +1124,7 @@ transform: rotate(45deg);
     background: #272727;
     width: 6.5rem;
     height: 6.5rem;
+    object-fit: cover;
     border-radius: 50%;
     margin-top: 0.5rem;
 }
@@ -1133,6 +1134,325 @@ transform: rotate(45deg);
     padding: 1rem;
 }
 
+
+/* _________show book page_________ */
+
+.main-section .main-container {
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-gap: 2rem;
+
+}
+
+.main-container .side-col-1 {
+    width: 18.5rem;
+}
+
+.main-container .side-col-1 .book .form-module {
+    display: flex;
+    justify-content: space-between;
+    width: 18.5rem;
+}
+.main-container .side-col-1 .book-details {
+    margin :2rem 0;
+    padding: 2rem 2rem 0 1rem;
+    background: #fff;
+    border-radius: 0.4rem;
+}
+.main-container .side-col-1 .book-details ul li {
+    display: flex;
+    align-items: center;
+    color: #272727;
+    font-size: 1.7rem;
+    padding: 1.6rem 0;
+    /* margin: 0.5rem 0; */
+}
+.main-container .side-col-1 .book-details ul li img {
+    margin-right: 0.8rem;
+}
+
+.form-module {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-container .side-col-1 input,
+.main-container .side-col-1 select
+{
+    width: 18.5rem;
+    font-size: 1.7rem;
+}
+
+.main-container .side-col-2 .summary-container .title {
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+.main-container .side-col-2 .summary-container .row-info {
+    padding: 0.5rem 0 0 0.5rem;
+    color: #3f3f3f;
+    font-size: 1.4rem;
+}
+.main-container .side-col-2 .summary-container .categories {
+    /* border-top: 1px #E0E0E0 solid; */
+    border-bottom: 1px #E0E0E0 solid;
+    padding: 1.6rem 0;
+}
+.main-container .side-col-2 .summary-container .categories a {
+    color: #272727;
+    font-size: 1.4rem;
+    border: 1px #E0E0E0 solid;
+    padding: 0.4rem 1rem;
+    border-radius: 0.4rem;
+    margin: 1rem;
+}
+
+.categories a:hover {
+    background: #e0e0e0;
+}
+
+.main-container .side-col-2 .summary-container .reviews {
+    margin: 1rem 6rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.add-rating {
+    margin-top: 3rem;
+}
+
+.rating-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.4rem;
+}
+
+#rating {
+    padding-left: 1rem;
+}
+
+
+
+#text-rating {
+    font-size: 2rem;
+    padding: 1rem 0;
+    text-align: center;
+    height: 2.2rem;
+}
+
+#more {display: none;}
+
+.read-more {
+    margin: 1rem 0;
+    color: #3a3a3a;
+    font-size: 1.6rem;
+    cursor: pointer;
+    display: none;
+}
+
+.read-more:hover {
+    color: #272727;
+    text-decoration: underline;
+}
+
+.main-container .side-col-2 .summary-container .reviews .reviews-text {
+    font-size: 3rem;
+    margin: 1rem 0;
+}
+.main-container .side-col-2 .summary-container .reviews .review-container {
+    display: flex;
+}
+ .review-content {
+    width: 100%;
+
+ }
+
+.main-container .side-col-2 .summary-container .reviews .review-container .review-user img {
+    border-radius: 0.4rem;
+    object-fit: cover;
+
+}
+
+.main-container .side-col-2 .summary-container .reviews .review-container .review .container {
+    padding: 1rem;
+    margin: 0 1rem;
+    border:  1px #E0E0E0 solid;
+    border-radius: 0.4rem;
+
+}
+
+.main-container .side-col-2 .summary-container .reviews .review-container .review .container.username {
+    font-size: 2rem;
+}
+
+.review-container .review .container .user-info {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+#recommended-text {
+    font-size: 3rem;
+    text-align: center;
+}
+
+
+.dropbtn {
+    color: #272727;
+    background: #fff;
+    font-size: 1.5rem;
+    border: none;
+    cursor: pointer;
+    padding: 0 0.4rem;
+    z-index: 100;
+  }
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    z-index: 100;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    right: 28px;
+    top: -2px;
+    font-size: 1.4rem;
+    background-color: #f9f9f9;
+    min-width: 70px;
+    box-shadow: 0px 5px 15px 0px rgba(0,0,0,0.2);
+    z-index: 100;
+    padding: 0.5rem 0;
+    border-radius: 0.4rem;
+  }
+
+  .dropdown-content div {
+    color: black;
+    padding: 12px 16px;
+    text-align: center;
+    display: block;
+    padding: 0.7rem;
+  }
+  .dropdown-content div:hover {
+    background: #e0e0e0;
+  }
+
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .dropdown:hover .dropbtn {
+    background-color: #e0e0e0;
+  }
+
+.main-container .side-col-2 .summary-container .reviews .review-container .review .container .user-info .followers {
+    font-size: 1.4rem;
+    color: #3f3f3f;
+    margin-bottom: 0.6rem;
+
+}
+
+.container-all-review {
+    max-height: 80rem;
+    overflow-y: scroll;
+}
+.clear {
+    clear: both;
+}
+.review {
+   width: 100%;
+}
+.reviews .review-container .review .interaction-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0.5rem 2rem;
+    font-size: 1.2rem;
+    color: #3f3f3f;
+}
+
+
+.review .interaction-container .add-interaction,
+.review .interaction-container .interaction {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.review .interaction-container .add-interaction img {
+    border: 1px #E0E0E0 solid;
+    border-radius: 0.4rem;
+    object-fit: cover;
+    padding: 0.3rem;
+    margin: 0 0.5rem;
+    cursor: pointer;
+}
+
+.add-review .user-container {
+    margin: 1rem 4rem;
+    display: flex;
+    align-items: center;
+}
+
+.add-review .user-container img{
+    border-radius: 0.4rem;
+    object-fit: cover;
+    margin-right: 1rem;
+}
+
+
+
+.add-review textarea[placeholder="Write Review"] {
+    font-size: 1.6rem;
+    font-family: SF-Pro-Text;
+    padding: 1rem;
+    border: 1px #e0e0ee solid;
+    border-radius: 0.4rem;
+    width: 100%;
+    height: 8rem;
+    resize: none;
+}
+
+#add-review-btn {
+    margin: 4rem;
+    font-size: 1.6rem;
+    padding: 0.6rem 2rem;
+    margin-top: 0.5rem;
+    color: #fff;
+    background: #272727;
+    border-radius: 0.4rem;
+    border: none;
+    float: right;
+    cursor: pointer;
+}
+
+#add-review-btn:hover {
+    background: #636262;
+}
+
+
+
+
+.main-container .side-col-3 {
+    width: 29rem;
+}
+
+.main-container .side-col-3 .author-container {
+    padding: 1.5rem;
+    border: 1px #E0E0E0 solid;
+    background: #fff;
+    border-radius: 0.4rem;
+}
+
+.main-container .side-col-3 .author-container .author-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.main-container .side-col-3 .author-container .author-info .avatar-name
 .user-dropdown-menu .setting li{
     padding: 0.5rem 1rem;
 }
@@ -1151,11 +1471,140 @@ transform: rotate(45deg);
     align-items: center;
 }
 
+.main-container .side-col-3 .author-container .author-info .avatar {
+    border-radius: 0.4rem;
+    object-fit: cover;
+}
+
+.name-followers .followers {
+    color: #3f3f3f;
+    font-size: 1.4rem;
+}
+
+.name-followers {
+    padding-left: 1rem;
+}
+
+.main-container .side-col-3 .author-container .follow {
+    background: #272727;
+    color: #fff;
+    padding: 0.6rem 1.4rem;
+    border: none;
+    border-radius: 0.4rem;
+    cursor: pointer;
+}
+
+.main-container .side-col-3 .author-container .follow:hover {
+    background: #636262;
+}
+.main-container .side-col-3 .author-container .author-summary {
+    padding: 1rem;
+    font-size: 1.5rem;
+}
+
+.main-container .side-col-3 .more-from-author {
+    border: 1px #E0E0E0 solid;
+    background: #fff;
+    border-radius: 0.4rem;
+    margin-top: 1rem;
+}
+
+.main-container .side-col-3 .more-from-author .books-author {
+    max-height: 37rem;
+    overflow: scroll;
+}
+
+.main-container .side-col-3 .more-from-author .more-books{
+    font-size: 2rem;
+    padding: 2rem 0 2rem 1rem;
+}
+
+.main-container .side-col-3 .more-from-author .books-author li a {
+    padding: 0.2rem 2rem;
+}
+
+.main-container .side-col-3 .more-from-author .books-author li a {
+    color: #272727;
+    display: flex;
+    align-items: center;
+}
+
+/* .main-container .side-col-3 .more-from-author .books-author li a{
+    background: #E0E0E0;
+} */
+
+.main-container .side-col-3 .more-from-author .books-author li a img {
+    border-radius: 0.4rem;
+}
+
+.main-container .side-col-3 .more-from-author .books-author li {
+    padding: 0.3rem 0;
+}
+
+.main-container .side-col-3 .more-from-author .books-author li a .book-info {
+    color: #3f3f3f;
+    font-size: 1.4rem;
+    padding-left: 1rem;
+}
+
+.main-container .side-col-3 .more-from-author .books-author li a .book-info .book-name {
+    color: #272727;
+    font-size: 1.8rem;
+}
 
 
+
+
+
+
+.main-section {
+    background-color: #F7F7F7;
+}
+
+.main-container .side-col-3 {
+    margin: 2rem 6rem 0 0;
+}
+
+.main-container .side-col-2 {
+    margin: 2rem 0 4rem 0;
+    padding: 4rem 4rem 2rem 4rem ;
+    border-radius: 0.4rem;
+    border: 1px #e0e0ee solid;
+    background-color: #fff;
+}
+.main-container .side-col-1 {
+    margin: 2rem 0 0 6rem;
+}
+
+.add-rating .rating .fa-star {
+    -webkit-text-fill-color: white;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #272727;
+    position: sticky;
+}
+
+.add-rating .rating .checked {
+    -webkit-text-fill-color: #272727;
+}
+
+.recommended-books {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 4rem;
+    margin: 3rem 0;
+}
+
+
+<<<<<<< HEAD
 
 .owl-carousel{
     max-width: 90%; 
+=======
+.owl-carousel  {
+    max-width: 90%;
+>>>>>>> 07c49ab5ed7fb1bfed3b771d1097dbe099c6f43b
 }
 
 

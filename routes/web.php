@@ -18,6 +18,10 @@ Route::get('/books', 'BooksController@index')->name('site.books.index');
 Route::view('/logins', 'site.login')->name('site.login');
 Route::view('/registers', 'site.register')->name('site.register');
 
+Route::get('/books/{book}', 'BooksController@show')->name('site.show');
+
+Route::post('/reviews', 'ReviewsController@store')->name('site.reviews.store');
+
 Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
 
     Route::get('/', function(){
