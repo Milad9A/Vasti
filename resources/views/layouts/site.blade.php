@@ -159,10 +159,12 @@
     <script src="/js/jquery.min.js"></script>
   <script src="/js/owl.carousel.js"></script>
   <script>
-    $('.owl-carousel').owlCarousel({
+    
+    $('#popular').owlCarousel({
         dots:false,
         margin:0,
         end:true,
+        nav:false,
         responsive:{
             0:{
                 items:1
@@ -184,15 +186,17 @@
             }
         }
     });
-    var owl = $('.owl-carousel');
+
+    var owl = $('#popular');
     owl.owlCarousel();
-    $('.owl-next').click(function() {
+    $('#next-popular').click(function() {
         owl.trigger('next.owl.carousel');
     })
-    $('.owl-prev').click(function() {
+    $('#prev-popular').click(function() {
         owl.trigger('prev.owl.carousel');
-    })
-  </script>
+    });
+    </script>
+
     @yield('scripts')
     @livewireScripts
 </body>

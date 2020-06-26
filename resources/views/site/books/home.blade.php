@@ -54,32 +54,41 @@
     <section class="bestselling-books">
         <h1 class="primary-text">Bestselling Books</h1>
         <div class="bestselling-row">
-            @svg('icons/next-02', 'prve-bo')
-            <div class="owl-carousel owl-theme">
+        <div class="owl-nav">
+            @svg('icons/next-02', ['id' => 'prev-bestselling'])
+            </div>
+
+            <div class="owl-carousel owl-theme" id="bestselling">
             @foreach($best_sellers as $sbook)
 
                 @component('components.book', ['book' => $sbook])
                 @endcomponent
 
             @endforeach
-
-            @svg('icons/next-01', 'next-bo')
-        </div>
+            </div>
+            <div class="owl-nav">
+            @svg('icons/next-01', ['id' => 'next-bestselling'])
+            </div>
     </section>
 
     <section class="popular-books">
         <h1 class="primary-text">Most Popular Books</h1>
         <div class="popular-row">
-            @svg('icons/next-02', 'prve-bo')
+        <div class="owl-nav">
+            @svg('icons/next-02-p', ['id' => 'prev-popular'])
+            </div>
 
+            <div class="owl-carousel owl-theme" id="popular">
             @foreach($most_popular as $mbook)
 
                 @component('components.book', ['book' => $mbook])
                 @endcomponent
 
             @endforeach
-
-            @svg('icons/next-01', 'next-bo')
+            </div>
+            <div class="owl-nav">
+            @svg('icons/next-01-p', ['id' => 'next-popular'])
+            </div>
         </div>
     </section>
 

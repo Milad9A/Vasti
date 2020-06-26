@@ -1153,14 +1153,18 @@ transform: rotate(45deg);
 
 
 
-.owl-carousel  {
+
+.owl-carousel{
     max-width: 90%; 
 }
 
-.owl-prev {
+
+.prev-popular,
+.prev-bestselling {
     margin-left: 6rem;
 }
 
-.owl-next {
+.next-bestselling,
+.next-popular {
     margin-right: 6rem;
 }
