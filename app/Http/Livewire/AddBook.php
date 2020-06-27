@@ -14,7 +14,8 @@ class AddBook extends Component
     public function mount(Book $book)
     {
         $this->book = $book;
-        $this->status_id = auth()->user()->status->where('pivot.book_id', $this->book->id)->pluck('id')->first();
+        if (auth()->user())
+            $this->status_id = auth()->user()->status->where('pivot.book_id', $this->book->id)->pluck('id')->first();
     }
 
     public function addBook()

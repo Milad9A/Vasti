@@ -198,7 +198,6 @@
 
     </script>
 
-
     @yield('scripts')
     @livewireScripts
 

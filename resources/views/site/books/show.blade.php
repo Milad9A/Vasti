@@ -6,7 +6,7 @@
         <div class="main-container">
             <div class="side-col-1">
 
-                @component('components.book', ['book' => $book])
+                @component('components.book-show-page', ['book' => $book])
                 @endcomponent
 
             </div>
@@ -100,7 +100,7 @@
                         </div>
                     </div>
                     <div class="add-review">
-                        <form method="POST" action="/reviews">
+                        <form method="POST" action="{{ route('site.reviews.store', compact('book')) }}">
                             @csrf
 
                             <div class="user-container">
@@ -241,8 +241,7 @@
                             </div>
                         </div>
 
-                            @livewire('follow-author', ['author'=>$book->author])
-{{--                            <input type="submit" class="follow" id="follow" value="follow">--}}
+                        @livewire('follow-author', ['author'=>$book->author])
 
                     </div>
                     <div class="author-summary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis,
@@ -251,22 +250,26 @@
                         ipsam quasi nostrum vel maiores!
                     </div>
                 </div>
-                <div class="more-from-author">
-                    <p class="more-books">More From {{ $book->author->name }}</p>
-                    <ul class="books-author">
-                        @foreach ($book->author->books->except($book->id)->take(7) as $abook)
-                            <li><a href="">
-                                    <img src="{{ asset($abook->image) }}" alt="" width="50" height="80">
-                                    <div class="book-info">
-                                        <p class="book-name">{{ $abook->title }}</p>
-                                        <p class="category">{{ $abook->categories->pluck('name')->first() }}</p>
-                                        <p class="year">{{ substr($abook->published_at, 0, 4) }}</p>
-                                    </div>
-                                </a>
-                            </li>
-                        @endforeach
-                    </ul>
-                </div>
+
+
+                @if ($book->author->books->count() === 0)
+                    <div class="more-from-author">
+                        <p class="more-books">More From {{ $book->author->name }}</p>
+                        <ul class="books-author">
+                            @foreach($book->author->books->except($book->id)->take(7) as $abook)
+                                <li><a href="">
+                                        <img src="{{ asset($abook->image) }}" alt="" width="50" height="80">
+                                        <div class="book-info">
+                                            <p class="book-name">{{ $abook->title }}</p>
+                                            <p class="category">{{ $abook->categories->pluck('name')->first() }}</p>
+                                            <p class="year">{{ substr($abook->published_at, 0, 4) }}</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
             </div>
         </div>
     </main>
