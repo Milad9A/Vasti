@@ -1606,14 +1606,23 @@ transform: rotate(45deg);
 }
 
 
+<<<<<<< HEAD
+
+.owl-carousel{
+    max-width: 90%; 
+=======
 .owl-carousel  {
     max-width: 90%;
+>>>>>>> 07c49ab5ed7fb1bfed3b771d1097dbe099c6f43b
 }
 
-.owl-prev {
+
+.prev-popular,
+.prev-bestselling {
     margin-left: 6rem;
 }
 
-.owl-next {
+.next-bestselling,
+.next-popular {
     margin-right: 6rem;
 }

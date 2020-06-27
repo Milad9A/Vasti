@@ -166,6 +166,7 @@
         dots:false,
         margin:0,
         end:true,
+        nav:false,
         responsive:{
             0:{
                 items:1
@@ -187,14 +188,15 @@
             }
         }
     });
-    var owl = $('.owl-carousel');
+
+    var owl = $('#popular');
     owl.owlCarousel();
-    $('.owl-next').click(function() {
+    $('#next-popular').click(function() {
         owl.trigger('next.owl.carousel');
     })
-    $('.owl-prev').click(function() {
+    $('#prev-popular').click(function() {
         owl.trigger('prev.owl.carousel');
-    })
+    });
 
     </script>
 

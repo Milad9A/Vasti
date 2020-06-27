@@ -41,15 +41,14 @@
     height:90px;
 }
 
-.prve-bo {
+#prev-bestselling,
+#next-bestselling,
+#prev-popular, 
+#next-popular{
     width: 45px;
     height: 90px;
 }
 
-.next-bo {
-    width: 45px;
-    height: 90px;
-}
 
 #input-search {
     display: flex;

@@ -40,6 +40,46 @@ content.style.left = right+'px';
 // console.log(width);
 // logout.style.width=width+'px';
 
+<<<<<<< HEAD
+$(document).ready(function () {
+    $('#bestselling').owlCarousel({
+        dots:false,
+        margin:0,
+        end:true,
+        nav:false,
+        responsive:{
+            0:{
+                items:1
+            },
+            550:{
+                items:2
+            },
+            700:{
+                items:3
+            },
+            800:{
+                items:4
+            },
+            1150:{
+                items:5
+            },
+            1250:{
+                items:7
+            }
+        }
+    });
+
+    var owl = $('#bestselling');
+    owl.owlCarousel();
+    $('#next-bestselling').click(function() {
+        owl.trigger('next.owl.carousel');
+    })
+    $('#prev-bestselling').click(function() {
+        owl.trigger('prev.owl.carousel');
+    });
+
+});
+=======
 
 
 const followBtn = document.getElementById("follow");
@@ -247,3 +287,4 @@ function rateFn(e) {
 
 
 
+>>>>>>> 07c49ab5ed7fb1bfed3b771d1097dbe099c6f43b
