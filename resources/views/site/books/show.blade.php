@@ -237,7 +237,7 @@
                             <img src="/img/Categories/Children.jpg" alt="" class="avatar" width="60" height="60">
                             <div class="name-followers">
                                 <p class="author-name">{{ $book->author->name }}</p>
-                                <p class="followers">240 followers</p>
+                                <p class="followers">{{ $book->author->followedBy()->count() }} followers</p>
                             </div>
                         </div>
 
