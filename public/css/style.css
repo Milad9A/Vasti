@@ -1494,6 +1494,15 @@ transform: rotate(45deg);
     cursor: pointer;
 }
 
+.main-container .side-col-3 .author-container .Unfollow {
+    background: #fff;
+    color: #272727;
+    padding: 0.6rem 1.4rem;
+    border: 1px #272727 solid;
+    border-radius: 0.4rem;
+    cursor: pointer;
+}
+
 .main-container .side-col-3 .author-container .follow:hover {
     background: #636262;
 }

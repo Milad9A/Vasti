@@ -20,7 +20,7 @@ Route::view('/registers', 'site.register')->name('site.register');
 
 Route::get('/books/{book}', 'BooksController@show')->name('site.show');
 
-Route::post('/reviews', 'ReviewsController@store')->name('site.reviews.store');
+Route::post('books/{book}/reviews', 'ReviewsController@store')->name('site.reviews.store');
 
 Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
 
