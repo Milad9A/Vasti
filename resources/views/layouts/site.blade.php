@@ -64,37 +64,37 @@
 
     @Auth
 
-{{--    <div class="user-dropdown-menu">--}}
-{{--        <div class="container">--}}
-{{--            <ul>--}}
-{{--                <li><img src="{{ asset(Auth::user()->image) }}" alt=""></li>--}}
-{{--                <li>--}}
-{{--                    {{ Auth::user()->name }} <span class="caret"></span>--}}
-{{--                </li>--}}
-{{--                <li>--}}
-{{--                    {{ Auth::user()->email }} <span class="caret"></span>--}}
-{{--                </li>--}}
-{{--            </ul>--}}
-{{--        </div>--}}
-{{--        <hr>--}}
-{{--        <ul class="setting">--}}
-{{--            <li><a href=""><i class='fas fa-user-alt'></i>Edit Profile</a></li>--}}
-{{--            <li><a href=""><i class="material-icons">feedback</i>send feedback</a></li>--}}
-{{--            <li>--}}
-{{--                <div aria-labelledby="navbarDropdown">--}}
-{{--                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();--}}
-{{--                       document.getElementById('logout-form').submit();">--}}
-{{--                        <i class="fa fa-power-off"></i>--}}
-{{--                        {{ __('Logout') }}--}}
-{{--                    </a>--}}
+    <div class="user-dropdown-menu" id ="user-dropdown-menu">
+        <div class="container">
+            <ul>
+                <li><img src="{{ asset(Auth::user()->image) }}" alt=""></li>
+                <li>
+                    {{ Auth::user()->name }} <span class="caret"></span>
+                </li>
+                <li>
+                    {{ Auth::user()->email }} <span class="caret"></span>
+                </li>
+            </ul>
+        </div>
+        <hr>
+        <ul class="setting">
+            <li><a href=""><i class='fas fa-user-alt'></i>Edit Profile</a></li>
+            <li><a href=""><i class="material-icons">feedback</i>send feedback</a></li>
+            <li>
+                <div aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                       document.getElementById('logout-form').submit();">
+                        <i class="fa fa-power-off"></i>
+                        {{ __('Logout') }}
+                    </a>
 
-{{--                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">--}}
-{{--                        @csrf--}}
-{{--                    </form>--}}
-{{--                </div>--}}
-{{--            </li>--}}
-{{--        </ul>--}}
-{{--    </div>--}}
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+                </div>
+            </li>
+        </ul>
+    </div>
 
     @endauth
 
@@ -184,7 +184,7 @@
                 items:5
             },
             1250:{
-                items:7
+                items:6
             }
         }
     });
