@@ -66,4 +66,9 @@ class User extends Authenticatable
         return "/storage/" . $this->attributes['image'];
     }
 
+    public function likes()
+    {
+        return $this->hasMany(Like::class);
+    }
+
 }

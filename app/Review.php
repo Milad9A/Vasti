@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Review extends Model
 {
+    use Likable;
+
     protected $fillable = [
       'user_id',
       'book_id',

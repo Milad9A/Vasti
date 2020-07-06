@@ -62,16 +62,23 @@
                                             <div class="user-info">
                                                 <div class="col">
                                                     <p class="username">{{ $review->user->name }}</p>
-                                                    <p class="followers">250 followers</p>
+                                                    <p class="followers">{{ $review->user->followedBy()->count() }}
+                                                        followers</p>
                                                 </div>
+
                                                 <div class="dropdown">
-                                                    <button class="dropbtn"><img src="/icons/setting-01.png" alt=""
-                                                                                 width="19"></button>
+                                                    <button class="dropbtn" type="submit">
+                                                        <img
+                                                            src="{{url('/img/settings.png')}}"
+                                                            width="19"
+                                                        >
+                                                    </button>
                                                     <div class="dropdown-content">
                                                         <div class="edit">Edit</div>
                                                         <div class="delete">Delete</div>
                                                     </div>
                                                 </div>
+
                                             </div>
                                             <p class="review-content" id="review-content">
                                                 {{ $review->body }}
@@ -80,13 +87,35 @@
                                         </div>
                                         <div class="interaction-container">
                                             <div class="add-interaction" id="add-interaction">
-                                                <img src="/icons/like-g-01.png" alt="" width="30" height="auto"
-                                                     id="like"
-                                                     class="offline">
-                                                <span>1k</span>
-                                                <img src="/icons/dislike-g-01.png" alt="" width="30" height="auto"
-                                                     id="dislike" class="offline">
-                                                <span>1k</span>
+
+                                                <form action="/books/reviews/{{ $review->id }}/like" method="POST">
+                                                    @csrf
+                                                    <button type="submit">
+                                                        <img
+                                                            src="{{ $review->isLikedBy(auth()->user()) ? url('/img/like/active-like.png') : url('/img/like/unactive-like.png') }}"
+                                                            alt="" width="30"
+                                                            height="auto"
+                                                            id="like"
+                                                            class="offline">
+                                                    </button>
+                                                </form>
+
+                                                <span>{{ $review->likes()->count() }}</span>
+
+                                                <form action="/books/reviews/{{ $review->id }}/like" method="POST">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit">
+                                                        <img
+                                                            src="{{ $review->isDislikedBy(auth()->user()) ? url('/img/like/active-dislike.png') : url('/img/like/unactive-dislike.png') }}"
+                                                            alt="" width="30"
+                                                            height="auto"
+                                                            id="dislike"
+                                                            class="offline">
+                                                    </button>
+                                                </form>
+
+                                                <span>{{ $review->dislikes()->count() }}</span>
                                             </div>
                                             <div class="interaction">
                                                 <span
@@ -233,15 +262,8 @@
             <div class="side-col-3">
                 <div class="author-container">
                     <div class="author-info">
-                        <div class="avatar-name">
-                            <img src="/img/Categories/Children.jpg" alt="" class="avatar" width="60" height="60">
-                            <div class="name-followers">
-                                <p class="author-name">{{ $book->author->name }}</p>
-                                <p class="followers">{{ $book->author->followedBy()->count() }} followers</p>
-                            </div>
-                        </div>
 
-                        @livewire('follow-author', ['author'=>$book->author])
+                        @livewire('follow-author', ['author'=>$book->author, 'book' => $book])
 
                     </div>
                     <div class="author-summary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis,
@@ -252,7 +274,7 @@
                 </div>
 
 
-                @if ($book->author->books->count() === 0)
+                @if ($book->author->books->count() !== 0)
                     <div class="more-from-author">
                         <p class="more-books">More From {{ $book->author->name }}</p>
                         <ul class="books-author">

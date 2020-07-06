@@ -1,32 +1,23 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 Route::get('/', 'BooksController@home');
-
-Route::get('/books', 'BooksController@index')->name('site.books.index');
 
 Route::view('/logins', 'site.login')->name('site.login');
 Route::view('/registers', 'site.register')->name('site.register');
 
+Route::get('/books', 'BooksController@index')->name('site.books.index');
 Route::get('/books/{book}', 'BooksController@show')->name('site.show');
 
-Route::post('books/{book}/reviews', 'ReviewsController@store')->name('site.reviews.store');
+Route::group(['middleware' => 'auth'], function () {
+    Route::post('books/{book}/reviews', 'ReviewsController@store')->name('site.reviews.store');
+    Route::post('books/reviews/{review}/like', 'LikeReviewController@store');
+    Route::delete('books/reviews/{review}/like', 'LikeReviewController@destroy');
+});
+
 
 Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function () {
 
-    Route::get('/', function(){
-        return view('layouts.admin');
-    });
+    Route::view('/', 'layouts.admin');
 
     Route::get('/books', 'AdminBooksController@index')->name('admin.books.index');
     Route::post('/books', 'AdminBooksController@store')->name('admin.books.store');
