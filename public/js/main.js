@@ -28,6 +28,21 @@ const left = searchBtn.offsetLeft;
 const right = left-328;
 content.style.left = right+'px';
 
+const avatar = document.getElementById('avatar');
+const editProfileCard = document.getElementById('user-dropdown-menu')
+avatar.addEventListener('click', showEditProfile);
+function showEditProfile() {
+  if (editProfileCard.style.display === 'none'){
+    editProfileCard.style.display = 'block';
+    editProfileCard.style.opacity = '1';
+  }
+  else {
+    editProfileCard.style.display = 'none'
+    editProfileCard.style.opacity = '0';
+  }
+};
+
+
 
 // const username = document.getElementById('user');
 // const logout = document.getElementById('logout');
