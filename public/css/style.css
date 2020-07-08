@@ -1657,3 +1657,356 @@ to {
     display: flex;
     align-items: center;
 }
+
+/*    profile       */
+
+.profile {
+    width: 70%;
+    margin: 1rem auto;
+}
+
+.profile .head-container {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin: 5rem;
+}
+
+.profile .head-container img {
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 3rem;
+}
+
+.profile .head-container .rows {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 30vw;
+    margin: 2.3rem 0;
+    font-size: 1.6rem;
+}
+
+.profile .head-container .username {
+    font-size: 4rem;
+}
+
+.profile .head-container .row-1 input {
+    font-size: 1.6rem;
+    background: #272727;
+    color: #fff;
+    border: none;
+    border-radius: 0.4rem;
+    padding: 1rem;
+}
+
+.profile .head-container .row-2 {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.profile .head-container .row-2 .following {
+    padding: 0 4rem;
+}
+
+.profile .lists-section {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px #e0e0ee solid;
+}
+
+.profile .lists-section .primary-text {
+    font-size: 1.8rem;
+    color: #a3a3a3;
+    padding: 1rem 10rem;
+    cursor: pointer;
+}
+
+#reading {
+    color: #272727;
+    border-top: 3px solid #272727;
+}
+.profile .book-info {
+    display: grid;
+    grid-template-columns: 1fr 3fr 2fr 2fr 2fr auto;
+    grid-gap: 2rem;
+    align-items: center;
+    padding: 2rem;
+    margin-top: 2.5rem;
+    font-size: 1.6rem;
+}
+
+.profile .book-info:last-child {
+    justify-self: end;
+}
+
+.profile .book-info div {
+    max-width: 21rem;
+}
+
+.profile .book-info img {
+    border-radius: 0.4rem;
+}
+
+.profile .book-info .title {
+    justify-self: flex-start;
+}
+
+.edit-profile-section {
+    width: 60%;
+    margin: 1rem auto;
+    display: none;
+    grid-template-columns: 2fr 6fr;
+    border: 1px #e0e0e0 solid;
+    border-radius: 0.4rem;
+}
+
+.edit-profile-section .col-1 {
+    border-right: 1px #e0e0e0 solid;
+}
+
+.edit-profile-section .col-2 {
+    margin: 2rem auto;
+}
+
+.edit-profile-section .col-1 div {
+    padding: 2rem 3rem;
+    cursor: pointer;
+}
+
+.edit-profile-section .col-2 .profile-edit div,
+.edit-profile-section .col-2 .password-edit div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem 0;
+}
+
+.edit-profile-section .col-2 input {
+    width: 30vw;
+    font-size: 1.6rem;
+    border: 1px #e0e0e0 solid;
+    border-radius: 0.4rem;
+    padding: 0.4rem;
+    height: 4rem;
+}
+
+.edit-profile-section .col-2 label {
+    padding: 0.4rem 0;
+}
+
+.edit-profile {
+    border-left: 4px solid #272727;
+}
+
+.col-2 .info-profile {
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.info-profile img {
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 2rem;
+}
+
+.save-btn,
+.change-password-btn {
+    color: #fff;
+    background: #272727;
+    font-size: 1.6rem;
+    padding: 0.7rem 2rem;
+    margin: 2rem 0;
+    float: right;
+    border: none;
+    border-radius: 0.4rem;
+    cursor: pointer;
+}
+
+.show {
+    display: grid;
+}
+
+.hide {
+    display: none;
+}
+
+.password-edit {
+    display: none;
+}
+
+#bio {
+    resize: vertical;
+    height: 4rem;
+    max-height: 14rem;
+    min-height: 4rem;
+    font-size: 1.6rem;
+    border: 1px #e0e0e0 solid;
+    border-radius: 0.4rem;
+}
+
+.custom-file-input::-webkit-file-upload-button {
+    visibility: hidden;
+    padding-left: 2rem;
+    margin: 0.2rem 0;
+}
+.custom-file-input::before {
+    content: "Choose image";
+    display: inline-block;
+    background: linear-gradient(top, #f9f9f9, #e3e3e3);
+    border: 1px solid #e0e0e0;
+    border-radius: 0.4rem;
+    padding: 0.3rem 0.4rem;
+    outline: none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+.custom-file-input:hover::before {
+    border-color: #272727;
+}
+.custom-file-input:active::before {
+    background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
+
+.custom-file-input {
+    height: 4rem;
+}
+
+/* ______________ shopping cart page ________________ */
+
+.shopping-cart {
+    padding: 3rem 6rem;
+    background: #f8f8f8;
+}
+
+.shopping-cart-header {
+    font-size: 4rem;
+    padding-left: 2rem;
+    margin-bottom: 1rem;
+}
+
+.shopping-cart-container {
+    display: grid;
+    grid-template-columns: 5fr 2fr;
+    grid-gap: 2rem;
+}
+
+.shopping-cart-container div {
+    margin: 1.5rem 0;
+}
+.shopping-cart-container .col-1 {
+    max-height: 55rem;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.shopping-cart-container .col-1 .book-cart-info {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    border-radius: 0.4rem;
+    background: #272727;
+    color: #fff;
+    height: 6rem;
+    padding: 0 2rem;
+    margin: 0.2rem 0.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1.85fr 1fr 1.2fr;
+    justify-content: space-between;
+    align-items: center;
+    grid-gap: 2rem;
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.2);
+}
+
+.shopping-cart-container .col-1 .book-cart {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 1fr auto;
+    grid-gap: 2rem;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.8rem;
+    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 0.4rem;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    margin: 0.6rem 2rem;
+}
+
+.shopping-cart-container .col-1 .book-cart:hover {
+    transform: scale(1.01);
+    box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.2);
+}
+
+.book-cart img {
+    border-radius: 0.4rem;
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.2);
+}
+
+.book-cart .remove {
+    cursor: pointer;
+}
+
+.shopping-cart-container .col-2 {
+    margin: 4rem 0;
+}
+
+.shopping-cart-container .checkout-cart {
+    margin: 4rem 0;
+    border-radius: 0.4rem;
+    border: 1px solid #e0e0e0;
+    background: #fff;
+    font-size: 1.6rem;
+    padding: 2rem 1rem;
+}
+
+.shopping-cart-container .checkout-cart .total-price {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.8rem;
+    background: #272727;
+    color: #fff;
+    border-radius: 0.4rem;
+}
+
+.shopping-cart-container .checkout-cart .bank-checkout {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    padding: 1.8rem;
+}
+
+.checkout-cart .bank-checkout input {
+    font-size: 1.6rem;
+    border: 1px #e0e0e0 solid;
+    border-radius: 0.4rem;
+    padding: 1rem;
+    margin-top: 0.6rem;
+    height: 4rem;
+}
+
+.checkout-cart .bank-checkout label[for="password-account"] {
+    padding-top: 1.5rem;
+}
+
+.checkout-cart .choose-your-payment {
+    padding: 1.5rem 0 0 1.5rem;
+}
+
+.choose-your-payment input[type="radio"] {
+    margin-right: 0.6rem;
+}
+
+.checkout-btn {
+    border: 1px #e0e0e0 solid;
+    border-radius: 0.4rem;
+    background: #272727;
+    color: #fff;
+    padding: 1rem 3rem;
+    margin: 0 2rem;
+}

@@ -274,7 +274,7 @@
                 </div>
 
 
-                @if ($book->author->books->count() !== 0)
+                @if ($book->author->books->count() === 0)
                     <div class="more-from-author">
                         <p class="more-books">More From {{ $book->author->name }}</p>
                         <ul class="books-author">

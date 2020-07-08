@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 
 class Book extends Model
 {
@@ -15,6 +16,7 @@ class Book extends Model
         'isbn',
         'image',
         'rating',
+        'price',
     ];
 
     public function categories()
@@ -42,5 +44,14 @@ class Book extends Model
     public function getImageAttribute()
     {
         return $this->attributes['image'] ? "/storage/" . $this->attributes['image'] : 'https://ibf.org/site_assets/img/placeholder-book-cover-default.png' ;
+    }
+
+    public function carts()
+    {
+        return $this->belongsToMany(Cart::class);
+    }
+
+    public function cart(User $user){
+        return $this->belongsToMany(Cart::class)->where('user_id', $user->id)->where('checked_out', 0)->first();
     }
 }

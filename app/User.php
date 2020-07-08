@@ -63,12 +63,29 @@ class User extends Authenticatable
 
     public function getImageAttribute()
     {
-        return "/storage/" . $this->attributes['image'];
+        return $this->attributes['image'] ? "/storage/" . $this->attributes['image'] : 'https://66.media.tumblr.com/7d65a925636d6e3df94e2ebe30667c29/tumblr_nq1zg0MEn51qg6rkio1_1280.jpg';
     }
 
     public function likes()
     {
         return $this->hasMany(Like::class);
+    }
+
+    public function carts()
+    {
+        return $this->belongsToMany(Cart::class);
+    }
+
+    public function saveBookToCart(Book $book)
+    {
+        if ($this->cart())
+            $this->cart()->books()->save($book);
+        return null;
+    }
+
+    public function cart()
+    {
+        return $this->belongsToMany(Cart::class)->where('carts.user_id', $this->id)->where('checked_out', 0)->first();
     }
 
 }

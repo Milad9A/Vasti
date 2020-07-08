@@ -20,7 +20,7 @@ class AddBook extends Component
 
     public function addBook()
     {
-        auth()->user()->saveBook($this->book, ['status_id' => 4]);
+        auth()->user()->saveBook($this->book, ['status_id' => 1]);
         $this->clicked = true;
     }
 
@@ -31,9 +31,6 @@ class AddBook extends Component
             $this->status_id = auth()->user()->status->where('pivot.book_id', $this->book->id)->pluck('id')->first();
         }
 
-
-        return view('livewire.add-book', [
-            'book' => $this->book,
-        ]);
+        return view('livewire.add-book');
     }
 }

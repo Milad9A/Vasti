@@ -281,12 +281,7 @@
 <!-- jQuery -->
 <script src="{{asset('admin_assets/js/libs.js')}}"></script>
 
-
 @yield('scripts')
-<<<<<<< HEAD
-
-=======
->>>>>>> 07c49ab5ed7fb1bfed3b771d1097dbe099c6f43b
 
 </body>
 

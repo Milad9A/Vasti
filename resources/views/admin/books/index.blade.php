@@ -13,12 +13,11 @@
             <th>Author</th>
             <th>Summary</th>
             <th>Language</th>
+            <th>Price</th>
             <th>Categories</th>
             <th>Publishing House</th>
             <th>Rating</th>
             <th>ISBN</th>
-            {{--            <th></th>--}}
-            {{--            <th></th>--}}
             <th>Created</th>
             <th>Updated</th>
         </tr>
@@ -38,6 +37,7 @@
                     <td><a href="">{{$book->author->name}}</a></td>
                     <td>{{$book->summary}}</td>
                     <td>{{$book->language}}</td>
+                    <td>{{$book->price}} $</td>
                     <td>
                         @if ($book->categories)
                             @foreach($book->categories as $category)
@@ -48,8 +48,6 @@
                     <td><a href="">{{ $book->publishing_house->name }}</a></td>
                     <td>{{$book->rating}}</td>
                     <td>{{$book->isbn}}</td>
-                    {{--                    <td><a href="{{route('home.post', $post->id)}}">View Post</a></td>--}}
-                    {{--                    <td><a href="{{route('admin.comments.show', $post->id)}}">View Comments</a></td>--}}
                     <td>{{$book->created_at->diffForhumans()}}</td>
                     <td>{{$book->updated_at->diffForhumans()}}</td>
                 </tr>

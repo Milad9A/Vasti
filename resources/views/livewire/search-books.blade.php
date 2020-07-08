@@ -9,7 +9,7 @@
         <div class="container-content">
             <ul>
                 @foreach($books as $book)
-                <li><a href=""><img src="/img/cover-book-001.png" alt="" height="60px">
+                <li><a href="{{ route('site.show', $book->id) }}"><img src="{{ asset($book->image) }}" alt="" height="60px">
                         <p>{{ $book->title }}</p>
                     </a>
                 </li>

@@ -58,6 +58,7 @@ class AdminBooksController extends Controller
             'publishing_house_id' => 'required|exists:publishing_houses,id',
             'summary' => 'required',
             'isbn' => 'required|unique:books',
+            'price' => 'required|numeric|min:10|max:1000',
             'language' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'rating' => 'required|numeric|min:0|max:5',
@@ -119,8 +120,9 @@ class AdminBooksController extends Controller
             'publishing_house_id' => 'required|exists:publishing_houses,id',
             'summary' => 'required',
             'isbn' => "required|unique:books,isbn,{$id}",
+            'price' => 'required|numeric|min:10|max:1000',
             'language' => 'required',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'rating' => 'required|numeric|min:0|max:5',
             'categories' => 'exists:categories,id'
         ]));

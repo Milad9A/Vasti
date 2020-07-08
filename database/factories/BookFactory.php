@@ -12,6 +12,8 @@ $factory->define(Book::class, function (Faker $faker) {
         'title' => $faker->word(),
         'summary' => $faker->paragraph,
         'isbn' => $faker->isbn13,
+        'price' => $faker->numberBetween(10, 150),
+        'image' => "",
         'language' => $faker->country,
         'rating' => $faker->numberBetween(0, 5),
     ];

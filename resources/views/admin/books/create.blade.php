@@ -100,6 +100,23 @@
                 </div>
 
                 <div class="field">
+                    <label for="price">Price</label>
+
+                    <div class="control">
+                        <input
+                            class="input @error('price') is-danger @enderror"
+                            name="price"
+                            id="price"
+                            value="{{ old('price') }}"
+                        >
+
+                        @error('price')
+                        <p class="help is-danger">{{ $errors->first('price') }}</p>
+                        @enderror
+                    </div>
+                </div>
+
+                <div class="field">
                     <label for="image">Cover</label>
 
                     <div class="control">

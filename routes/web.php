@@ -7,6 +7,7 @@ Route::view('/registers', 'site.register')->name('site.register');
 
 Route::get('/books', 'BooksController@index')->name('site.books.index');
 Route::get('/books/{book}', 'BooksController@show')->name('site.show');
+Route::get('/cart/{user}', 'CartController@index')->name('site.cart.index');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::post('books/{book}/reviews', 'ReviewsController@store')->name('site.reviews.store');

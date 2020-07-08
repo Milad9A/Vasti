@@ -4,7 +4,7 @@
     </a>
     <h1 class="title">{{ $book->title }}</h1>
     <h1 class="author">by {{ $book->author->name }}</h1>
-    <h1 class="price">$12.2</h1>
+    <h1 class="price">{{ $book->price }}$</h1>
     <div class="rating">
         @for($i = 0; $i < $book->rating; $i++)
             <span class="fa fa-star checked"></span>
@@ -13,7 +13,8 @@
                 <span class="fa fa-star"></span>
                 @endfor
     </div>
-    <input type="submit" value="Buy" class="buy">
+
+    @livewire('add-to-cart', ['book' => $book])
 
     @livewire('add-book', ['book' => $book])
 
