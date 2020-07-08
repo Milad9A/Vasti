@@ -14,7 +14,11 @@ class AddToCart extends Component
     public function mount(Book $book)
     {
         $this->book = $book;
-        $this->value = auth()->user()->cart()->books->contains($this->book) ? "Added to Cart ✓" : "Add to Cart";
+        if (auth()->user() && auth()->user()->cart()) {
+            $this->value = auth()->user()->cart()->books->contains($this->book) ? "Added to Cart  ✓" : "Add to Cart";
+        } else {
+            $this->value = "Add to Cart";
+        }
     }
 
     public function addBookToCart()
@@ -30,7 +34,11 @@ class AddToCart extends Component
 
     public function render()
     {
-        $this->value = auth()->user()->cart()->books->contains($this->book) ? "Added to Cart ✓" : "Add to Cart";
+        if (auth()->user() && auth()->user()->cart()) {
+            $this->value = auth()->user()->cart()->books->contains($this->book) ? "Added to Cart  ✓" : "Add to Cart";
+        } else {
+            $this->value = "Add to Cart";
+        }
         return view('livewire.add-to-cart', [
             'book' => $this->book,
         ]);

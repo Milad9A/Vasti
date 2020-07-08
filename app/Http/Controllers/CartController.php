@@ -8,4 +8,10 @@ class CartController extends Controller
     {
         return view('site.cart.index');
     }
+
+    public function login()
+    {
+        $total = request()->total;
+        return view('site.cart.login', compact('total'));
+    }
 }

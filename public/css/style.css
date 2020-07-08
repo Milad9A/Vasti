@@ -347,9 +347,9 @@ ul {
     animation-fill-mode: forwards;
 }
 
-.col-1 {
-    display: none;
-}
+/*.col-1 {*/
+/*    display: none;*/
+/*}*/
 
 .next-bo,
 .prve-bo {

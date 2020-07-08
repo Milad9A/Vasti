@@ -7,12 +7,16 @@ Route::view('/registers', 'site.register')->name('site.register');
 
 Route::get('/books', 'BooksController@index')->name('site.books.index');
 Route::get('/books/{book}', 'BooksController@show')->name('site.show');
-Route::get('/cart/{user}', 'CartController@index')->name('site.cart.index');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::post('books/{book}/reviews', 'ReviewsController@store')->name('site.reviews.store');
     Route::post('books/reviews/{review}/like', 'LikeReviewController@store');
     Route::delete('books/reviews/{review}/like', 'LikeReviewController@destroy');
+
+    Route::get('/cart/{user}', 'CartController@index')->name('site.cart.index');
+    Route::get('/cart/banker/login', 'CartController@login')->name('site.cart.banker.login');
+    Route::post('/cart/banker/login', 'BankerController@login')->name('site.cart.banker.apilogin');
+    Route::post('/cart/banker/confirm', 'BankerController@purchase')->name('site.cart.banker.purchase');
 });
 
 

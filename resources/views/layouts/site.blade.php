@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
-        integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous" />
+          integrity="sha256-+N4/V/SbAFiW1MPBCXnfnP9QSN3+Keu+NlB+0ev/YKQ=" crossorigin="anonymous"/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="/css/search.css">
     <link rel="stylesheet" href="/css/owl.carousel.css">
@@ -20,51 +20,61 @@
 
 <body>
 
-    <nav id="main-nav">
-        <div class="container">
-            <a href="/">
-                <h1 class="logo">VASTI</h1>
-            </a>
-            <div class="nav-text">
-                <ul>
-                    <li><a href="{{  route('site.books.index') }}">Browse All Books</a></li>
-                    <li><a href="#">Reading list</a></li>
-                    <li><a href="#">News Feed</a></li>
-                </ul>
-            </div>
-            <div class="icon-register">
-                <ul>
+<nav id="main-nav">
+    <div class="container">
+        <a href="/">
+            <h1 class="logo">VASTI</h1>
+        </a>
+        <div class="nav-text">
+            <ul>
+                <li><a href="{{  route('site.books.index') }}">Browse All Books</a></li>
+                <li><a href="#">Reading list</a></li>
+                <li><a href="#">News Feed</a></li>
+            </ul>
+        </div>
+        <div class="icon-register">
+            <ul>
 
-                    @livewire('books-search-bar')
+                @livewire('books-search-bar')
 
-                    <li> @svg('icons/shopping-cart', 'cart-btn')</li>
+                <li>
+                    @auth()
+                        <a href="{{ route('site.cart.index', auth()->user()) }}">
+                            @svg('icons/shopping-cart', 'cart-btn')
+                        </a>
+                    @else
+                        <a href="{{ route('site.login') }}">
+                            @svg('icons/shopping-cart', 'cart-btn')
+                        </a>
+                    @endauth
+                </li>
 
-                    <!-- Authentication Links -->
-                    @guest
+                <!-- Authentication Links -->
+                @guest
                     <li class="register-login" id="login">
                         <a href="{{ route('site.login') }}">{{ __('Login') }}</a>
                     </li>
                     @if (Route::has('register'))
-                    <li class="register-login" id="register">
-                        <a href="{{ route('site.register') }}">{{ __('Register') }}</a>
-                    </li>
+                        <li class="register-login" id="register">
+                            <a href="{{ route('site.register') }}">{{ __('Register') }}</a>
+                        </li>
                     @endif
-                    @else
+                @else
                     <li>
                         <div class="img-avatar" id="avatar">
                             <img src="{{ asset(Auth::user()->image) }}" alt="" width="30" height="30">
                         </div>
                     </li>
-                    @endguest
-                </ul>
-            </div>
+                @endguest
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
 
 
-    @Auth
+@Auth
 
-    <div class="user-dropdown-menu" id ="user-dropdown-menu">
+    <div class="user-dropdown-menu" id="user-dropdown-menu">
         <div class="container">
             <ul>
                 <li><img src="{{ asset(Auth::user()->image) }}" alt=""></li>
@@ -96,112 +106,112 @@
         </ul>
     </div>
 
-    @endauth
+@endauth
 
-    <div class="content-search" id="content">
-        @livewire('search-books')
-    </div>
+<div class="content-search" id="content">
+    @livewire('search-books')
+</div>
 
-    @yield('content')
+@yield('content')
 
 
-    <footer class="footer-container">
-        <div class="container">
-            <div class="footer-col-1">
-                <a href="index.html" class="logo">VASTI</a>
-                <div class="nav">
-                    <h1>Navigation</h1>
-                    <ul>
-                        <li><a href="Browse_all_books.html">Browse All Books</a></li>
-                        <li><a href="News_feed.html">News feed</a></li>
-                        <li><a href="reading_list.html">Reading list</a></li>
-                    </ul>
+<footer class="footer-container">
+    <div class="container">
+        <div class="footer-col-1">
+            <a href="index.html" class="logo">VASTI</a>
+            <div class="nav">
+                <h1>Navigation</h1>
+                <ul>
+                    <li><a href="Browse_all_books.html">Browse All Books</a></li>
+                    <li><a href="News_feed.html">News feed</a></li>
+                    <li><a href="reading_list.html">Reading list</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-col-2">
+            <h1>Contact Us</h1>
+            <p>Please fill out the form below to contact us</p>
+            <form method="POST" action="/emails">
+                @csrf
+                <div>
+                    <input id="name-message" type="text" class="input" placeholder="Name" name="name"
+                           value="{{ old('name') }}" required>
+                    @error('name')
+                    <p class="help is-danger">{{ $message }}</p>
+                    @enderror
                 </div>
-            </div>
-            <div class="footer-col-2">
-                <h1>Contact Us</h1>
-                <p>Please fill out the form below to contact us</p>
-                <form method="POST" action="/emails">
-                    @csrf
-                    <div>
-                        <input id="name-message" type="text" class="input" placeholder="Name" name="name"
-                            value="{{ old('name') }}" required>
-                        @error('name')
-                        <p class="help is-danger">{{ $message }}</p>
-                        @enderror
-                    </div>
-                    <br>
-                    <div>
-                        <input id="email-message" type="email" class="input" placeholder="Email" name="email"
-                            value="{{ old('email') }}" required autocomplete="email">
-                        @error('email')
-                        <p class="help is-danger">{{ $message }}</p>
-                        @enderror
-                    </div>
-                    <br>
-                    <div>
+                <br>
+                <div>
+                    <input id="email-message" type="email" class="input" placeholder="Email" name="email"
+                           value="{{ old('email') }}" required autocomplete="email">
+                    @error('email')
+                    <p class="help is-danger">{{ $message }}</p>
+                    @enderror
+                </div>
+                <br>
+                <div>
                         <textarea id="text-message" type="text" class="input" placeholder="Message" name="message_body"
-                            value="{{ old('message_body') }}" required></textarea>
-                        @error('message_body')
-                        <p class="help is-danger">{{ $message }}</p>
-                        @enderror
-                    </div>
-                    <br>
-                    <button type="submit" class="btn">Submit</button>
-                </form>
-            </div>
+                                  value="{{ old('message_body') }}" required></textarea>
+                    @error('message_body')
+                    <p class="help is-danger">{{ $message }}</p>
+                    @enderror
+                </div>
+                <br>
+                <button type="submit" class="btn">Submit</button>
+            </form>
         </div>
-        <div class="Copyright">
-            <p>Copyright © 2020 VASTI.</p>
-        </div>
-    </footer>
+    </div>
+    <div class="Copyright">
+        <p>Copyright © 2020 VASTI.</p>
+    </div>
+</footer>
 
 
-    <script src="/js/main_index.js"></script>
-    <script src="/js/main.js"></script>
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/owl.carousel.js"></script>
-    <script>
-        $('.owl-carousel').owlCarousel({
-        dots:false,
-        margin:0,
-        end:true,
-        nav:false,
-        responsive:{
-            0:{
-                items:1
+<script src="/js/main_index.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/owl.carousel.js"></script>
+<script>
+    $('.owl-carousel').owlCarousel({
+        dots: false,
+        margin: 0,
+        end: true,
+        nav: false,
+        responsive: {
+            0: {
+                items: 1
             },
-            550:{
-                items:2
+            550: {
+                items: 2
             },
-            700:{
-                items:3
+            700: {
+                items: 3
             },
-            800:{
-                items:4
+            800: {
+                items: 4
             },
-            1150:{
-                items:5
+            1150: {
+                items: 5
             },
-            1250:{
-                items:6
+            1250: {
+                items: 6
             }
         }
     });
 
     var owl = $('#popular');
     owl.owlCarousel();
-    $('#next-popular').click(function() {
+    $('#next-popular').click(function () {
         owl.trigger('next.owl.carousel');
     })
-    $('#prev-popular').click(function() {
+    $('#prev-popular').click(function () {
         owl.trigger('prev.owl.carousel');
     });
 
-    </script>
+</script>
 
-    @yield('scripts')
-    @livewireScripts
+@yield('scripts')
+@livewireScripts
 
 </body>
 

@@ -9,7 +9,7 @@
         @endif
     @else
         <form action="{{  route('site.login') }}">
-            <input wire:click="addBookToCart" type="submit" value="{{ $value }}" class="buy">
+            <input type="submit" value="Add to Cart" class="buy">
         </form>
     @endauth
 </div>

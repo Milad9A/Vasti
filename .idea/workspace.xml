@@ -2,23 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="98ec25eb-a16d-455f-9950-181db38c7402" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vasti.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vasti.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Book.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Book.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminBooksController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminBooksController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/AddBook.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/AddBook.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/BookFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/BookFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_05_12_182421_create_books_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_05_12_182421_create_books_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CartController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/AddToCart.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/AddToCart.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/books/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/books/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/books/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/books/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/books/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/books/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/book-show-page.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/book-show-page.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/book.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/book.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/search-books.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/search-books.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/books/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/books/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/site.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/site.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/add-to-cart.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/add-to-cart.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/site/cart/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/cart/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -150,6 +144,13 @@
       <path value="$PROJECT_DIR$/vendor/laravel/ui" />
       <path value="$PROJECT_DIR$/vendor/nothingworks/blade-svg" />
       <path value="$PROJECT_DIR$/vendor/livewire/livewire" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php80" />
     </include_path>
   </component>
   <component name="ProjectId" id="1boJvK5yyxBvYnIYCTuN5d3HQFQ" />
@@ -245,7 +246,8 @@
       <workItem from="1593626985932" duration="81000" />
       <workItem from="1594026876392" duration="14821000" />
       <workItem from="1594066904346" duration="10000" />
-      <workItem from="1594139792286" duration="20422000" />
+      <workItem from="1594139792286" duration="20777000" />
+      <workItem from="1594210330451" duration="14556000" />
     </task>
     <servers />
   </component>
@@ -336,10 +338,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1594168696364" />
-    <state x="390" y="50" width="672" height="678" key="search.everywhere.popup" timestamp="1594166308740">
+    <state x="390" y="50" width="672" height="678" key="search.everywhere.popup" timestamp="1594240350930">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="390" y="50" width="672" height="678" key="search.everywhere.popup/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1590159966339" />
-    <state x="390" y="50" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1594166308740" />
+    <state x="390" y="50" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1594240350930" />
   </component>
 </project>
