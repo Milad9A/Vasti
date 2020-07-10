@@ -56,7 +56,7 @@
 <main id="main-container">
     <div class="container-category-slid">
         <div class="container-category-slid-row-1">
-            <h1 id="primary">categories</h1>
+            <p id="primary">Categories</p>
             <form action="/books" method="GET" id="search-form">
                 @foreach ($categories as $category)
                 <div>
@@ -67,10 +67,10 @@
                     </label>
                 </div>
                 @endforeach
-                <h1>Price range</h1>
+                <p>Price range</p>
                 <div class="col-1">
-                    <input type="number" value="10" min="10" max="100">
-                    <input type="number" value="12" min="10" max="100">
+                    <input type="number" value="10" min="10" max="200">
+                    <input type="number" value="12" min="10" max="200">
                 </div>
                 <input type="submit" value="Apply">
             </form>
