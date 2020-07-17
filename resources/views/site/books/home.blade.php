@@ -54,40 +54,40 @@
     <section class="bestselling-books">
         <h1 class="primary-text">Bestselling Books</h1>
         <div class="bestselling-row">
-        <div class="owl-nav">
-            @svg('icons/next-02', ['id' => 'prev-bestselling'])
+            <div class="owl-nav">
+                @svg('icons/next-02', ['id' => 'prev-bestselling'])
             </div>
 
             <div class="owl-carousel owl-theme" id="bestselling">
-            @foreach($best_sellers as $sbook)
+                @foreach($best_sellers as $sbook)
 
-                @component('components.book', ['book' => $sbook])
-                @endcomponent
+                    @component('components.book', ['book' => $sbook])
+                    @endcomponent
 
-            @endforeach
+                @endforeach
             </div>
             <div class="owl-nav">
-            @svg('icons/next-01', ['id' => 'next-bestselling'])
+                @svg('icons/next-01', ['id' => 'next-bestselling'])
             </div>
     </section>
 
     <section class="popular-books">
         <h1 class="primary-text">Most Popular Books</h1>
         <div class="popular-row">
-        <div class="owl-nav">
-            @svg('icons/next-02-p', ['id' => 'prev-popular'])
+            <div class="owl-nav">
+                @svg('icons/next-02-p', ['id' => 'prev-popular'])
             </div>
 
             <div class="owl-carousel owl-theme" id="popular">
-            @foreach($most_popular as $mbook)
+                @foreach($most_popular as $mbook)
 
-                @component('components.book', ['book' => $mbook])
-                @endcomponent
+                    @component('components.book', ['book' => $mbook])
+                    @endcomponent
 
-            @endforeach
+                @endforeach
             </div>
             <div class="owl-nav">
-            @svg('icons/next-01-p', ['id' => 'next-popular'])
+                @svg('icons/next-01-p', ['id' => 'next-popular'])
             </div>
         </div>
     </section>
@@ -95,92 +95,15 @@
     <section class="categories">
         <h1 class="primary-text">Browse by Category</h1>
         <div class="container-categories">
-            <a href="" class="category">
-                <img src="/img/Categories/Cooking.jpg" alt="">
-                <h1>Cooking</h1>
-            </a>
 
-            <a href="" class="category">
-                <img src="/img/Categories/Children.jpg" alt="">
-                <h1>Children</h1>
-            </a>
-
-            <a href="" class="category">
-                <img src="/img/Categories/Health.jpg" alt="">
-                <h1>Health</h1>
-            </a>
-
-            <a href="" class="category">
-                <img src="/img/Categories/Religion.jpg" alt="">
-                <h1>Religion</h1>
-            </a>
-
-            <a href="" class="category">
-                <img src="/img/Categories/Biographies.jpg" alt="">
-                <h1>Biographies</h1>
-            </a>
-
-            <a href="" class="category">
-                <img src="/img/Categories/History.jpg" alt="">
-                <h1>History</h1>
-            </a>
-
-            <a href="" class="category">
-                <img src="/img/Categories/Technology.jpg" alt="">
-                <h1>Technology</h1>
-            </a>
-
-            <a href="" class="category">
-                <img src="/img/Categories/Economics.jpg" alt="">
-                <h1>Economics</h1>
-            </a>
-
-            <a href="" class="category">
-                <img src="/img/Categories/Medicine.jpg" alt="">
-                <h1>Medicine</h1>
-            </a>
-
-            <a href="" class="category">
-                <img src="/img/Categories/Fantasy.jpg" alt="">
-                <h1>Fantasy</h1>
-            </a>
-
-            <a href="" class="category">
-                <img src="/img/Categories/Music.jpg" alt="">
-                <h1>Music</h1>
-            </a>
-
-            <a href="" class="category">
-                <img src="/img/Categories/Art.jpg" alt="">
-                <h1>Art</h1>
-            </a>
-
+                @foreach(\App\Category::all()->take(12) as $category)
+                        <a href="{{ route('site.books.index', ['categories[]' => $category->id]) }}" class="category">
+                            <img src="{{ asset($category->image) }}" alt="">
+                            <h1>{{ $category->name }}</h1>
+                        </a>
+                @endforeach
         </div>
     </section>
-
-    <!-- <section class="progress">
-    <div class="bg">
-        <div class="users">
-        <img src="/icons/men.svg" alt="">
-        <p>500+
-        <br> users</p>
-        </div>
-        <div class="line"></div>
-        <div class="books">
-        <img src="/icons/books-icon.svg" alt="">
-        <p>500+
-            <br>Books
-        </p>
-        </div>
-        <div class="line"></div>
-        <div class="authors">
-        <img src="/icons/author-sign.svg" alt="">
-        <p>500+
-            <br>Authors
-        </p>
-    </div>
-    </div>
-    </section> -->
 
     <section class="read-without-limits" id="read">
         <div class="container">

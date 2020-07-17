@@ -14,6 +14,6 @@ class Category extends Model
 
     public function getImageAttribute()
     {
-        return "/storage/" . $this->attributes['image'];
+        return $this->attributes['image'];
     }
 }

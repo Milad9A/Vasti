@@ -1,12 +1,3 @@
-const editProfileBtn = document.getElementById("edit-profile-btn");
-const editProfileSection = document.getElementById("edit-profile-section");
-const profile = document.getElementById("profile");
-editProfileBtn.addEventListener("click", showEditProfile);
-function showEditProfile() {
-    editProfileSection.classList.add("show");
-    profile.classList.add("hide");
-}
-
 const profileSetting = document.getElementById("edit-profile-section");
 profileSetting.addEventListener("click", editProfile);
 function editProfile(e) {

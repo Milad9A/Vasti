@@ -88,7 +88,7 @@
         </div>
         <hr>
         <ul class="setting">
-            <li><a href=""><i class='fas fa-user-alt'></i>Edit Profile</a></li>
+            <li><a href="{{ route('site.user.profile') }}"><i class='fas fa-user-alt'></i>Profile</a></li>
             <li><a href=""><i class="material-icons">feedback</i>send feedback</a></li>
             <li>
                 <div aria-labelledby="navbarDropdown">

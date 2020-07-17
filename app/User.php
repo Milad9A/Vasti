@@ -36,6 +36,20 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function initBooks($num)
+    {
+        factory(Book::class, $num)->create();
+
+        $categories = Category::all();
+
+        Book::All()->each(function ($book) use ($categories) {
+            $book->categories()->saveMany($categories);
+        });
+
+        return 1;
+
+    }
+
     public function books()
     {
         return $this->belongsToMany(Book::class);
