@@ -8,6 +8,10 @@ Route::view('/registers', 'site.register')->name('site.register');
 Route::get('/books', 'BooksController@index')->name('site.books.index');
 Route::get('/books/{book}', 'BooksController@show')->name('site.show');
 
+Route::get('/users', function (){
+    return view('site.user.index');
+});
+
 Route::group(['middleware' => 'auth'], function () {
     Route::post('books/{book}/reviews', 'ReviewsController@store')->name('site.reviews.store');
     Route::post('books/reviews/{review}/like', 'LikeReviewController@store');

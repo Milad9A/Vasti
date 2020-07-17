@@ -14,9 +14,11 @@
         "laravel/framework": "^6.2",
         "laravel/tinker": "^2.0",
         "livewire/livewire": "^1.1",
-        "nothingworks/blade-svg": "^0.3.4"
+        "nothingworks/blade-svg": "^0.3.4",
+        "spatie/laravel-backup": "^6.11"
     },
     "require-dev": {
+        "beyondcode/laravel-er-diagram-generator": "^1.4",
         "facade/ignition": "^1.4",
         "fzaninotto/faker": "^1.9.1",
         "laravel/ui": "1.*",

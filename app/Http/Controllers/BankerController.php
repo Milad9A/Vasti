@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Arr;
+
 class BankerController extends Controller
 {
     public function login()
@@ -22,9 +24,13 @@ class BankerController extends Controller
             ]
         ]);
 
-        $token = json_decode($response->getBody())->access_token;
+        if (Arr::has(json_decode($response->getBody(), true), 'access_token')) {
+            $token = json_decode($response->getBody())->access_token;
+            return view('site.cart.confirm', compact('token', 'total'));
+        }
 
-        return view('site.cart.confirm', compact('token', 'total'));
+        return redirect()->back();
+
     }
 
     public function purchase()
@@ -35,15 +41,18 @@ class BankerController extends Controller
             'Authorization' => 'Bearer ' . request()->token,
             'Accept' => 'application/json',
         ];
-        $client->request('POST', 'http://banker.test:10080/api/payments/make', [
+        $response = $client->request('POST', 'http://banker.test:10080/api/payments/make', [
             'headers' => $headers,
             'form_params' => [
                 'account_id' => 1,
                 'payment_amount' => $total,
             ],
         ]);
-        auth()->user()->cart()->update(['checked_out' => 1]);
-        return redirect('/');
+        return redirect('/')->withSuccess('Success message');
+        $message = json_decode($response->getBody())->message;
+        if ($message == 'Your Payment has been received.')
+            auth()->user()->cart()->update(['checked_out' => 1]);
+        return redirect('/')->withErrors([$message]);
     }
 
 }

@@ -45,18 +45,22 @@ class BooksController extends Controller
                     $books = Book::join('authors', 'books.author_id', '=', 'authors.id')
                             ->orderBy('authors.name', 'desc');
                     break;
-                // case 'price_a':
-                //     $books = Book::orderBy('price', 'asc')->get();
-                //     break;
-                // case 'price_d':
-                //     $books = Book::orderBy('price', 'desc')->get();
-                //     break;
+                 case 'price_a':
+                     $books = Book::orderBy('price', 'asc');
+                     break;
+                 case 'price_d':
+                     $books = Book::orderBy('price', 'desc');
+                     break;
             }
         }
         if ($request->has('categories')) {
             $categories_ids = request('categories');
             $cids = DB::table('book_category')->whereIn('category_id', $categories_ids)->pluck('book_id');
             $books->whereIn('id', $cids);
+        }
+
+        if ($request->has('price_min') && $request->has('price_max')){
+            $books->whereBetween('price', [request('price_min'), request('price_max')]);
         }
 
         $books = $books->get();
