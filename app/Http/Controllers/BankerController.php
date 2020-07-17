@@ -29,7 +29,7 @@ class BankerController extends Controller
             return view('site.cart.confirm', compact('token', 'total'));
         }
 
-        return redirect()->back();
+        return redirect()->back()->withErrors(json_decode($response->getBody())->message);
 
     }
 
@@ -48,11 +48,14 @@ class BankerController extends Controller
                 'payment_amount' => $total,
             ],
         ]);
-        return redirect('/')->withSuccess('Success message');
+
         $message = json_decode($response->getBody())->message;
-        if ($message == 'Your Payment has been received.')
+        if ($message == 'Your Payment has been received.') {
             auth()->user()->cart()->update(['checked_out' => 1]);
-        return redirect('/')->withErrors([$message]);
+            return redirect('/');
+        }
+
+        return redirect()->back()->withErrors($message);
     }
 
 }

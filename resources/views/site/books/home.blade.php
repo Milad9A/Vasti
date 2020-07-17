@@ -19,7 +19,10 @@
         <div class="igm-best-container" id="book-summary">
             <div class="square"></div>
             @foreach($featured as $book)
-                <img class="mySlides" src="{{ asset($book->image) }}" alt="" height="420px" width="auto">  {{--260px--}}
+                <a href="{{ route('site.show', ['book' => $book]) }}">
+                    <img class="mySlides" src="{{ asset($book->image) }}" alt="" height="420px"
+                         width="auto">
+                </a>
             @endforeach
         </div>
         <div class="text-section">
@@ -96,12 +99,12 @@
         <h1 class="primary-text">Browse by Category</h1>
         <div class="container-categories">
 
-                @foreach(\App\Category::all()->take(12) as $category)
-                        <a href="{{ route('site.books.index', ['categories[]' => $category->id]) }}" class="category">
-                            <img src="{{ asset($category->image) }}" alt="">
-                            <h1>{{ $category->name }}</h1>
-                        </a>
-                @endforeach
+            @foreach(\App\Category::all()->take(12) as $category)
+                <a href="{{ route('site.books.index', ['categories[]' => $category->id]) }}" class="category">
+                    <img src="{{ asset($category->image) }}" alt="">
+                    <h1>{{ $category->name }}</h1>
+                </a>
+            @endforeach
         </div>
     </section>
 

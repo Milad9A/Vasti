@@ -33,9 +33,9 @@
 
                         @else
                             <div class="book-cart">
-                                <h3>
+                                <p style="font-size: 18px">
                                     You have no books in your cart!
-                                </h3>
+                                </p>
                             </div>
                         @endif
                     </div>

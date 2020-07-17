@@ -28,7 +28,7 @@
         <div class="nav-text">
             <ul>
                 <li><a href="{{  route('site.books.index') }}">Browse All Books</a></li>
-                <li><a href="#">Reading list</a></li>
+                <li><a href="{{ route('site.user.reading_list') }}">Reading list</a></li>
                 <li><a href="#">News Feed</a></li>
             </ul>
         </div>

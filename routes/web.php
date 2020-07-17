@@ -19,7 +19,11 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/cart/banker/confirm', 'BankerController@purchase')->name('site.cart.banker.purchase');
 
     Route::get('/user/profile', 'UsersController@profile')->name('site.user.profile');
+    Route::put('/user/profile', 'UsersController@update')->name('site.user.profile.update');
+    Route::put('/user/profile/password', 'UsersController@updatePassword')->name('site.user.profile.update.password');
     Route::get('/user/profile/edit', 'UsersController@edit')->name('site.user.profile.edit');
+
+    Route::get('user/reading_list', 'ReadingListController@index')->name('site.user.reading_list');
 });
 
 

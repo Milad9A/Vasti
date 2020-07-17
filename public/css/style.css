@@ -2146,3 +2146,21 @@ to {
     padding: 1rem 3rem;
     margin: 0 2rem;
 }
+
+
+.shopping-cart-main-login ,
+.shopping-cart-main-confirm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.shopping-cart-main-login  .shopping-cart-container,
+.shopping-cart-main-confirm .shopping-cart-container {
+    display: flex;
+}
+.shopping-cart-main-login .col-2 ,
+.shopping-cart-main-confirm .col-2{
+    width: 40vw;
+}
+

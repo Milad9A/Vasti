@@ -77,9 +77,9 @@ class BooksController extends Controller
 
         $featured = Book::latest()->take(4)->get();
 
-        $best_sellers = Book::orderBy('rating', 'desc')->take(6)->get();
+        $best_sellers = Book::orderBy('rating', 'desc')->take(12)->get();
 
-        $most_popular = Book::take(6)->get();
+        $most_popular = Book::take(12)->get();
 
         return view('site.books.home', compact('best_sellers', 'most_popular', 'featured'));
     }
@@ -114,7 +114,8 @@ class BooksController extends Controller
     public function show($id)
     {
         $book = Book::findOrFail($id);
-        return view('site.books.show', compact('book'));
+        $recommendedBooks = Book::all()->except($book->id)->take(4);
+        return view('site.books.show', compact('book', 'recommendedBooks'));
     }
 
     /**

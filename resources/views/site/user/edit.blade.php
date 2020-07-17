@@ -11,46 +11,66 @@
         </div>
         <div class="col-2">
             <div class="info-profile">
-                <img src="/img/cover-03-01.png" alt="" width="40" height="40"/>
-                <div class="name">Milad A</div>
+                <img src="{{ asset($user->image) }}" alt="" width="50" height="50"/>
+                <div class="name">{{ $user->name }}</div>
+            </div>
+            <div>
+                @if($errors->any())
+                    {!! implode('', $errors->all('<div style="color: darkred">:message</div>')) !!}
+                @endif
             </div>
             <div class="profile-edit" id="profile-option">
-                <div class="container">
-                    <div class="edit-img">
-                        <label for="">Change Profile Photo</label>
-                        <input type="file" class="custom-file-input"/>
+                <form action="{{ route('site.user.profile.update') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    @method('PUT')
+
+                    <div class="container">
+                        <div class="edit-img">
+                            <label for="image">Change Profile Photo</label>
+                            <input type="file" class="custom-file-input" name="image"/>
+                        </div>
+                        <div class="edit-username">
+                            <label for="name">Username</label>
+                            <input type="text" name="name" id="username" value="{{ $user->name }}"/>
+                        </div>
+                        <div class="edit-bio">
+                            <label for="bio">Bio</label>
+                            <textarea name="bio" id="bio">{{ $user->bio }}</textarea>
+                        </div>
                     </div>
-                    <div class="edit-username">
-                        <label for="username">Username</label>
-                        <input type="text" name="username" id="username"/>
-                    </div>
-                    <div class="edit-bio">
-                        <label for="bio">Bio</label>
-                        <textarea name="bio" id="bio"></textarea>
-                    </div>
-                </div>
-                <button class="save-btn">Save</button>
+                    <button type="submit" class="save-btn">Save</button>
+                </form>
             </div>
             <div class="password-edit" id="password-option">
-                <div class="container">
-                    <div class="old-password">
-                        <label for="old-password">Old password</label>
-                        <input type="password" name="old-password" id="old-password"/>
+                <form action="{{ route('site.user.profile.update.password') }}" method="POST">
+                    @csrf
+                    @method('PUT')
+
+                    <div class="container">
+                        <div class="old-password">
+                            <label for="oldPassword">Old password</label>
+                            <input type="password" name="oldPassword" id="old-password"/>
+                        </div>
+                        <div class="new-password">
+                            <label for="password">New password</label>
+                            <input type="password" name="password" id="new-password"/>
+                        </div>
+                        <div class="confirm-password">
+                            <label for="password_confirmation">Confirm password</label>
+                            <input type="password" name="password_confirmation" id="confirm-password"/>
+                        </div>
                     </div>
-                    <div class="new-password">
-                        <label for="new-password">New password</label>
-                        <input type="password" name="new-password" id="new-password"/>
+                    <button type="submit" class="change-password-btn">Change Password</button>
+                </form>
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
                     </div>
-                    <div class="confirm-password">
-                        <label for="confirm-password">Confirm password</label>
-                        <input
-                            type="password"
-                            name="confirm-password"
-                            id="confirm-password"
-                        />
-                    </div>
-                </div>
-                <button class="change-password-btn">Change Password</button>
+                @endif
             </div>
         </div>
     </div>

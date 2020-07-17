@@ -14,23 +14,31 @@
                 <div class="info-container">
                     <div class="rows row-1">
                         <div class="username">{{ $user->name }}</div>
-                        <a href="{{ route('site.user.profile.edit') }}">
-                            <input
-                                type="submit"
-                                value="Edit Profile"
-                                id="edit-profile-btn"
-                                class="btn"
-                            />
-                        </a>
-                        <input type="submit" value="Follow" id="follow" class="btn"/>
+
+                        @if(auth()->user()->is($user))
+
+                            <a href="{{ route('site.user.profile.edit') }}">
+                                <input
+                                    type="submit"
+                                    value="Edit Profile"
+                                    id="edit-profile-btn"
+                                    class="btn"
+                                />
+                            </a>
+                        @else
+                            <input type="submit" value="Follow" id="follow" class="btn"/>
+                        @endif
                     </div>
                     <div class="rows row-2">
                         <div class="followers">{{ $user->followedBy()->count() }} Followers</div>
-                        <div class="following">{{ $user->followsUsers()->count() + $user->followsAuthors()->count() + $user->followsCategories()->count() }} Following</div>
+                        <div
+                            class="following">{{ $user->followsUsers()->count() + $user->followsAuthors()->count() + $user->followsCategories()->count() }}
+                            Following
+                        </div>
                     </div>
                     <div class="rows row-3">
                         <div class="bio">
-                            There's no humor in heaven.
+                            {{ $user->bio }}
                         </div>
                     </div>
                 </div>
