@@ -17,6 +17,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/cart/banker/login', 'CartController@login')->name('site.cart.banker.login');
     Route::post('/cart/banker/login', 'BankerController@login')->name('site.cart.banker.apilogin');
     Route::post('/cart/banker/confirm', 'BankerController@purchase')->name('site.cart.banker.purchase');
+    Route::delete('cart/{user}/delete', 'CartController@destroy')->name('site.cart.destroy');
 
     Route::get('/user/profile', 'UsersController@profile')->name('site.user.profile');
     Route::put('/user/profile', 'UsersController@update')->name('site.user.profile.update');

@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\App;
 
 class BankerController extends Controller
 {
     public function login()
     {
         $total = request()->total;
+        $books = request()->books;
 
         $attributes = request()->validate([
             'email' => 'required|email',
@@ -26,7 +28,7 @@ class BankerController extends Controller
 
         if (Arr::has(json_decode($response->getBody(), true), 'access_token')) {
             $token = json_decode($response->getBody())->access_token;
-            return view('site.cart.confirm', compact('token', 'total'));
+            return view('site.cart.confirm', compact('token', 'total', 'books'));
         }
 
         return redirect()->back()->withErrors(json_decode($response->getBody())->message);
@@ -51,8 +53,17 @@ class BankerController extends Controller
 
         $message = json_decode($response->getBody())->message;
         if ($message == 'Your Payment has been received.') {
+
+            $books = auth()->user()->cart()->books;
+            $pdf = App::make('dompdf.wrapper');
+            $pdf->loadView('site.cart.invoice', compact('books'));
+
+            $pdf = $pdf->stream();
+
             auth()->user()->cart()->update(['checked_out' => 1]);
-            return redirect('/');
+
+            return $pdf;
+
         }
 
         return redirect()->back()->withErrors($message);

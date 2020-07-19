@@ -27,7 +27,20 @@
                                     <div class="title">{{ $book->title }}</div>
                                     <div class="author">{{ $book->author->name }}</div>
                                     <div class="price">{{ $book->price }}$</div>
-                                    <div class="remove"><i class="fa fa-remove"></i></div>
+
+
+                                    <form action="{{ route('site.cart.destroy', ['user' => auth()->user()]) }}"
+                                          method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <input type="hidden" name="book_id" value="{{ $book->id }}">
+                                        <div class="remove">
+                                            <button type="submit"
+                                                    style="border-color: white; background-color: #ffffff;"><i
+                                                    class="fa fa-remove"></i></button>
+                                        </div>
+                                    </form>
+
                                 </div>
                             @endforeach
 
