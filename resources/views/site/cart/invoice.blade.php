@@ -107,11 +107,12 @@
                 <table>
                     <tr>
                         <td class="title">
-                            <img src="https://www.sparksuite.com/images/logo.png" style="width:100%; max-width:300px;">
+                            VASTI
+                            {{--                            <img src="https://www.sparksuite.com/images/logo.png" style="width:100%; max-width:300px;">--}}
                         </td>
 
                         <td>
-                            Invoice #: {{ '9999999' }}<br>
+                            Invoice number: {{ '8346' }}<br>
                             Created: {{ now() }}<br>
                         </td>
                     </tr>
@@ -124,13 +125,12 @@
                 <table>
                     <tr>
                         <td>
-                            Digital Edge, Inc.<br>
-                            12345 Shekh Daher<br>
-                            Lattakia, Sy 12345
+                            Vasti, Inc.<br>
+                            12345 Mashta al-helo<br>
+                            Tartuos, Sy 12345
                         </td>
 
                         <td>
-                            Tishreen Corp.<br>
                             {{auth()->user()->name}}<br>
                             {{auth()->user()->email}}
                         </td>
@@ -139,29 +139,27 @@
             </td>
         </tr>
 
-        {{--        <tr class="heading">--}}
-        {{--            <td>--}}
-        {{--                Payment Method--}}
-        {{--            </td>--}}
+        <tr class="heading">
+            <td>
+                Payment Method
+            </td>
+            <td>
 
-        {{--            <td>--}}
-        {{--                Check #--}}
-        {{--            </td>--}}
-        {{--        </tr>--}}
+            </td>
+        </tr>
 
-        {{--        <tr class="details">--}}
-        {{--            <td>--}}
-        {{--                {{ $payment->payment_method }}--}}
-        {{--            </td>--}}
+        <tr class="details">
+            <td>
+                {{ 'Banker payments' }}
+            </td>
+            <td>
 
-        {{--            <td>--}}
-        {{--                1000--}}
-        {{--            </td>--}}
-        {{--        </tr>--}}
+            </td>
+        </tr>
 
         <tr class="heading">
             <td>
-                Item
+                Book Name
             </td>
 
             <td>

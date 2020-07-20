@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Arr;
-use Illuminate\Support\Facades\App;
 
 class BankerController extends Controller
 {
@@ -53,17 +52,9 @@ class BankerController extends Controller
 
         $message = json_decode($response->getBody())->message;
         if ($message == 'Your Payment has been received.') {
-
             $books = auth()->user()->cart()->books;
-            $pdf = App::make('dompdf.wrapper');
-            $pdf->loadView('site.cart.invoice', compact('books'));
-
-            $pdf = $pdf->stream();
-
             auth()->user()->cart()->update(['checked_out' => 1]);
-
-            return $pdf;
-
+            return view('site.cart.pdf', compact('books'));
         }
 
         return redirect()->back()->withErrors($message);

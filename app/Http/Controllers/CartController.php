@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Book;
 use App\User;
+use Illuminate\Support\Facades\App;
 
 class CartController extends Controller
 {
@@ -26,6 +28,14 @@ class CartController extends Controller
 
         }
         return redirect()->back();
+    }
+
+    public function downloadPDF()
+    {
+        $books = collect(\GuzzleHttp\json_decode(request()->books));
+        $pdf = App::make('dompdf.wrapper');
+        $pdf->loadView('site.cart.invoice', ['books' => $books]);
+        return $pdf->stream();
     }
 
 }

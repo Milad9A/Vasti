@@ -23,16 +23,7 @@
                         @csrf
                         <input type="hidden" name="total" value="{{ $total }}">
                         <input type="hidden" name="token" value="{{ $token }}">
-
-
-                        @livewire('confirm-button')
-{{--                        @if (auth()->user()->cart())--}}
-{{--                            <button class="checkout-btn" type="submit">Confirm</button>--}}
-{{--                        @else--}}
-{{--                            <button class="checkout-btn">Confirmed!</button>--}}
-{{--                        @endif--}}
-
-
+                        <button class="checkout-btn" type="submit">Confirm</button>
                     </form>
 
                 </div>
