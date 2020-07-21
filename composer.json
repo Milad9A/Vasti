@@ -16,6 +16,7 @@
         "laravel/tinker": "^2.0",
         "livewire/livewire": "^1.1",
         "nothingworks/blade-svg": "^0.3.4",
+        "spatie/laravel-activitylog": "^3.14",
         "spatie/laravel-backup": "^6.11"
     },
     "require-dev": {

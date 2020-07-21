@@ -23,6 +23,13 @@ class AddBook extends Component
         auth()->user()->saveBook($this->book, ['status_id' => 1]);
         $this->status_id = auth()->user()->status->where('pivot.book_id', $this->book->id)->pluck('id')->first();
         $this->clicked = true;
+
+        activity()
+            ->performedOn($this->book)
+            ->causedBy(auth()->user())
+            ->withProperties(['status' => $this->status_id])
+            ->log(auth()->user()->name . ' added ' . $this->book->title . ' to his Reading List');
+
     }
 
     public function render()

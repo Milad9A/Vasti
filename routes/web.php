@@ -1,6 +1,12 @@
 <?php
 
+use Spatie\Activitylog\Models\Activity;
+
 Route::get('/', 'BooksController@home');
+
+Route::get('/act', function () {
+   return Activity::all()->last();
+});
 
 Route::view('/logins', 'site.login')->name('site.login');
 Route::view('/registers', 'site.register')->name('site.register');

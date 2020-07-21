@@ -3,9 +3,27 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Activitylog\Traits\LogsActivity;
 
 class Book extends Model
 {
+    use LogsActivity;
+
+//    protected static $ignoreChangedAttributes = ['title', 'updated_at'];
+
+    protected static $logAttributes = ['title', 'summary'];
+
+    protected static $logOnlyDirty = true;
+
+    protected static $recordEvents = ['created', 'updated'];
+
+    public static $logName = "Book";
+
+    public function getDescriptionForEvent(string $eventName): string
+    {
+        return "This Book has been {$eventName}";
+    }
+
     protected $fillable = [
         'title',
         'author_id',
