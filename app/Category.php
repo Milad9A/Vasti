@@ -16,4 +16,9 @@ class Category extends Model
     {
         return $this->attributes['image'];
     }
+
+    public function followedBy()
+    {
+        return $this->morphToMany('App\User', 'followable');
+    }
 }

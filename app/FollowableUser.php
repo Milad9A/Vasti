@@ -46,4 +46,9 @@ trait FollowableUser
     {
         return $this->followsCategories()->save($category);
     }
+
+    public function unFollowCategory(Category $category)
+    {
+        return $this->followsCategories()->detach($category);
+    }
 }

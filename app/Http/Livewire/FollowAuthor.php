@@ -23,7 +23,7 @@ class FollowAuthor extends Component
         auth()->user()->followAuthor($this->author);
 
         activity()
-            ->performedOn(auth()->user())
+            ->performedOn($this->author)
             ->causedBy(auth()->user())
             ->withProperties(['name' => $this->author->name])
             ->log(auth()->user()->name . ' started following ' . $this->author->name);

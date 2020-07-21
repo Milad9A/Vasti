@@ -1,6 +1,6 @@
 <div>
     <div class="avatar-name">
-        <img src="/img/Categories/Children.jpg" alt="" class="avatar" width="60" height="60">
+        <img src="/img/twain.jpg" alt="" class="avatar" width="60" height="60">
 
 
         <div class="name-followers">

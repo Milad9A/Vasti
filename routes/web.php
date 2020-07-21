@@ -4,15 +4,12 @@ use Spatie\Activitylog\Models\Activity;
 
 Route::get('/', 'BooksController@home');
 
-Route::get('/act', function () {
-   return Activity::all()->last();
-});
-
 Route::view('/logins', 'site.login')->name('site.login');
 Route::view('/registers', 'site.register')->name('site.register');
 
 Route::get('/books', 'BooksController@index')->name('site.books.index');
 Route::get('/books/{book}', 'BooksController@show')->name('site.show');
+Route::get('/categories/{category}', 'CategoriesController@show')->name('site.category.show');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::post('books/{book}/reviews', 'ReviewsController@store')->name('site.reviews.store');
