@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="98ec25eb-a16d-455f-9950-181db38c7402" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Category.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/FollowableUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/FollowableUser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/FollowAuthor.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/FollowAuthor.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/follow-author.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/follow-author.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-    </list>
+    <list default="true" id="98ec25eb-a16d-455f-9950-181db38c7402" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -269,7 +261,7 @@
       <workItem from="1595170645263" duration="10471000" />
       <workItem from="1595232672073" duration="45000" />
       <workItem from="1595245668380" duration="67000" />
-      <workItem from="1595251273456" duration="19380000" />
+      <workItem from="1595251273456" duration="19533000" />
     </task>
     <servers />
   </component>

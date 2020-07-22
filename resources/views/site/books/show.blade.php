@@ -31,7 +31,7 @@
                     <p class="read-more" id="red-more-summary">Read more</p>
                     <div class="categories">
                         @foreach ($book->categories as $category)
-                            <a href="" class="category">{{ $category->name }}</a>
+                            <a href="{{ route('site.category.show', compact('category')) }}" class="category">{{ $category->name }}</a>
                         @endforeach
                     </div>
 
