@@ -2,7 +2,6 @@
 
 @section('content')
 
-
 <!-- <i class="fa fa-close"></i> -->
 <section class="search-section">
     <div class="container-section">
@@ -69,8 +68,8 @@
                 @endforeach
                 <p>Price range</p>
                 <div class="col-1">
-                    <input type="number" value="10" min="10" max="200">
-                    <input type="number" value="12" min="10" max="200">
+                    <input name="price_min" type="number" value="10" min="10" max="200">
+                    <input name="price_max" type="number" value="80" min="10" max="200">
                 </div>
                 <input type="submit" value="Apply">
             </form>

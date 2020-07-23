@@ -39,12 +39,12 @@ class AdminCategoriesController extends Controller
         $category = new Category(request()->validate([
             'name' => 'required|unique:categories,name',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        
+
         ]));
         if ($image = $request->file('image')) {
             $imageName = date('YmdHis') . "." . $image->getClientOriginalExtension();
-            $filepath = $request->file('image')->storeAs('categoriesCovers', $imageName, 'public');
-            $category['image'] = $filepath;
+            $filepath = $request->file('image')->storeAs('Categories', $imageName, 'public_img');
+            $category['image'] = '/img/' . $filepath;
         }
         $category->save();
         return redirect(route('admin.categories.index'));
@@ -89,10 +89,9 @@ class AdminCategoriesController extends Controller
         ]));
         if ($image = $request->file('image')) {
             $imageName = date('YmdHis') . "." . $image->getClientOriginalExtension();
-            $filepath = $request->file('image')->storeAs('CategoriesCovers', $imageName, 'public');
-            $category['image'] = $filepath;
+            $filepath = $request->file('image')->storeAs('Categories', $imageName, 'public_img');
             $category->update([
-                'image' => $filepath,
+                'image' => '/img' . $filepath,
             ]);
         }
         return redirect(route('admin.categories.index'));

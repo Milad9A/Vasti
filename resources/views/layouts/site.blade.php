@@ -55,7 +55,7 @@
                 <p class="username">Milad-A</p>
                 </li>
                 <li><a href="{{  route('site.books.index') }}">Browse All Books</a></li>
-                <li><a href="#">Reading list</a></li>
+                <li><a href="{{ route('site.user.reading_list') }}">Reading list</a></li>
                 <li><a href="#">News Feed</a></li>
                 <li><a href="#" class="resp">Logout</a></li>
             </ul>
@@ -116,7 +116,7 @@
         </div>
         <hr>
         <ul class="setting">
-            <li><a href=""><i class='fas fa-user-alt'></i>Edit Profile</a></li>
+            <li><a href="{{ route('site.user.profile') }}"><i class='fas fa-user-alt'></i>Profile</a></li>
             <li><a href=""><i class="material-icons">feedback</i>send feedback</a></li>
             <li>
                 <div aria-labelledby="navbarDropdown">

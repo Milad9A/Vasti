@@ -45,18 +45,22 @@ class BooksController extends Controller
                     $books = Book::join('authors', 'books.author_id', '=', 'authors.id')
                             ->orderBy('authors.name', 'desc');
                     break;
-                // case 'price_a':
-                //     $books = Book::orderBy('price', 'asc')->get();
-                //     break;
-                // case 'price_d':
-                //     $books = Book::orderBy('price', 'desc')->get();
-                //     break;
+                 case 'price_a':
+                     $books = Book::orderBy('price', 'asc');
+                     break;
+                 case 'price_d':
+                     $books = Book::orderBy('price', 'desc');
+                     break;
             }
         }
         if ($request->has('categories')) {
             $categories_ids = request('categories');
             $cids = DB::table('book_category')->whereIn('category_id', $categories_ids)->pluck('book_id');
             $books->whereIn('id', $cids);
+        }
+
+        if ($request->has('price_min') && $request->has('price_max')){
+            $books->whereBetween('price', [request('price_min'), request('price_max')]);
         }
 
         $books = $books->get();
@@ -73,9 +77,9 @@ class BooksController extends Controller
 
         $featured = Book::latest()->take(4)->get();
 
-        $best_sellers = Book::orderBy('rating', 'desc')->take(6)->get();
+        $best_sellers = Book::orderBy('rating', 'desc')->take(12)->get();
 
-        $most_popular = Book::take(6)->get();
+        $most_popular = Book::take(12)->get();
 
         return view('site.books.home', compact('best_sellers', 'most_popular', 'featured'));
     }
@@ -110,7 +114,8 @@ class BooksController extends Controller
     public function show($id)
     {
         $book = Book::findOrFail($id);
-        return view('site.books.show', compact('book'));
+        $recommendedBooks = Book::all()->except($book->id)->take(4);
+        return view('site.books.show', compact('book', 'recommendedBooks'));
     }
 
     /**

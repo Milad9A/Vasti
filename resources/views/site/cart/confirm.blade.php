@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="shopping-cart-main">
+    <div class="shopping-cart-main-confirm">
         <div class="shopping-cart-container">
             <div class="col-2">
 
@@ -10,6 +10,11 @@
                     <div class="total-price">
                         <p class="total-text">Confirm the Purchase</p>
                     </div>
+
+                    @if($errors->any())
+                        {!! implode('', $errors->all('<div style="color: darkred">:message</div>')) !!}
+                    @endif
+
                     <div class="choose-your-payment">
                         <p class="payment">Your total is: {{ $total }}$</p>
                     </div>

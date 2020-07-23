@@ -1,5 +1,7 @@
 <?php
 
+use Spatie\Activitylog\Models\Activity;
+
 Route::get('/', 'BooksController@home');
 
 Route::view('/logins', 'site.login')->name('site.login');
@@ -7,6 +9,7 @@ Route::view('/registers', 'site.register')->name('site.register');
 
 Route::get('/books', 'BooksController@index')->name('site.books.index');
 Route::get('/books/{book}', 'BooksController@show')->name('site.show');
+Route::get('/categories/{category}', 'CategoriesController@show')->name('site.category.show');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::post('books/{book}/reviews', 'ReviewsController@store')->name('site.reviews.store');
@@ -17,6 +20,15 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/cart/banker/login', 'CartController@login')->name('site.cart.banker.login');
     Route::post('/cart/banker/login', 'BankerController@login')->name('site.cart.banker.apilogin');
     Route::post('/cart/banker/confirm', 'BankerController@purchase')->name('site.cart.banker.purchase');
+    Route::delete('cart/{user}/delete', 'CartController@destroy')->name('site.cart.destroy');
+    Route::post('cart/pdf', 'CartController@downloadPDF')->name('site.cart.pdf');
+
+    Route::get('/user/profile', 'UsersController@profile')->name('site.user.profile');
+    Route::put('/user/profile', 'UsersController@update')->name('site.user.profile.update');
+    Route::put('/user/profile/password', 'UsersController@updatePassword')->name('site.user.profile.update.password');
+    Route::get('/user/profile/edit', 'UsersController@edit')->name('site.user.profile.edit');
+
+    Route::get('user/reading_list', 'ReadingListController@index')->name('site.user.reading_list');
 });
 
 

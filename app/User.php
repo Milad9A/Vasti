@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'image', 'is_admin',
+        'name', 'email', 'password', 'image', 'is_admin', 'bio'
     ];
 
     /**
@@ -35,6 +35,20 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function initBooks($num)
+    {
+        factory(Book::class, $num)->create();
+
+        $categories = Category::all();
+
+        Book::All()->each(function ($book) use ($categories) {
+            $book->categories()->saveMany($categories);
+        });
+
+        return 1;
+
+    }
 
     public function books()
     {

@@ -31,7 +31,7 @@
                     <p class="read-more" id="red-more-summary">Read more</p>
                     <div class="categories">
                         @foreach ($book->categories as $category)
-                            <a href="" class="category">{{ $category->name }}</a>
+                            <a href="{{ route('site.category.show', compact('category')) }}" class="category">{{ $category->name }}</a>
                         @endforeach
                     </div>
 
@@ -155,106 +155,15 @@
                 <section class="recommended-books-containers">
                     <p id="recommended-text">Recommended Books</p>
                     <div class="recommended-books">
-                        <div class="book">
-                            <a href=""><img src="/img/cover/Book-Cover-Dare-to-Love-a-Duke-by-Eva-Leigh.jpg" alt=""
-                                            height="240px" width="150px"></a>
-                            <h1 class="title">MILLION TO ONE</h1>
-                            <h1 class="author">by milad</h1>
-                            <h1 class="price">$12.2</h1>
-                            <div class="rating">
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                            </div>
-                            <input type="submit" value="Buy" class="buy">
-                            <input type="submit" value="Add to list" class="add-to-list">
-                            <span class="fa fa-plus"></span>
-                            <div class="dropdown">
-                                <select name="" id="status-book">
-                                    <option value="Want to Read">Want to Read</option>
-                                    <option value="Reader">Reader</option>
-                                    <option value="Currently Reading">Currently Reading</option>
-                                </select>
-                                <i class="fa fa-caret-down"></i>
-                            </div>
-                        </div>
-                        <div class="book">
-                            <a href=""><img src="/img/cover/Book-Cover-Dare-to-Love-a-Duke-by-Eva-Leigh.jpg" alt=""
-                                            height="240px" width="150px"></a>
-                            <h1 class="title">MILLION TO ONE</h1>
-                            <h1 class="author">by milad</h1>
-                            <h1 class="price">$12.2</h1>
-                            <div class="rating">
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                            </div>
-                            <input type="submit" value="Buy" class="buy">
-                            <input type="submit" value="Add to list" class="add-to-list">
-                            <span class="fa fa-plus"></span>
-                            <div class="dropdown">
-                                <select name="" id="status-book">
-                                    <option value="Want to Read">Want to Read</option>
-                                    <option value="Reader">Reader</option>
-                                    <option value="Currently Reading">Currently Reading</option>
-                                </select>
-                                <i class="fa fa-caret-down"></i>
-                            </div>
-                        </div>
-                        <div class="book">
-                            <a href=""><img src="/img/cover/Book-Cover-Dare-to-Love-a-Duke-by-Eva-Leigh.jpg" alt=""
-                                            height="240px" width="150px"></a>
-                            <h1 class="title">MILLION TO ONE</h1>
-                            <h1 class="author">by milad</h1>
-                            <h1 class="price">$12.2</h1>
-                            <div class="rating">
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                            </div>
-                            <input type="submit" value="Buy" class="buy">
-                            <input type="submit" value="Add to list" class="add-to-list">
-                            <span class="fa fa-plus"></span>
-                            <div class="dropdown">
-                                <select name="" id="status-book">
-                                    <option value="Want to Read">Want to Read</option>
-                                    <option value="Reader">Reader</option>
-                                    <option value="Currently Reading">Currently Reading</option>
-                                </select>
-                                <i class="fa fa-caret-down"></i>
-                            </div>
-                        </div>
-                        <div class="book">
-                            <a href=""><img src="/img/cover/Book-Cover-Dare-to-Love-a-Duke-by-Eva-Leigh.jpg" alt=""
-                                            height="240px" width="150px"></a>
-                            <h1 class="title">MILLION TO ONE</h1>
-                            <h1 class="author">by milad</h1>
-                            <h1 class="price">$12.2</h1>
-                            <div class="rating">
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                            </div>
-                            <input type="submit" value="Buy" class="buy">
-                            <input type="submit" value="Add to list" class="add-to-list">
-                            <span class="fa fa-plus"></span>
-                            <div class="dropdown">
-                                <select name="" id="status-book">
-                                    <option value="Want to Read">Want to Read</option>
-                                    <option value="Reader">Reader</option>
-                                    <option value="Currently Reading">Currently Reading</option>
-                                </select>
-                                <i class="fa fa-caret-down"></i>
-                            </div>
-                        </div>
+
+                        @foreach($recommendedBooks as $rbook)
+
+                            @component('components.book', ['book' => $rbook])
+                            @endcomponent
+
+
+                        @endforeach
+
                     </div>
                 </section>
             </div>
