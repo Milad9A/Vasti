@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="/css/search.css">
     <link rel="stylesheet" href="/css/owl.carousel.css">
     <link rel="stylesheet" href="/css/owl.theme.default.min.css">
+    <link rel="stylesheet" media="screen and (max-width: 500px)" href="/css/tablet.css">
+    <link rel="stylesheet" href="/css/mobile.css">
+    
     @livewireStyles
     @yield('styles')
     <title>Vasti</title>
@@ -22,17 +25,42 @@
 
 <nav id="main-nav">
     <div class="container">
+        <button id="toggle" class="toggle resp">
+            <i class=" fa fa-bars fa-2x"></i>
+        </button>
         <a href="/">
             <h1 class="logo">VASTI</h1>
         </a>
+        <div class="resp-nav">
+            <img src="/icons/icons8-search.svg" alt="" height="23" width="23" class="resp se-btn" id="se-icon">
+            <li class="resp">
+                @auth()
+                    <a href="{{ route('site.cart.index', auth()->user()) }}">
+                        @svg('icons/shopping-cart', 'cart-btn')
+                    </a>
+                @else
+                    <a href="{{ route('site.login') }}">
+                        @svg('icons/shopping-cart', 'cart-btn')
+                    </a>
+                @endauth
+            </li>
+            <button class="resp">
+                <i class="fas fa-user"></i>
+            </button>
+        </div>
         <div class="nav-text">
             <ul>
+                <li class="resp">
+                <img src="" alt="" width="30" height="30">
+                <p class="username">Milad-A</p>
+                </li>
                 <li><a href="{{  route('site.books.index') }}">Browse All Books</a></li>
                 <li><a href="#">Reading list</a></li>
                 <li><a href="#">News Feed</a></li>
+                <li><a href="#" class="resp">Logout</a></li>
             </ul>
         </div>
-        <div class="icon-register">
+        <div class="icon-register hidden-nav">
             <ul>
 
                 @livewire('books-search-bar')
