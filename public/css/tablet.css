@@ -1,0 +1,141 @@
+.show-nav {
+    transform: translateX(200px);
+}
+
+#main-nav .container .nav-text ul {
+    background-color: #272727;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 240px;
+    height: 100vh;
+    z-index: 100;
+    margin-top: 4rem;
+
+    /* transform: translateX(-100%); */
+}
+.resp {
+    display: block;
+}
+
+.hidden-nav {
+    display: none;
+}
+#toggle {
+    border: none;
+    color: #fff;
+    background-color: #272727;
+    cursor: pointer;
+}
+
+#main-nav .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.6rem;
+    padding: 0;
+}
+
+#main-nav .container .resp-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#main-nav .container .icon-register {
+    display: none;
+}
+
+#main-nav .container .nav-text {
+    margin: 1rem auto;
+    padding: 0;
+}
+
+#main-nav .container .nav-text ul li {
+    padding: 1rem 0;
+    font-size: 1.8rem;
+}
+
+#main-nav .container .nav-text ul {
+    flex-direction: column;
+}
+
+.footer-container .container .footer-col-1 {
+    display: none;
+}
+
+.footer-container .container .footer-col-2 {
+    padding: 4rem;
+    width: 100%;
+}
+
+#main-container .container-category-slid .container-category-slid-row-1 {
+    display: none;
+}
+
+#main-container {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+#main-container .all-books-container {
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    grid-gap: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.search-section .container-section form .search-bar {
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.search-section .container-section form input {
+    width: 80%;
+}
+
+.search-section .container-section form button {
+    width: 19%;
+}
+
+#main-container .container-category-slid .container-category-slid-row-1 {
+    margin-left: 10px;
+}
+
+#main-container .container-category-slid p {
+    background: #272727;
+    color: #fff;
+    border-radius: 0.4rem;
+    text-align: center;
+    padding: 0.5rem;
+    font-size: 1.6rem;
+}
+
+#main-container .container-category-slid form div {
+    font-size: 1.6rem;
+    padding: 0.5rem;
+}
+
+#main-container .container-category-slid input[type="submit"] {
+    font-size: 1.4rem;
+    padding: 0.5rem;
+}
+#main-container .container-category-slid input[value] {
+    font-size: 1.4rem;
+    padding: 0.6rem;
+}
+
+.search-section .container-section form .filter {
+    margin: 2rem 0;
+}
+
+.Pagination {
+    margin: 1rem;
+}
+
+.Pagination .Pagination-container form input {
+    margin: 3rem 0.8rem;
+}
