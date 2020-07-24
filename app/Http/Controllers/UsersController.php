@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
+
 class UsersController extends Controller
 {
-    public function profile()
+    public function profile($id)
     {
-        $user = auth()->user();
+        $user = User::findOrFail($id);
         return view('site.user.profile', compact('user'));
     }
 
@@ -31,7 +33,7 @@ class UsersController extends Controller
                 'image' => $filepath,
             ]);
         }
-        return redirect(route('site.user.profile'));
+        return redirect(route('site.user.profile', ['user' => $user]));
     }
 
     public function updatePassword()
@@ -44,6 +46,6 @@ class UsersController extends Controller
         $user->update([
            'password' => bcrypt(request()->password),
         ]);
-        return redirect(route('site.user.profile'));
+        return redirect(route('site.user.profile', ['user' => $user]));
     }
 }

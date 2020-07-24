@@ -29,7 +29,7 @@
             <ul>
                 <li><a href="{{  route('site.books.index') }}">Browse All Books</a></li>
                 <li><a href="{{ route('site.user.reading_list') }}">Reading list</a></li>
-                <li><a href="#">News Feed</a></li>
+                <li><a href="{{ route('site.user.news_feed') }}">News Feed</a></li>
             </ul>
         </div>
         <div class="icon-register">
@@ -88,7 +88,7 @@
         </div>
         <hr>
         <ul class="setting">
-            <li><a href="{{ route('site.user.profile') }}"><i class='fas fa-user-alt'></i>Profile</a></li>
+            <li><a href="{{ route('site.user.profile', ['user' => auth()->user()]) }}"><i class='fas fa-user-alt'></i>Profile</a></li>
             <li><a href=""><i class="material-icons">feedback</i>send feedback</a></li>
             <li>
                 <div aria-labelledby="navbarDropdown">

@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="98ec25eb-a16d-455f-9950-181db38c7402" name="Default Changelist" comment="" />
+    <list default="true" id="98ec25eb-a16d-455f-9950-181db38c7402" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Book.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Book.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/FollowableUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/FollowableUser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UsersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UsersController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/AddBook.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/AddBook.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/FollowAuthor.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/FollowAuthor.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/FollowCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/FollowCategory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/site.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/site.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/site/user/profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/user/profile.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -176,19 +190,19 @@
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Console Font" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\vasti\public\img" />
-      <recent name="C:\xampp\htdocs\vasti\resources\views\site" />
-      <recent name="C:\xampp\htdocs\vasti\public\admin_assets\css" />
-      <recent name="C:\xampp\htdocs\vasti\resources\views\admin" />
-      <recent name="C:\xampp\htdocs\vasti\resources\views\layouts" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\vasti\public\img" />
       <recent name="C:\xampp\htdocs\vasti\public\img\like" />
       <recent name="C:\xampp\htdocs\vasti\public\icons" />
       <recent name="C:\xampp\htdocs\vasti\public\storage" />
       <recent name="C:\xampp\htdocs\vasti\resources\views\site" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\vasti\public\img" />
+      <recent name="C:\xampp\htdocs\vasti\resources\views\site" />
+      <recent name="C:\xampp\htdocs\vasti\public\admin_assets\css" />
+      <recent name="C:\xampp\htdocs\vasti\resources\views\admin" />
+      <recent name="C:\xampp\htdocs\vasti\resources\views\layouts" />
     </key>
   </component>
   <component name="RunManager">
@@ -262,6 +276,8 @@
       <workItem from="1595232672073" duration="45000" />
       <workItem from="1595245668380" duration="67000" />
       <workItem from="1595251273456" duration="19533000" />
+      <workItem from="1595436872807" duration="744000" />
+      <workItem from="1595599181136" duration="9647000" />
     </task>
     <servers />
   </component>
@@ -310,10 +326,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1594755594069" />
-    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1595361464795">
+    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1595605973954">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1595361464795" />
+    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1595605973954" />
     <state x="405" y="190" key="EditFileWatcherDialog" timestamp="1589322042339">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -352,10 +368,20 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1595186632623" />
-    <state x="390" y="50" width="672" height="678" key="search.everywhere.popup" timestamp="1595371181735">
+    <state x="390" y="50" width="672" height="678" key="search.everywhere.popup" timestamp="1595608555046">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="390" y="50" width="672" height="678" key="search.everywhere.popup/0.0.1536.824/1920.0.1366.728@0.0.1536.824" timestamp="1590159966339" />
-    <state x="390" y="50" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1595371181735" />
+    <state x="390" y="50" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1595608555046" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/app/Http/Controllers/NewsFeedController.php</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

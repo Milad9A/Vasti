@@ -1,7 +1,5 @@
 <?php
 
-use Spatie\Activitylog\Models\Activity;
-
 Route::get('/', 'BooksController@home');
 
 Route::view('/logins', 'site.login')->name('site.login');
@@ -23,12 +21,14 @@ Route::group(['middleware' => 'auth'], function () {
     Route::delete('cart/{user}/delete', 'CartController@destroy')->name('site.cart.destroy');
     Route::post('cart/pdf', 'CartController@downloadPDF')->name('site.cart.pdf');
 
-    Route::get('/user/profile', 'UsersController@profile')->name('site.user.profile');
     Route::put('/user/profile', 'UsersController@update')->name('site.user.profile.update');
     Route::put('/user/profile/password', 'UsersController@updatePassword')->name('site.user.profile.update.password');
     Route::get('/user/profile/edit', 'UsersController@edit')->name('site.user.profile.edit');
+    Route::get('/user/profile/{user}', 'UsersController@profile')->name('site.user.profile');
 
     Route::get('user/reading_list', 'ReadingListController@index')->name('site.user.reading_list');
+
+    Route::get('user/news_feed', 'NewsFeedController@index')->name('site.user.news_feed');
 });
 
 

@@ -26,6 +26,7 @@ class AddBook extends Component
 
         activity()
             ->performedOn($this->book)
+            ->inLog('Added Book to List')
             ->causedBy(auth()->user())
             ->withProperties(['status' => $this->status_id])
             ->log(auth()->user()->name . ' added ' . $this->book->title . ' to his Reading List');

@@ -32,6 +32,11 @@ trait FollowableUser
         return $this->followsUsers()->save($user);
     }
 
+    public function unFollowUser(User $user)
+    {
+        return $this->followsUsers()->detach($user);
+    }
+
     public function followAuthor(Author $author)
     {
         return $this->followsAuthors()->save($author);

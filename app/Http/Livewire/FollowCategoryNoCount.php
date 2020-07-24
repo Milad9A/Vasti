@@ -5,15 +5,12 @@ namespace App\Http\Livewire;
 use App\Category;
 use Livewire\Component;
 
-class FollowCategory extends Component
+class FollowCategoryNoCount extends Component
 {
     public $category;
-    public $count;
 
-    public function mount(Category $category)
-    {
+    public function mount(Category $category){
         $this->category = $category;
-        $this->count = $this->category->followedBy()->count();
     }
 
     public function followCategory()
@@ -35,7 +32,6 @@ class FollowCategory extends Component
 
     public function render()
     {
-        $this->count = $this->category->followedBy()->count();
-        return view('livewire.follow-category');
+        return view('livewire.follow-category-no-count');
     }
 }

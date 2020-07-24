@@ -12,21 +12,25 @@
                     class="avatar-profile"
                 />
                 <div class="info-container">
-                    <div class="rows row-1">
+                    <div class="rows">
                         <div class="username">{{ $user->name }}</div>
 
                         @if(auth()->user()->is($user))
 
-                            <a href="{{ route('site.user.profile.edit') }}">
-                                <input
-                                    type="submit"
-                                    value="Edit Profile"
-                                    id="edit-profile-btn"
-                                    class="btn"
-                                />
-                            </a>
+                            <div class="row-1">
+
+                                <a href="{{ route('site.user.profile.edit') }}">
+                                    <input
+                                        type="submit"
+                                        value="Edit Profile"
+                                        id="edit-profile-btn"
+                                        class="btn"
+                                    />
+                                </a>
+                            </div>
+
                         @else
-                            <input type="submit" value="Follow" id="follow" class="btn"/>
+                            @livewire('follow-user', ['user' => $user])
                         @endif
                     </div>
                     <div class="rows row-2">

@@ -21,7 +21,8 @@ class Book extends Model
 
     public function getDescriptionForEvent(string $eventName): string
     {
-        return "This Book has been {$eventName}";
+        if ($eventName === 'created')
+            return "A new Book has been added";
     }
 
     protected $fillable = [
