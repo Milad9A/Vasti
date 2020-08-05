@@ -53,6 +53,9 @@ class BankerController extends Controller
         $message = json_decode($response->getBody())->message;
         if ($message == 'Your Payment has been received.') {
             $books = auth()->user()->cart()->books;
+            foreach ($books as $book) {
+                auth()->user()->purchase($book);
+            }
             auth()->user()->cart()->update(['checked_out' => 1]);
             return view('site.cart.pdf', compact('books'));
         }
