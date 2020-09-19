@@ -19,6 +19,22 @@
 
                             <div class="row-1">
 
+                                <a href="">
+                                    <input
+                                        type="submit"
+                                        value="My Books"
+                                        id="edit-profile-btn"
+                                        class="btn-w"
+                                    />
+                                </a>
+                                <a href="">
+                                    <input
+                                        type="submit"
+                                        value="My Reviews"
+                                        id="edit-profile-btn"
+                                        class="btn-w"
+                                    />
+                                </a>
                                 <a href="{{ route('site.user.profile.edit') }}">
                                     <input
                                         type="submit"

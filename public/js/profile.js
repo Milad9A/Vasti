@@ -26,12 +26,10 @@ function editProfile(e) {
 const lists = document.getElementById("lists");
 lists.addEventListener("click", selectedList);
 function selectedList(e) {
-    console.log("rpc");
     const reading = document.getElementById("reading");
     const plan = document.getElementById("plan");
     const completed = document.getElementById("completed");
     if (e.target.id === "reading") {
-        console.log("r");
         reading.style.color = "#272727";
         reading.style.borderTop = "3px solid #272727";
         plan.style.color = "#e0e0e0";

@@ -1,6 +1,6 @@
 * {
     box-sizing: border-box;
-    margin:0;
+    margin: 0;
     padding: 0;
 }
 
@@ -10,12 +10,15 @@
 }
 
 body {
-    background: #272727;
     color: #fff;
     line-height: 1.5;
     font-family: SF-Pro-Text;
     font-size: 1.6rem;
     vertical-align: middle;
+    background: #272727 url("../img/cover-00.png") no-repeat;
+    background-size: cover;
+    background-position: top;
+    height: 100%;
 }
 
 a {
@@ -23,22 +26,23 @@ a {
 }
 
 .modal-container {
-    margin: 2rem auto;
+    background-color: #fff;
+    margin: 0 10rem;
     max-width: 400px;
     padding: 20px;
-} 
-
-.modal-header {
-    background: #272727;
-    padding: 0.2rem 1rem;
-    color: #fff;
-    text-align: center;
-    margin: 3rem 0;
-    
+    height: 100vh;
 }
 
-.modal-header h1 {
-    font-size: 4rem;
+.modal-header {
+    padding: 0.2rem 1rem;
+    color: #fff;
+    margin: 1rem 0;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .modal label {
@@ -56,15 +60,13 @@ a {
 }
 
 .modal {
-    background: #fff;
     padding: 15px 25px;
     color: #333;
-    border: 1px solid #272727;
     border-radius: 0.4rem;
 }
 
 .modal input[type="submit"] {
-    background: #27AF43;
+    background: #27af43;
     color: #fff;
     margin-bottom: 2rem;
     border: none;
@@ -101,16 +103,17 @@ footer {
 }
 
 .modal-container .modal .form-control small {
-    color: #e74c3c;;
+    color: #e74c3c;
     visibility: hidden;
 }
 
 .modal .form-control.error small {
     visibility: visible;
-} 
+}
 
-#register, #login {
-    color: #27AF43; 
+#register,
+#login {
+    color: #27af43;
 }
 
 footer span {
@@ -118,7 +121,7 @@ footer span {
     padding-left: 0.5rem;
 }
 
-.form-check .form-check-label{
+.form-check .form-check-label {
     display: flex;
     justify-content: flex-start;
 }
@@ -127,13 +130,13 @@ footer span {
     width: 1.3rem;
     margin-right: 1rem;
     padding: 0;
-    border: 1px solid #272727;
+    border: 1px solid #fff;
     border-radius: 4px;
 }
 
 .modal-content .modal-form #forgot {
     float: right;
-    color: #337CD9;
+    color: #337cd9;
     transform: translateY(-3.16rem);
     font-size: 1.3rem;
     padding: 0;
@@ -143,4 +146,3 @@ footer span {
 .login-footer {
     margin-top: -2.2rem;
 }
-
