@@ -15,6 +15,12 @@
     <!-- <link rel="stylesheet" media="screen and (max-width: 500px)" href="/css/tablet.css">
     <link rel="stylesheet" href="/css/mobile.css"> -->
 
+
+    <link rel="icon"
+          type="image/png"
+          href="/img/favicon.png">
+
+
     @livewireStyles
     @yield('styles')
     <title>Vasti</title>
@@ -90,7 +96,8 @@
         </div>
         <hr>
         <ul class="setting">
-            <li><a href="{{ route('site.user.profile', ['user' => auth()->user()]) }}"><i class='fas fa-user-alt'></i>Profile</a></li>
+            <li><a href="{{ route('site.user.profile', ['user' => auth()->user()]) }}"><i class='fas fa-user-alt'></i>Profile</a>
+            </li>
             <li><a href=""><i class="material-icons">feedback</i>send feedback</a></li>
             <li>
                 <div aria-labelledby="navbarDropdown">

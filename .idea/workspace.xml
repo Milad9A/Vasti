@@ -3,8 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="98ec25eb-a16d-455f-9950-181db38c7402" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../resources/views/components/book-show-page.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/components/book-show-page.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/css/login_register.css" beforeDir="false" afterPath="$PROJECT_DIR$/../public/css/login_register.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/../public/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/js/profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/../public/js/profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/views/layouts/site.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/layouts/site.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../resources/views/site/reading_list/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/site/reading_list/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../resources/views/site/user/profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../resources/views/site/user/profile.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,19 +189,19 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\vasti\public\img" />
-      <recent name="C:\xampp\htdocs\vasti\resources\views\site" />
-      <recent name="C:\xampp\htdocs\vasti\public\admin_assets\css" />
-      <recent name="C:\xampp\htdocs\vasti\resources\views\admin" />
-      <recent name="C:\xampp\htdocs\vasti\resources\views\layouts" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\vasti\storage\app\public" />
       <recent name="C:\xampp\htdocs\vasti\public\img" />
       <recent name="C:\xampp\htdocs\vasti\public\img\like" />
       <recent name="C:\xampp\htdocs\vasti\public\icons" />
       <recent name="C:\xampp\htdocs\vasti\public\storage" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\vasti\public\img" />
+      <recent name="C:\xampp\htdocs\vasti\resources\views\site" />
+      <recent name="C:\xampp\htdocs\vasti\public\admin_assets\css" />
+      <recent name="C:\xampp\htdocs\vasti\resources\views\admin" />
+      <recent name="C:\xampp\htdocs\vasti\resources\views\layouts" />
     </key>
   </component>
   <component name="RunManager">
@@ -281,7 +285,7 @@
       <workItem from="1600184172182" duration="4846000" />
       <workItem from="1600510182385" duration="12049000" />
       <workItem from="1600536218688" duration="30000" />
-      <workItem from="1600536273218" duration="2807000" />
+      <workItem from="1600536273218" duration="9457000" />
     </task>
     <servers />
   </component>
@@ -338,14 +342,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="507" height="446" key="SwitcherDM/0.0.1536.824@0.0.1536.824" timestamp="1594141892284" />
-    <state x="425" y="187" width="672" height="677" key="run.anything.popup" timestamp="1600525550812">
+    <state x="425" y="187" width="672" height="677" key="run.anything.popup" timestamp="1600546215736">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="425" y="187" width="672" height="677" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1600525550812" />
-    <state x="390" y="50" width="672" height="678" key="search.everywhere.popup" timestamp="1600537995998">
+    <state x="425" y="187" width="672" height="677" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1600546215736" />
+    <state x="390" y="50" width="672" height="678" key="search.everywhere.popup" timestamp="1600543012679">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="390" y="50" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1600537995998" />
+    <state x="390" y="50" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1600543012679" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

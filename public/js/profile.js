@@ -1,3 +1,26 @@
+const lists = document.getElementById("lists");
+lists.addEventListener("click", selectedList);
+function selectedList(e) {
+    const reading = document.getElementById("reading");
+    const plan = document.getElementById("plan");
+    const completed = document.getElementById("completed");
+    if (e.target.id === "reading") {
+        reading.classList.add("current-selected");
+        plan.classList.remove("current-selected");
+        completed.classList.remove("current-selected");
+    }
+    if (e.target.id === "plan") {
+        reading.classList.remove("current-selected");
+        plan.classList.add("current-selected");
+        completed.classList.remove("current-selected");
+    }
+    if (e.target.id === "completed") {
+        reading.classList.remove("current-selected");
+        plan.classList.remove("current-selected");
+        completed.classList.add("current-selected");
+    }
+}
+
 const profileSetting = document.getElementById("edit-profile-section");
 profileSetting.addEventListener("click", editProfile);
 function editProfile(e) {
@@ -23,36 +46,4 @@ function editProfile(e) {
     }
 }
 
-const lists = document.getElementById("lists");
-lists.addEventListener("click", selectedList);
-function selectedList(e) {
-    const reading = document.getElementById("reading");
-    const plan = document.getElementById("plan");
-    const completed = document.getElementById("completed");
-    if (e.target.id === "reading") {
-        reading.style.color = "#272727";
-        reading.style.borderTop = "3px solid #272727";
-        plan.style.color = "#e0e0e0";
-        plan.style.borderTop = "none";
-        completed.style.color = "#e0e0e0";
-        completed.style.borderTop = "none";
-    }
-    if (e.target.id === "plan") {
-        console.log("p");
-        reading.style.color = "#e0e0e0";
-        reading.style.borderTop = "none";
-        plan.style.color = "#272727";
-        plan.style.borderTop = "3px solid #272727";
-        completed.style.color = "#e0e0e0";
-        completed.style.borderTop = "none";
-    }
-    if (e.target.id === "completed") {
-        console.log("c");
-        reading.style.color = "#e0e0e0";
-        reading.style.borderTop = "none";
-        plan.style.color = "#e0e0e0";
-        plan.style.borderTop = "none";
-        completed.style.color = "#272727";
-        completed.style.borderTop = "3px solid #272727";
-    }
-}
+

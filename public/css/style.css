@@ -948,8 +948,8 @@ ul {
 }
 
 .status-bar .status-bar-container .Current {
-    background: #272727;
-    color: #fff;
+    background: #272727 !important;
+    color: #fff !important;
 }
 
 .status-bar .status-bar-container .want-to-read,
@@ -991,7 +991,7 @@ ul {
     display: grid;
     grid-template-columns: 1fr 4fr 1fr;
     grid-gap: 2rem;
-    background: #3f3f3f;
+    background: #e0e0e0;
 }
 
 .main-container .side-col-1 {
@@ -1644,8 +1644,9 @@ ul {
     cursor: pointer;
 }
 
-#reading {
-    color: #272727;
+
+.current-selected{
+    color: #272727 !important;
     border-top: 3px solid #272727;
 }
 .profile .book-info {

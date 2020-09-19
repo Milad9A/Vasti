@@ -4,13 +4,13 @@
 
     <div class="reading-list-main">
 
-    <section class="status-bar" >
-           <div class="status-bar-container" id="status-bar">
-          <button class="want-to-read " id="want-to-read">Plan to Read</button>
-          <button class="reader" id="reader">Completed</button>
-          <button class="currently-reading" id="currently-reading">Currently Reading</button>
-       </div>
-    </section>
+        <section class="status-bar">
+            <div class="status-bar-container" id="status-bar">
+                <button class="want-to-read Current" id="want-to-read">Plan to Read</button>
+                <button class="reader" id="reader">Completed</button>
+                <button class="currently-reading" id="currently-reading">Currently Reading</button>
+            </div>
+        </section>
 
         <main class="reading-list">
 
@@ -53,3 +53,6 @@
 
 @endsection
 
+@section('scripts')
+    <script src="/js/reading_list.js"></script>
+@endsection

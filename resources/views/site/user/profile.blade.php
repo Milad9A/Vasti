@@ -65,7 +65,7 @@
             </div>
             <div class="lists-section" id="lists">
                 <div class="currently-reading">
-                    <p class="primary-text" id="reading">Currently reading</p>
+                    <p class="primary-text current-selected" id="reading">Currently reading</p>
                 </div>
                 <div class="plan-to-read">
                     <p class="primary-text" id="plan">Plan to read</p>

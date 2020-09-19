@@ -28,7 +28,7 @@ a {
 .modal-container {
     background-color: #fff;
     margin: 0 10rem;
-    max-width: 400px;
+    max-width: 430px;
     padding: 20px;
     height: 100vh;
 }
@@ -83,7 +83,7 @@ a {
 }
 
 footer {
-    color: #fff;
+    color: #272727;
     display: flex;
     justify-content: center;
     padding: 0;
@@ -124,6 +124,7 @@ footer span {
 .form-check .form-check-label {
     display: flex;
     justify-content: flex-start;
+    align-items: center;
 }
 
 .form-check .form-check-label input[name="remember"] {
