@@ -5,9 +5,7 @@
     <h1 class="price">{{ $book->price }}$</h1>
 
     @livewire('add-to-cart', ['book' => $book])
-
-    @livewire('add-book', ['book' => $book])
-
+    
     @auth
         @if (auth()->user()->purchased->contains($book))
             <form action="{{ route('site.books.download') }}" method="POST">
@@ -17,4 +15,7 @@
             </form>
         @endif
     @endauth
+
+    @livewire('add-book', ['book' => $book])
+
 </div>

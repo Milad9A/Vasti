@@ -6,8 +6,8 @@
 
         <section class="status-bar">
             <div class="status-bar-container">
-                <button class="want-to-read Current btn-selected">Want to Read</button>
-                <button class="reader">Reader</button>
+                <button class="want-to-read Current btn-selected">Plan to Read</button>
+                <button class="reader">Completed</button>
                 <button class="currently-reading">Currently Reading</button>
             </div>
         </section>
@@ -35,7 +35,7 @@
                                 <span class="fa fa-star"></span>
                             @endfor
                         </div>
-                        
+
                         @livewire('add-book', ['book' => $book])
 
                     </div>
