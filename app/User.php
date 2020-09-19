@@ -102,4 +102,13 @@ class User extends Authenticatable
         return $this->belongsToMany(Cart::class)->where('carts.user_id', $this->id)->where('checked_out', 0)->first();
     }
 
+    public function purchased(){
+        return $this->belongsToMany(Book::class, 'purchased_books', 'user_id', 'book_id');
+    }
+
+    public function purchase(Book $book){
+        $this->purchased()->save($book);
+        return null;
+    }
+
 }

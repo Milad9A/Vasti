@@ -76,4 +76,8 @@ class Book extends Model
     {
         return $this->belongsToMany(Cart::class)->where('user_id', $user->id)->where('checked_out', 0)->first();
     }
+
+    public function purchased(){
+        return $this->belongsToMany(User::class, 'purchased_books', 'book_id', 'user_id');
+    }
 }

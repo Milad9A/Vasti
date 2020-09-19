@@ -1,5 +1,18 @@
 <?php
 
+
+$updates = Telegram::getWebhookUpdates();
+Route::post('/123/webhook', function () {
+    $updates = Telegram::getWebhookUpdates();
+    $update = Telegram::commandsHandler(true);
+    return 'ok';
+});
+
+Route::get('/setwebhook', function () {
+    $response = Telegram::setWebhook(['url' => 'https://ee84cf249bfd.ngrok.io/123/webhook']);
+    dd($response);
+});
+
 Route::get('/', 'BooksController@home');
 
 Route::view('/logins', 'site.login')->name('site.login');

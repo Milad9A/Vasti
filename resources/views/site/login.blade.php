@@ -31,12 +31,12 @@
                             value="{{ old('email') }}"
                             required autocomplete="email" autofocus>
 
-                        @error('email')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                        @enderror
-                    </div>
+                    @error('email')
+                    <span class="invalid-feedback" role="alert">
+                        <strong style="color: crimson">{{ $message }}</strong>
+                    </span>
+                    @enderror
+                </div>
 
                     <div>
                         <label for="password">{{ __('Password') }}</label>
@@ -48,12 +48,12 @@
                             placeholder="Enter Password"
                             required autocomplete="current-password">
 
-                        @error('password')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                        @enderror
-                    </div>
+                    @error('password')
+                    <span class="invalid-feedback" role="alert">
+                        <strong style="color: crimson">{{ $message }}</strong>
+                    </span>
+                    @enderror
+                </div>
 
                     <div class="form-group row mb-0">
                         <div class="form-check">
