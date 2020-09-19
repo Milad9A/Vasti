@@ -1,6 +1,7 @@
 <?php
 
 
+
 $updates = Telegram::getWebhookUpdates();
 Route::post('/123/webhook', function () {
     $updates = Telegram::getWebhookUpdates();
@@ -8,8 +9,14 @@ Route::post('/123/webhook', function () {
     return 'ok';
 });
 
+
 Route::get('/setwebhook', function () {
-    $response = Telegram::setWebhook(['url' => 'https://ee84cf249bfd.ngrok.io/123/webhook']);
+    $response = Telegram::setWebhook(['url' => 'https://8c52fae2d50f.ngrok.io/123/webhook']);
+    dd($response);
+});
+
+Route::get('/deletewebhook', function () {
+    $response = Telegram::deleteWebhook();
     dd($response);
 });
 
@@ -26,6 +33,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('books/{book}/reviews', 'ReviewsController@store')->name('site.reviews.store');
     Route::post('books/reviews/{review}/like', 'LikeReviewController@store');
     Route::delete('books/reviews/{review}/like', 'LikeReviewController@destroy');
+    Route::post('books/download', 'BooksController@downloadPDF')->name('site.books.download');
 
     Route::get('/cart/{user}', 'CartController@index')->name('site.cart.index');
     Route::get('/cart/banker/login', 'CartController@login')->name('site.cart.banker.login');

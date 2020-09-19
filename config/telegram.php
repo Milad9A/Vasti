@@ -40,14 +40,10 @@ return [
             'commands' => [
                 App\Telegram\Commands\HelpCommand::class,
                 App\Telegram\Commands\BooksCommand::class,
+                App\Telegram\Commands\BuyBookCommand::class,
                 // App\Telegram\Commands\StartCommand::class,
             ],
         ],
-
-        //        'mySecondBot' => [
-        //            'username'  => 'AnotherTelegram_Bot',
-        //            'token' => '123456:abc',
-        //        ],
     ],
 
     /*
@@ -118,9 +114,9 @@ return [
     |
     */
     'commands' => [
-        // App\Telegram\Commands\HelpCommand::class,
-        // App\Telegram\Commands\BooksCommand::class,
-        // App\Telegram\Commands\StartCommand::class,
+        App\Telegram\Commands\HelpCommand::class,
+        App\Telegram\Commands\BooksCommand::class,
+        App\Telegram\Commands\BuyBookCommand::class,
     ],
 
     /*

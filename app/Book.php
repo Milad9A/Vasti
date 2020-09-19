@@ -9,7 +9,7 @@ class Book extends Model
 {
     use LogsActivity;
 
-//    protected static $ignoreChangedAttributes = ['title', 'updated_at'];
+    //    protected static $ignoreChangedAttributes = ['title', 'updated_at'];
 
     protected static $logAttributes = ['title', 'summary'];
 
@@ -23,6 +23,8 @@ class Book extends Model
     {
         if ($eventName === 'created')
             return "A new Book has been added";
+        elseif ($eventName === 'updated')
+            return "A Book has been updated";
     }
 
     protected $fillable = [
@@ -77,7 +79,8 @@ class Book extends Model
         return $this->belongsToMany(Cart::class)->where('user_id', $user->id)->where('checked_out', 0)->first();
     }
 
-    public function purchased(){
+    public function purchased()
+    {
         return $this->belongsToMany(User::class, 'purchased_books', 'book_id', 'user_id');
     }
 }

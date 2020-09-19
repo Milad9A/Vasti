@@ -8,4 +8,13 @@
 
     @livewire('add-book', ['book' => $book])
 
+    @auth
+        @if (auth()->user()->purchased->contains($book))
+            <form action="{{ route('site.books.download') }}" method="POST">
+                @csrf
+                <input type="hidden" name="title" value="{{ $book->title }}">
+                <input value="Download PDF" type="submit" class="buy">
+            </form>
+        @endif
+    @endauth
 </div>

@@ -4,13 +4,18 @@ namespace App\Http\Controllers;
 
 use App\Book;
 use App\Category;
-use App\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class BooksController extends Controller
 {
+    public function downloadPDF()
+    {
+        $title = request()->title;
+        return Storage::disk('public')->download('PDFs/' . $title . '.pdf');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -39,18 +44,18 @@ class BooksController extends Controller
                     break;
                 case 'author_id_a':
                     $books = Book::join('authors', 'books.author_id', '=', 'authors.id')
-                            ->orderBy('authors.name', 'asc');
+                        ->orderBy('authors.name', 'asc');
                     break;
                 case 'author_id_d':
                     $books = Book::join('authors', 'books.author_id', '=', 'authors.id')
-                            ->orderBy('authors.name', 'desc');
+                        ->orderBy('authors.name', 'desc');
                     break;
-                 case 'price_a':
-                     $books = Book::orderBy('price', 'asc');
-                     break;
-                 case 'price_d':
-                     $books = Book::orderBy('price', 'desc');
-                     break;
+                case 'price_a':
+                    $books = Book::orderBy('price', 'asc');
+                    break;
+                case 'price_d':
+                    $books = Book::orderBy('price', 'desc');
+                    break;
             }
         }
         if ($request->has('categories')) {
@@ -59,7 +64,7 @@ class BooksController extends Controller
             $books->whereIn('id', $cids);
         }
 
-        if ($request->has('price_min') && $request->has('price_max')){
+        if ($request->has('price_min') && $request->has('price_max')) {
             $books->whereBetween('price', [request('price_min'), request('price_max')]);
         }
 
@@ -97,7 +102,7 @@ class BooksController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -108,7 +113,7 @@ class BooksController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -121,7 +126,7 @@ class BooksController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -132,8 +137,8 @@ class BooksController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -144,7 +149,7 @@ class BooksController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
