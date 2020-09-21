@@ -40,7 +40,7 @@ class User extends Authenticatable
     {
         factory(Book::class, $num)->create();
 
-        $categories = Category::all();
+        $categories = Category::take(3);
 
         Book::All()->each(function ($book) use ($categories) {
             $book->categories()->saveMany($categories);

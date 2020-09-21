@@ -462,11 +462,11 @@ ul {
     margin-top: 1rem;
     width: 100%;
     background: linear-gradient(
-            to bottom,
-            rgba(39, 39, 39, 0.5),
-            rgba(243, 219, 219, 0.5)
-        ),
-        url("../img/cover-002-01-01-01.png") center center/cover;
+        to bottom,
+        rgba(39, 39, 39, 0.5),
+        rgba(243, 219, 219, 0.5)
+    ),
+    url("../img/cover-002-01-01-01.png") center center/cover;
 }
 
 /* footer */
@@ -593,11 +593,13 @@ ul {
     align-items: center;
     overflow: hidden;
 }
+
 .search-section .container-section .search-bar {
     display: flex;
     justify-content: space-between;
     flex-wrap: nowrap;
 }
+
 .search-section .container-section form input {
     width: 40vw;
     font-size: 2rem;
@@ -616,6 +618,7 @@ ul {
     background: #272727;
     cursor: pointer;
 }
+
 .search-section .container-section form button:hover {
     background: #383838;
 }
@@ -859,21 +862,21 @@ ul {
 
 /* On mouse-over, add a grey background color */
 #main-container
-    .container-category-slid
-    form
-    .container:hover
-    input
-    ~ .checkmark {
+.container-category-slid
+form
+.container:hover
+input
+~ .checkmark {
     background-color: #a3a0a0;
 }
 
 /* When the checkbox is checked, add a blue background */
 #main-container
-    .container-category-slid
-    form
-    .container
-    input:checked
-    ~ .checkmark {
+.container-category-slid
+form
+.container
+input:checked
+~ .checkmark {
     background-color: #272727;
 }
 
@@ -886,11 +889,11 @@ ul {
 
 /* Show the checkmark when checked */
 #main-container
-    .container-category-slid
-    form
-    .container
-    input:checked
-    ~ .checkmark:after {
+.container-category-slid
+form
+.container
+input:checked
+~ .checkmark:after {
     display: block;
 }
 
@@ -1126,23 +1129,23 @@ ul {
 }
 
 .main-container
-    .side-col-2
-    .summary-container
-    .reviews
-    .review-container
-    .review-user
-    img {
+.side-col-2
+.summary-container
+.reviews
+.review-container
+.review-user
+img {
     border-radius: 0.4rem;
     object-fit: cover;
 }
 
 .main-container
-    .side-col-2
-    .summary-container
-    .reviews
-    .review-container
-    .review
-    .container {
+.side-col-2
+.summary-container
+.reviews
+.review-container
+.review
+.container {
     padding: 1rem;
     margin: 0 1rem;
     border: 1px #e0e0e0 solid;
@@ -1150,12 +1153,12 @@ ul {
 }
 
 .main-container
-    .side-col-2
-    .summary-container
-    .reviews
-    .review-container
-    .review
-    .container.username {
+.side-col-2
+.summary-container
+.reviews
+.review-container
+.review
+.container.username {
     font-size: 2rem;
 }
 
@@ -1207,6 +1210,7 @@ ul {
     display: block;
     padding: 0.7rem;
 }
+
 .dropdown-content div:hover {
     background: #e0e0e0;
 }
@@ -1220,14 +1224,14 @@ ul {
 }
 
 .main-container
-    .side-col-2
-    .summary-container
-    .reviews
-    .review-container
-    .review
-    .container
-    .user-info
-    .followers {
+.side-col-2
+.summary-container
+.reviews
+.review-container
+.review
+.container
+.user-info
+.followers {
     font-size: 1.4rem;
     color: #3f3f3f;
     margin-bottom: 0.6rem;
@@ -1276,6 +1280,7 @@ ul {
     border: none;
     background: none;
 }
+
 .add-review .user-container {
     margin: 1rem 4rem;
     display: flex;
@@ -1350,14 +1355,17 @@ ul {
     align-items: center;
     width: 100%;
 }
+
 .follow-btn-followers {
     display: flex;
     align-items: center;
 }
+
 .name-followers .followers {
     color: #3f3f3f;
     font-size: 1.4rem;
 }
+
 .name-followers {
     padding-left: 1rem;
 }
@@ -1431,13 +1439,13 @@ ul {
 }
 
 .main-container
-    .side-col-3
-    .more-from-author
-    .books-author
-    li
-    a
-    .book-info
-    .book-name {
+.side-col-3
+.more-from-author
+.books-author
+li
+a
+.book-info
+.book-name {
     color: #272727;
     font-size: 1.8rem;
 }
@@ -1645,10 +1653,11 @@ ul {
 }
 
 
-.current-selected{
+.current-selected {
     color: #272727 !important;
     border-top: 3px solid #272727;
 }
+
 .profile .book-info {
     display: grid;
     grid-template-columns: 1fr 3fr 2fr 2fr 2fr auto;
@@ -1659,10 +1668,12 @@ ul {
     font-size: 1.6rem;
     transition: all 0.5s;
 }
+
 .profile .book-info:hover {
     border: 1px #e0e0e0 solid;
     border-radius: 0.4rem;
 }
+
 .profile .book-info:last-child {
     justify-self: end;
 }
@@ -1779,6 +1790,7 @@ ul {
     padding-left: 2rem;
     margin: 0.2rem 0;
 }
+
 .custom-file-input::before {
     content: "Choose image";
     display: inline-block;
@@ -1792,9 +1804,11 @@ ul {
     cursor: pointer;
     font-size: 1.5rem;
 }
+
 .custom-file-input:hover::before {
     border-color: #272727;
 }
+
 .custom-file-input:active::before {
     background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
 }
@@ -1808,9 +1822,11 @@ ul {
 .status-bar {
     margin: 2rem 10rem;
 }
+
 .reading-list {
     height: 75vh;
 }
+
 .status-bar .status-bar-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -1833,10 +1849,12 @@ ul {
     width: 100%;
     transition: all 0.5s;
 }
+
 .selected-button {
     background: #272727 !important;
     color: #fff !important;
 }
+
 .status-bar .status-bar-container button:hover {
     background: #e0e0e0;
 }
@@ -1890,10 +1908,10 @@ ul {
 }
 
 .reading-list
-    .container-status-book
-    .description-container
-    .dropdown
-    .fa-caret-down {
+.container-status-book
+.description-container
+.dropdown
+.fa-caret-down {
     transform: translate(11rem, -2.5rem);
 }
 
@@ -1929,6 +1947,7 @@ ul {
 .container-status-book .categories-suggestion span:hover {
     transform: scale(1.07);
 }
+
 .owl-carousel {
     max-width: 90%;
 }
@@ -1964,6 +1983,7 @@ ul {
 .shopping-cart-container div {
     margin: 1.5rem 0;
 }
+
 .shopping-cart-container .col-1 {
     max-height: 55rem;
     overflow-y: scroll;
@@ -1987,11 +2007,13 @@ ul {
     grid-gap: 2rem;
     box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.2);
 }
+
 .shopping-cart-container .book-cart .remove button {
     background: none;
     border: none;
     cursor: pointer;
 }
+
 .shopping-cart-container .col-1 .book-cart {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr 1fr auto;
@@ -2092,6 +2114,7 @@ ul {
 .shopping-cart-main-confirm .shopping-cart-container {
     display: flex;
 }
+
 .shopping-cart-main-login .col-2,
 .shopping-cart-main-confirm .col-2 {
     width: 40vw;
@@ -2102,6 +2125,7 @@ ul {
     width: 70%;
     margin: 2rem auto;
 }
+
 .categories-container .categories-row-1 .main-category img {
     height: 30rem;
     width: 100%;
@@ -2153,6 +2177,7 @@ ul {
     width: 0;
     transition: all 0.5s;
 }
+
 .main-category .container-row1 button {
     background: #272727;
     color: #fff;
@@ -2214,6 +2239,7 @@ ul {
     grid-template-columns: 2fr 4fr 2fr;
     grid-gap: 4rem;
 }
+
 .news-feed-col-1 .container-user {
     display: flex;
     align-items: center;
@@ -2222,10 +2248,12 @@ ul {
     padding: 2rem 1rem;
     transition: all 0.1s;
 }
+
 .news-feed-col-1 .container-user:hover {
     background: #d3d2d2;
     border-radius: 0.4rem;
 }
+
 .news-feed-col-1 .container-user img {
     height: 4.5rem;
     width: 4.5rem;
@@ -2242,6 +2270,7 @@ ul {
     box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
     margin-bottom: 2rem;
 }
+
 .news-feed-col-2 .header-card-post {
     display: flex;
     align-items: center;
@@ -2345,9 +2374,11 @@ ul {
     background: #d3d2d2;
     border-radius: 0.4rem;
 }
+
 .container-discovered-friends {
     margin-top: 4rem;
 }
+
 .container-discovered-friends .search-friends {
     display: flex;
 }
@@ -2359,6 +2390,7 @@ ul {
     padding: 1rem;
     font-size: 1.8rem;
 }
+
 .container-discovered-friends .search-friends button {
     border: none;
     border-radius: 0.4rem;
@@ -2368,9 +2400,11 @@ ul {
     color: #fff;
     margin-left: 0.5rem;
 }
+
 .content-search-friends .container-all-contents {
     margin-top: 3rem;
 }
+
 .content-search-friends .container-all-contents .container-user {
     display: flex;
     justify-content: space-between;
@@ -2395,13 +2429,15 @@ ul {
     border-radius: 50%;
     margin-right: 1rem;
 }
+
 .content-search-friends
-    .container-all-contents
-    .container-user
-    .container-avatar {
+.container-all-contents
+.container-user
+.container-avatar {
     display: flex;
     align-items: center;
 }
+
 .discovered-friends-btn {
     display: flex;
     align-items: center;

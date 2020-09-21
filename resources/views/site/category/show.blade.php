@@ -32,7 +32,7 @@
             </div>
             <div class="categories-row-3">
                 <p class="category-text">
-                    Books under the <span>Art</span> category
+                    Books under the <span>{{ $category->name }}</span> category
                 </p>
                 <div class="container-categories-row-3">
                     @foreach(App\Category::findOrFail($category->id)->books()->get() as $book)

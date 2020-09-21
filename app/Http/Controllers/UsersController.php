@@ -2,23 +2,38 @@
 
 namespace App\Http\Controllers;
 
+use App\Status;
 use App\User;
+use Illuminate\Http\Request;
 
 class UsersController extends Controller
 {
-    public function profile($id)
+    public function profile(Request $request, $id)
     {
         $user = User::findOrFail($id);
-        return view('site.user.profile', compact('user'));
+
+        $books = User::where('id', $id)->firstOrFail()->books();
+
+        if ($request->has('status')) {
+            $status_id = Status::where('name', request('status'))->firstOrFail()->id;
+            $sid = $user->status->pluck('pivot')->where('status_id', $status_id)->pluck('book_id');
+            $books->whereIn('books.id', $sid);
+        }
+
+        $books = $books->get();
+
+        return view('site.user.profile', compact('user', 'books'));
     }
 
-    public function edit()
+    public
+    function edit()
     {
         $user = auth()->user();
         return view('site.user.edit', compact('user'));
     }
 
-    public function update()
+    public
+    function update()
     {
         $user = auth()->user();
         $user->update(request()->validate([
@@ -36,7 +51,8 @@ class UsersController extends Controller
         return redirect(route('site.user.profile', ['user' => $user]));
     }
 
-    public function updatePassword()
+    public
+    function updatePassword()
     {
         $user = auth()->user();
         request()->validate([
@@ -44,7 +60,7 @@ class UsersController extends Controller
             'password' => 'required|string|min:8|confirmed',
         ]);
         $user->update([
-           'password' => bcrypt(request()->password),
+            'password' => bcrypt(request()->password),
         ]);
         return redirect(route('site.user.profile', ['user' => $user]));
     }

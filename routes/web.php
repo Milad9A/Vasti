@@ -11,7 +11,7 @@ Route::post('/123/webhook', function () {
 
 
 Route::get('/setwebhook', function () {
-    $response = Telegram::setWebhook(['url' => 'https://8c52fae2d50f.ngrok.io/123/webhook']);
+    $response = Telegram::setWebhook(['url' => 'https://9ac3a85b80d1.ngrok.io/123/webhook']);
     dd($response);
 });
 
@@ -48,6 +48,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/user/profile/{user}', 'UsersController@profile')->name('site.user.profile');
 
     Route::get('user/reading_list', 'ReadingListController@index')->name('site.user.reading_list');
+    Route::post('user/reading_list', 'ReadingListController@index')->name('site.user.reading_list');
 
     Route::get('user/news_feed', 'NewsFeedController@index')->name('site.user.news_feed');
 });

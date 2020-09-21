@@ -30,6 +30,9 @@ class Like extends Model
 
     }
 
-
     protected $guarded = [];
+
+    public function review(){
+        return $this->belongsTo(Review::class);
+    }
 }

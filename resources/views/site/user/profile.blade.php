@@ -64,43 +64,41 @@
                 </div>
             </div>
             <div class="lists-section" id="lists">
+
+
                 <div class="currently-reading">
-                    <p class="primary-text current-selected" id="reading">Currently reading</p>
+                    <a href="{{ route('site.user.profile', ['status' => 'Currently Reading', 'user' => $user]) }}">
+                        <p class="primary-text {{ request('status') == 'Currently Reading' ? 'current-selected' : '' }}"
+                           id="reading">Currently reading</p>
+                    </a>
                 </div>
+
                 <div class="plan-to-read">
-                    <p class="primary-text" id="plan">Plan to read</p>
+                    <a href="{{ route('site.user.profile', ['status' => 'Plan to Read', 'user' => $user]) }}">
+                        <p class="primary-text {{ request('status') == 'Plan to Read' ? 'current-selected' : '' }}"
+                           id="plan">Plan to Read</p>
+                    </a>
                 </div>
                 <div class="completed">
-                    <p class="primary-text" id="completed">Completed</p>
+                    <a href="{{ route('site.user.profile', ['status' => 'Completed', 'user' => $user]) }}">
+                        <p class="primary-text {{ request('status') == 'Completed' ? 'current-selected' : '' }}"
+                           id="completed">Completed</p>
+                    </a>
                 </div>
             </div>
             <div class="lists-books">
-                <div class="book-info">
-                    <img src="/img/cover/1 (1).jpg" alt="" height="80"/>
-                    <div class="title">
-                        title Lorem ipsum dolor, sit amet consectetur adipisicing.
+                @foreach($books as $book)
+                    <div class="book-info">
+                        <a href="{{ route('site.show', ['book' => $book]) }}">
+                            <img src="{{ $book->image }}" alt="" height="80"/>
+                        </a>
+                        <div class="title">{{ $book->title }}</div>
+                        <div class="author">{{ $book->author->name }}</div>
+                        <div class="category"></div>
+                        <div
+                            class="data">{{ Illuminate\Support\Carbon::parse($book->published_at)->diffForHumans() }}</div>
                     </div>
-                    <div class="author">author Lorem ipsum dolor sit.</div>
-                    <div class="category">category Lorem ipsum dolor sit amet.</div>
-                    <div class="data">23/2/2012</div>
-                    <div class="remove"><i class="fa fa-remove"></i></div>
-                </div>
-                <div class="book-info">
-                    <img src="/img/cover/1 (1).jpg" alt="" height="80"/>
-                    <div class="title">title</div>
-                    <div class="author">author</div>
-                    <div class="category">category</div>
-                    <div class="data">23/2/2012</div>
-                    <div class="remove"><i class="fa fa-remove"></i></div>
-                </div>
-                <div class="book-info">
-                    <img src="/img/cover/1 (1).jpg" alt="" height="80"/>
-                    <div class="title">title</div>
-                    <div class="author">author</div>
-                    <div class="category">category</div>
-                    <div class="data">23/2/2012</div>
-                    <div class="remove"><i class="fa fa-remove"></i></div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>

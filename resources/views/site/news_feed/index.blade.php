@@ -23,7 +23,8 @@
             <div class="news-feed-col-2">
                 <div class="container-body-news-feed" id="container-body-news-feed">
 
-                    @foreach($loggedActivities->whereIn('causer_id', auth()->user()->followsUsers->except(auth()->user()->id)->pluck('id')) as $log)
+                    @foreach($loggedActivities->whereIn('causer_id',
+                    auth()->user()->followsUsers->except(auth()->user()->id)->pluck('id')) as $log)
 
                         @if ($log->log_name === 'Added Book to List')
 
@@ -35,7 +36,8 @@
                                 <br>
                                 <div class="header-card-post">
                                     <div class="container-avatar">
-                                        <a href="{{ route('site.user.profile', ['user' => App\User::findOrFail($log->causer_id)]) }}">
+                                        <a
+                                            href="{{ route('site.user.profile', ['user' => App\User::findOrFail($log->causer_id)]) }}">
                                             <img src="{{ asset(App\User::findOrFail($log->causer_id)->image)  }}">
                                         </a>
 
@@ -75,7 +77,8 @@
                                 <br>
                                 <div class="header-card-post">
                                     <div class="container-avatar">
-                                        <a href="{{ route('site.user.profile', ['user' => App\User::findOrFail($log->causer_id)]) }}">
+                                        <a
+                                            href="{{ route('site.user.profile', ['user' => App\User::findOrFail($log->causer_id)]) }}">
                                             <img src="{{ asset(App\User::findOrFail($log->causer_id)->image)  }}">
                                         </a>
 
@@ -90,7 +93,8 @@
                                     <br>
                                     <div class="container-book-post">
                                         <div class="post-col-1">
-                                            <a href="{{ route('site.category.show', ['category' => App\Category::findOrFail($log->subject_id)]) }}">
+                                            <a
+                                                href="{{ route('site.category.show', ['category' => App\Category::findOrFail($log->subject_id)]) }}">
                                                 <img
                                                     src="{{ asset(App\Category::findOrFail($log->subject_id)->image) }}"
                                                     alt="">
@@ -100,6 +104,53 @@
                                             <div class="title">
                                                 Category
                                                 Name: {{ App\Category::findOrFail($log->subject_id)->name }}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        @elseif($log->log_name === 'Like')
+
+                            <div class="post-card">
+                                <p>{{ $log->description }}</p>
+                                <p>{{ $log->created_at->diffForHumans() }}</p>
+                                <br>
+                                <hr>
+                                <br>
+                                <div class="header-card-post">
+                                    <div class="container-avatar">
+                                        <a
+                                            href="{{ route('site.user.profile', ['user' => App\User::findOrFail($log->causer_id)]) }}">
+                                            <img src="{{ asset(App\User::findOrFail($log->causer_id)->image)  }}">
+                                        </a>
+
+                                        <div class="username-date">
+                                            <div
+                                                class="username">{{ App\User::findOrFail($log->causer_id)->name }}</div>
+                                        </div>
+                                    </div>
+                                    @livewire('follow-user', ['user' => App\User::findOrFail($log->causer_id)])
+                                </div>
+                                <div class="body-card-post">
+                                    <br>
+                                    <div class="container-book-post">
+                                        <div class="post-col-1">
+                                            <a
+                                                href="{{ route('site.show', ['book' => App\Like::findOrFail($log->subject_id)->review->book]) }}">
+                                                <img
+                                                    src="{{ asset(App\Like::findOrFail($log->subject_id)->review->book->image) }}"
+                                                    alt="">
+                                            </a>
+                                        </div>
+                                        <div class="post-col-2">
+                                            <div class="title">
+                                                The Review's
+                                                Body: {{ App\Like::findOrFail($log->subject_id)->review->body }}
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="title">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -115,7 +166,8 @@
                                 <br>
                                 <div class="header-card-post">
                                     <div class="container-avatar">
-                                        <a href="{{ route('site.user.profile', ['user' => App\User::findOrFail($log->causer_id)]) }}">
+                                        <a
+                                            href="{{ route('site.user.profile', ['user' => App\User::findOrFail($log->causer_id)]) }}">
                                             <img src="{{ asset(App\User::findOrFail($log->causer_id)->image)  }}">
                                         </a>
 
@@ -130,7 +182,8 @@
                                     <br>
                                     <div class="container-book-post">
                                         <div class="post-col-1">
-                                            <a href="{{ route('site.show', ['book' => App\Review::findOrFail($log->subject_id)->book]) }}">
+                                            <a
+                                                href="{{ route('site.show', ['book' => App\Review::findOrFail($log->subject_id)->book]) }}">
                                                 <img
                                                     src="{{ asset(App\Review::findOrFail($log->subject_id)->book->image) }}"
                                                     alt="">
@@ -255,10 +308,12 @@
                 </div>
             </div>
         </div>
+
     </div>
+
+@endsection
 
 @section('scripts')
     <script src="/js/discover.js"></script>
 @endsection
 
-@endsection
