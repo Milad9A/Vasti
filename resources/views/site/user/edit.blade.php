@@ -37,6 +37,7 @@
                             <label for="bio">Bio</label>
                             <textarea name="bio" id="bio">{{ $user->bio }}</textarea>
                         </div>
+                        </div>
                     </div>
                     <button type="submit" class="save-btn">Save</button>
                 </form>
@@ -78,5 +79,5 @@
 
 
 @section('scripts')
-    <script src="/js/profile.js"></script>
+    <script src="/js/edit_profile.js"></script>
 @endsection
