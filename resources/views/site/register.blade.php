@@ -10,7 +10,7 @@
 <body>
 <div class="modal-container" id="modal-register">
     <div class="modal-header">
-        <img src="{{url('/img/vasti-logo.png')}}" alt="" height="250px" width="auto">
+        <img src="{{url('/img/vasti-logo.png')}}" alt="" height="250px" width="auto" id="logo-lr">
     </div>
     <div class="modal">
         <div class="modal-content">

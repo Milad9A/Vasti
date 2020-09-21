@@ -78,5 +78,5 @@
 
 
 @section('scripts')
-    <script src="/js/profile.js"></script>
+    <script src="/js/edit_profile.js"></script>
 @endsection

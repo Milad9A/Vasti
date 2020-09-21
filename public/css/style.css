@@ -177,7 +177,10 @@ ul {
 #showcase-header .showcase-container {
     height: 60rem;
     width: 100%;
-    background: url("../img/showcase-01-01-01-01.png") right center/cover;
+    background: url("../img/showcase-01-01-01-01-01.png");
+    background-position: right;
+    background-size: 100vh;
+    background-repeat: no-repeat;
 }
 
 #showcase-header .showcase-container .showcase-text .square {
@@ -1652,7 +1655,6 @@ a
     cursor: pointer;
 }
 
-
 .current-selected {
     color: #272727 !important;
     border-top: 3px solid #272727;
@@ -1817,6 +1819,187 @@ a
     height: 4rem;
 }
 
+.modal-container-b {
+    background-color: rgba(0, 0, 0, 0.2);
+    display: none;
+}
+
+.modal-container-b.show-modal {
+    display: block;
+}
+
+.modal-b {
+    background-color: #fff;
+    border-radius: 0.4rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%;
+    width: 500px;
+    animation-name: modalopen;
+    animation-duration: 1s;
+}
+
+.modal-header-b {
+    background: #272727;
+    color: #fff;
+    padding: 15px;
+}
+
+.modal-header-b p {
+    margin: 0;
+}
+
+.modal-content-b {
+    max-height: 70vh;
+    overflow-y: scroll;
+}
+
+.modal-content-b .container-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    margin: 0.8rem 0;
+}
+
+.modal-content-b .container-item:hover {
+    background: #e2e2e2;
+}
+.modal-content-b .container-item img {
+    object-fit: cover;
+    border-radius: 0.4rem;
+    margin-right: 1rem;
+}
+
+.modal-content-b .container-item button {
+    background: #272727;
+    color: #fff;
+    border: none;
+    border-radius: 0.4rem;
+    padding: 1rem;
+    cursor: pointer;
+    margin-left: 1rem;
+}
+.modal-content-b .container-item button:hover {
+    background: #3a3a3a;
+}
+
+.close-btn {
+    background: transparent;
+    font-size: 25px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: none;
+    color: #fff;
+    margin: 1rem;
+    cursor: pointer;
+}
+
+@keyframes modalopen {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.modal-container-r {
+    background-color: rgba(0, 0, 0, 0.2);
+    display: none;
+}
+
+.modal-container-r.show-modal-r {
+    display: block;
+}
+
+.modal-r {
+    background-color: #fff;
+    border-radius: 0.4rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%;
+    width: 500px;
+    animation-name: modalopen;
+    animation-duration: 1s;
+}
+
+.modal-header-r {
+    background: #272727;
+    color: #fff;
+    padding: 15px;
+}
+
+.modal-header-r p {
+    margin: 0;
+}
+
+.modal-content-r {
+    max-height: 70vh;
+    overflow-y: scroll;
+}
+
+.modal-content-r .container-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    margin: 0.8rem 0;
+}
+
+.modal-content-r .container-item:hover {
+    background: #e2e2e2;
+}
+.modal-content-r .container-item img {
+    object-fit: cover;
+    border-radius: 0.4rem;
+    margin-right: 1rem;
+}
+
+.modal-content-r .container-item button {
+    background: #272727;
+    color: #fff;
+    border: none;
+    border-radius: 0.4rem;
+    padding: 1rem;
+    cursor: pointer;
+    margin-left: 1rem;
+}
+.modal-content-r .container-item button:hover {
+    background: #3a3a3a;
+}
+
+.close-btn {
+    background: transparent;
+    font-size: 25px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: none;
+    color: #fff;
+    margin: 1rem;
+    cursor: pointer;
+}
+
+@keyframes modalopen {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
 /****************** reading-list-page ************/
 
 .status-bar {

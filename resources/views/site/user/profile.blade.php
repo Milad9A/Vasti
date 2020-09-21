@@ -17,24 +17,13 @@
 
                         @if(auth()->user()->is($user))
 
-                            <div class="row-1">
-
-                                <a href="">
+                            <div class="row-1">     
                                     <input
                                         type="submit"
                                         value="My Books"
-                                        id="edit-profile-btn"
+                                        id="my-books"
                                         class="btn-w"
-                                    />
-                                </a>
-                                <a href="">
-                                    <input
-                                        type="submit"
-                                        value="My Reviews"
-                                        id="edit-profile-btn"
-                                        class="btn-w"
-                                    />
-                                </a>
+                                    />                              
                                 <a href="{{ route('site.user.profile.edit') }}">
                                     <input
                                         type="submit"
@@ -102,6 +91,23 @@
             </div>
         </div>
     </div>
+    <div class="modal-container-b" id="modal-b">
+      <div class="modal-b">
+        <button class="close-btn" id="close-b">
+          <i class="fa fa-times"></i>
+        </button>
+        <div class="modal-header-b">
+          <p>Your Books</p>
+        </div>
+        <div class="modal-content-b">
+            <div class="container-item">
+                <img src="/img/favicon.png" alt="" height="110px" width="60px">
+                <p class="title-book">Title Book</p>
+                <button>Download</button>
+            </div>
+        </div>
+    </div>
+
 
 @endsection
 
